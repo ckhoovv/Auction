@@ -1,0 +1,159 @@
+@charset "UTF-8";
+.container {
+	width: 100%;
+	position: relative;
+	margin: 0;
+	overflow: hidden;
+}
+.collect_wrap {
+	width: 800px;
+	margin: 0 500px auto 300px;
+	border-bottom: 1px solid #e5e5e5;
+	overflow: hidden;
+}
+.collect_wrap .collect_content {
+	float: left;
+	width: 628px;
+	padding: 60px 94px 90px;
+}
+.collect_wrap .title {
+	font-size: 36px;
+	font-weight: 400;
+	color: #222;
+	letter-spacing: -0.04em;
+	line-height: 40px;
+	border-bottom: 1px solid #e5e5e5;
+	text-align: left;
+}
+.tab_cont {
+	margin-bottom: 30px;
+}
+.tab_cont img{
+	width: 628px;
+	margin-bottom: 30px;
+}
+.tab_cont .intro_lst {
+	margin: 0;
+	overflow: hidden;
+	list-style: none;
+	width: 628px;
+	float: left;
+	padding: 0;
+}
+.tab_cont .intro_lst li {
+	margin-top: 30px;
+}
+.intro_lst li dt {
+	font-weight: 700;
+	font-size: 20px;
+	color: #444;
+	line-height: 30px;
+	text-align: left;
+}
+.intro_lst li dd{
+	margin-top: 16px;
+	font-size: 18px;
+	color: #666;
+	line-height: 32px;
+	text-align: justify;
+	margin-left: 0;
+}
+
+.editor_base {
+	line-height: 1.5;
+}
+
+/* 기부 배너스크롤 */
+.banner_scroll {
+	position: fixed;
+	width: 300px;
+	height: 500px;
+	left: 60%;
+	top:25%;
+	border: 1px solid #e5e5e5;
+}
+.graph_wrap {
+	width:250px;
+	height: 100px;
+	padding:25px;
+	padding-bottom: 0px;
+}
+.graph_wrap .graph_status {
+	text-align: left;
+	color: #10c838;
+}
+.graph_wrap .graph_status strong {
+	font-size: 53px;
+	
+}
+.graph_bar {
+	width: 100%;
+	height: 4px;
+	margin-top: 3px;
+	background: #ebebeb;
+}
+.graph_wrap .graph_bar .donation_bar {
+	background-color: #10c838;
+}
+.graph_wrap .graph_bar span {
+	display: inline-block;
+	height:4px;
+	background-color: #10c838;
+	vertical-align: top;
+	float: left;
+}
+.graph_wrap .term_area div {
+	min-height: 21px;
+	padding-left: 20px;
+	float: left;
+	letter-spacing: -0.05em;
+	
+}
+.graph_wrap .term_area div span {
+	display: inline-block;
+	height: 20px;
+	padding: 0 10px 0;
+	margin-right: 5px;
+	border-radius: 2px;
+	background: #f86f46;
+	font-size: 16px;
+	font-weight:bold;
+	color: #fff;
+	line-height: 21px;
+	text-align: center;
+	vertical-align: top;
+	letter-spacing: -0.04em;
+}
+.num_area {
+	padding-top: 24px;
+	padding-left: 20px;
+	text-align: left;
+	letter-spacing: -0.05em;
+}
+.num_area .status_num strong {
+	font-size: 37px;
+	color: #CD6155;
+}
+.num_area .purpose_num strong {
+	font-size: 37px;
+	color: #45B39D;
+}
+.account_area {
+	padding-left: 20px;
+	text-align: left;
+	letter-spacing: -0.05em;
+}
+.account_area .my_account strong {
+	font-size: 25px;
+}
+.donation_btn {
+	margin-top: 295px;
+	width: 300px;
+	height: 80px;
+}
+.donation_btn img {
+	width: 300px;
+	height: 80px;
+}
+
+

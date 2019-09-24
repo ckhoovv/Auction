@@ -1,0 +1,26 @@
+
+.login_center {
+	border: 3px solid blue;
+	margin: auto;
+	text-align: center;
+	margin: 100px;
+	padding: 50px;
+}
+
+.lgoin_align {
+	display: inline-block;
+	background: #ffff00;
+}
+
+.login_float {
+	float: left;
+}
+
+.login_float button {
+	width: 70px;	
+	height: 40px;
+}
+
+.lgin_inline {
+	margin: 10px;
+}

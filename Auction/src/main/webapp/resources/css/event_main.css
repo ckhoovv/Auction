@@ -1,0 +1,250 @@
+@charset "UTF-8";
+
+.main_img {
+	width: 500px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.product_banner {
+	width: 900px;
+	height: 40px;
+	background: #95A5A6;
+	margin-left: auto;
+	margin-right: auto;
+}
+.banner_title {
+	font-size: 30px;
+	color: #F9E79F;
+	text-align: left;
+	margin-left: 10px;
+}
+.end_event{
+	float: right;
+	width: 150px;
+	height: 30px;
+	background: #283747;
+	margin-top: 5px;
+	margin-right: 10px;
+	text-align: center;
+}
+.end_date {
+	font-size: 20px;
+	color: #FDFEFE;
+}
+.event_coupon {
+	position: absolute;
+	margin-left: 246px;
+}
+
+.event_list {
+	width: 900px;
+	height: 1050px;
+	margin-left: auto;
+	margin-right: auto;
+	background: black;
+}
+.product_list {
+	float: left;
+	width: 300px;
+}
+.event_ul {
+	list-style: none;
+	width: 900px;
+	margin: 0px;
+	margin-left: -40px;
+}
+.product_img {
+	height: 200px;
+	position: relative;
+}
+.event_list ul li img{
+	width: 298px;
+	height: 200px;
+	border: 1px solid #dedede;
+	float: left;
+}
+.product_content {
+	width: 298px;
+	height: 150px;
+	background: #E5E7E9;
+	text-align: center;
+	border: 1px solid #dedede;
+}
+.event_btn {
+  background-color: #CA6F1E;
+  border: none;
+  color: #17202A;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 15px;
+  line-height: 1em;
+  margin:10px 10px;
+  outline: none;
+  padding: 12px 40px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.event_btn:before,
+.event_btn:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.event_btn:before {
+  border-color: #CA6F1E;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+.event_btn:after {
+  border-bottom-width: 2px;
+  border-color: #CA6F1E;
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+.event_btn:hover,
+.event_btn.hover {
+  background-color: #CA6F1E;
+}
+.event_btn:hover:before,
+.event_btn.hover:before,
+.event_btn:hover:after,
+.event_btn.hover:after {
+  height: 100%;
+  width: 100%;
+}
+.coupon_count {
+	margin-top: 20px;
+	font-size: 15px;
+}
+.event_count {
+	font-size: 15px;
+	color: #784212;
+}
+.input_count {
+	border-top: 1px solid #bbbbbb;
+	border-left: 1px solid #bbbbbb;
+	border-bottom: 1px solid #e4e4e4;
+	border-right: 1px solid #e4e4e4;
+}
+.product_title {
+	font-size: 20px;
+	margin-bottom: 10px;
+	margin-top: -10px;
+	color: #21618C;
+}
+
+.main_img {
+	width: 500px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.product_banner {
+	width: 900px;
+	height: 40px;
+	background: #95A5A6;
+	margin-left: auto;
+	margin-right: auto;
+}
+.event_list {
+	width: 900px;
+	height: 1050px;
+	margin-left: auto;
+	margin-right: auto;
+	background: black;
+}
+.product_list {
+	float: left;
+	width: 300px;
+	position: relative;
+}
+.event_ul {
+	list-style: none;
+	width: 900px;
+	margin: 0px;
+	margin-left: -40px;
+}
+.product_img {
+	height: 200px;
+}
+.event_list ul li img{
+	width: 298px;
+	height: 200px;
+	border: 1px solid #dedede;
+	float: left;
+}
+.product_content {
+	width: 298px;
+	height: 150px;
+	background: #E5E7E9;
+	text-align: center;
+	border: 1px solid #dedede;
+}
+.ly_check {
+	position:absolute;
+	top: 62px;
+	left: 31px;
+	width:240px;
+	height: 65px;
+	text-align: center;
+	border: 1px solid black;
+	padding: 20px;
+	line-height: 16px;
+	background: #FFF;
+}
+.event_list .product_content .ly_check{
+	position: absolute;
+	top: 170px;
+	left: 40px;
+	width: 200px;
+	height: 75px;
+	padding: 15px 10px 5px 10px;
+	font-size: 11px;
+	line-height: 16px;
+	letter-spacing: -1px;
+	z-index: 3;
+}
+.winner {
+	position: relative;
+	width: 900px;
+	height: 42px;
+	border-top: 3px solid #7F8C8D;
+	border-left: 3px solid #7F8C8D;
+	border-right: 3px solid #7F8C8D;
+	border-bottom: 3px solid #7F8C8D;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+span.now {
+	display: inline-block;
+	margin-top: 4px;
+	margin-left: 10px;
+	font-size: 25px;
+	color: #1F618D;
+}
+.mycoupon_cnt {
+	color: #A93226;
+}
+.winner_view {
+	float: right;
+	margin-right: 10px;
+	margin-top: 8px;
+	width: 100px;
+	height: 27px;
+}
