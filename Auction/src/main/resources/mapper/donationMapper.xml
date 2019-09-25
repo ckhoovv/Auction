@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="donationDAO">
+
+	<select id="select_donation" parameterType="donationDTO" resultMap="rsMap">
+		SELECT FROM d_detail
+		 WHERE dona_num = #{dona_num}
+	</select>
+
+	<resultMap type="donationDTO" id="rsMap">
+		<result property="dona_num" column="dona_num" />
+		<result property="dona_tit" column="dona_tit" />
+		<result property="dona_tit_sub" column="dona_tit_sub" />
+		<result property="dona_con" column="dona_con" />
+		<result property="dona_start_yy" column="dona_start_yy" />
+		<result property="dona_start_mm" column="dona_start_mm" />
+		<result property="dona_start_dd" column="dona_start_dd" />
+		<result property="dona_end_yy" column="dona_end_yy" />
+		<result property="dona_end_mm" column="dona_end_mm" />
+		<result property="dona_end_dd" column="dona_end_dd" />
+	</resultMap>
+	
+	<resultMap type="donation_listDTO" id="list_rsMap">
+		<result property="sq" column="sq" />
+		<result property="dona_num" column="dona_num" />
+		<result property="dona_tit" column="dona_tit" />
+		<result property="member_email" column="member_email" />
+		<result property="dona_money" column="dona_money" />
+		<result property="dona_date_yy" column="dona_date_yy" />
+		<result property="dona_date_mm" column="dona_date_mm" />
+		<result property="dona_date_dd" column="dona_date_dd" />
+	</resultMap>
+
+	<select id="selectAll" resultMap="rsMap">
+		SELECT * FROM d_detail 
+		 
+	</select>
+
+	<insert id="insert_donation" parameterType="donationDTO">
+		INSERT INTO d_dtail
+		VALUES(#{dona_num},#{dona_tit},#{dona_tit_sub},#{dona_con}
+			  ,#{dona_start_yy},#{dona_start_mm},#{dona_start_dd}\
+			  ,#{dona_end_yy},#{dona_end_mm},#{dona_end_dd})
+	</insert>
+	<update id="update" parameterType="donationDTO">
+		UPDATE tablename1
+		SET
+		columnname1=#{param1}
+		WHERE
+		columnname2 = #{param2}
+	</update>
+
+	<delete id="delete" parameterType="donationDTO">
+		DELETE FROM tablename1 WHERE
+		columnname1 = #{param1}
+	</delete>
+
+</mapper>
