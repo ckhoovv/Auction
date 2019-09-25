@@ -67,6 +67,10 @@
 	    		</li>
 	    		<li style="width: 150px;">
 	    			<a href="donation_main.do">기부</a>
+	    			<ul class="li-2-submenu">
+		    			<li><a href="donation_main.do">기부</a></li>
+		    			<li><a href="event_main.do">응모</a></li>
+	    			</ul>
 	    		</li>
     			<li>
     				<select style="margin-left: 20px;">
