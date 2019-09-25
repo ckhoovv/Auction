@@ -1,71 +1,37 @@
 /**
  * 
  */
-
-window.onload = function join() {
+$(function(){
+	/* 일반 로그인, 소셜 로그인 구분 */
 	$(".sign_button").click(function(){
 		var id_check = $(this).attr("id");
-		alert(id_check)
 		location.href=id_check+'.do';
 	});
-}
-
-
-/*window.onload = function result_join() {
-	$(".result_button").click(function(){
-		location.href='signIn.do';
-	});
-}
-*/
-window.onload = function doLogin() {
+	
+	/* 로그인 유효성 검사 */
 	$("#doLogin").click(function(){
-		alert("ㅎㅇ")
-	});
-};
-
-
-/*
-window.onload = function doLogin() {
-	$("#doLogin").click(function(){
+		var email = $("#email").val();
+		var pw = $("#pw").val();
 		$.ajax({
-            url:'doLogin.do',
-            dataType: 'text',
+            url:"doLogin.do",
+            data: {
+            	"email" : email,
+            	"pw" : pw
+            },
             success: function(result){
-            	
+            	var check = result.split(",");
+            	var email = check[0];
+            	var pw = check[1];
+            	if(email == null || email == "") {
+            		alert("아이디와 비밀번호를 확인해주세요.")
+            		$("#email").val("")
+            	} else {
+            		location.href='sessionLogin.do?email='+email;
+            	}
+            },
+            error : function(xhr, status) {
+               alert(xhr + " : " + status);
             }
         });// end ajax
-        return false;
-		location.href='doLogin.do';
 	});
-};*/
-
-
-	/*$("#rss").click(function(){
-		$(document).ready(function() {
-			$("#doLogin").click();
-			$.ajax({
-				url: "https://api.rss2json.com/v1/api.json?rss_url=http://www.chosun.com/site/data/rss/rss.xml&api_key=jphzs4irszlwnezw8hfvcmgmwo24zeqcgyyul5ow", 
-				dataType: "json",
-				data: {
-					url:"http://www.chosun.com/site/data/rss/rss.xml",
-					api_key: "jphzs4irszlwnezw8hfvcmgmwo24zeqcgyyul5ow",
-					count: 20
-				} ,
-				success: function(result) {
-					for(var index=0; index<20 ; index++) {
-						var title = result.items[index].title
-						var thumbnail = result.items[index].thumbnail
-						var link = result.items[index].link
-						$("#result").append("<a href="+link+">"+title+"</a><br>");
-						$("#result").append("<img src="+thumbnail+"><br>");
-					}
-				}
-			});
-		});
-	});
-	
-	$(document).ready(function() {
-	    $('#collapseOne').click(function() {
-	        
-	    });
-	});*/
+})

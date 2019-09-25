@@ -21,9 +21,9 @@ public class SignController {
 	
 	@RequestMapping("doLogin.do")
 	public String doLogin(MemberDTO memberDTO, Model model) {
-		MemberDTO memberSelectDTO = suiDAO.select_member(memberDTO);
-		model.addAttribute("memberSelectDTO", memberSelectDTO);
-		return "main";
+		MemberDTO memberloginDTO = suiDAO.login_member(memberDTO);
+		model.addAttribute("memberloginDTO", memberloginDTO);
+		return "login_check";
 	}
 
 	@RequestMapping("signUp_ready.do")

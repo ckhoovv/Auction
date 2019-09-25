@@ -35,6 +35,10 @@ public class SignUpInsertDAO {
 		return mybatis.selectOne("signUpDAO.select_member", memberDTO);
 	}
 	
+	public MemberDTO login_member(MemberDTO memberDTO) {
+		return mybatis.selectOne("signUpDAO.login_member", memberDTO);
+	}
+	
 	public AddressDTO select_address(AddressDTO addressDTO) {
 		return mybatis.selectOne("signUpDAO.select_address", addressDTO);
 	}

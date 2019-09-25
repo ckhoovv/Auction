@@ -13,6 +13,16 @@
 	 	  FROM member a
 		 WHERE a.email = #{email}
 	</select>
+	<select id="login_member" parameterType="memberDTO" resultMap="rsMap">
+		SELECT a.email	<!-- member  / 사용자 이메일 -->
+			 , a.pw		<!-- member  / 사용자 비밀번호 -->
+			 , a.birth	<!-- member  / 사용자 생년월일 -->
+			 , a.name	<!-- member  / 사용자 이름 -->
+			 , a.tel	<!-- member  / 사용자 전화번호 -->
+	 	  FROM member a
+		 WHERE a.email = #{email}
+		   and a.pw = #{pw}
+	</select>
 	<select id="select_address" parameterType="addressDTO" resultMap="addr_rsMap">
 		SELECT b.addr1	<!-- address / 사용자 우편번호-->
 			 , b.addr2	<!-- address / 사용자 주소-->
