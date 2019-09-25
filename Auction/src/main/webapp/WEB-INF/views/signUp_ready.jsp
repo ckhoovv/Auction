@@ -27,6 +27,7 @@
 				<button class="sign_button" id="b_daum" onclick="join()">다음</button>
 				<!-- 구글로그인-->
 				<button class="sign_button" d="b_google" onclick="join()">구글</button>
+				
 				<!-- 페이스북로그인-->
 				<button class="sign_button" id="b_facebook" onclick="join()">페이스북</button>
 				<!-- 카카오로그인-->

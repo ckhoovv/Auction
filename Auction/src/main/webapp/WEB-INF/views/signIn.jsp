@@ -7,9 +7,11 @@
 		<title>login</title>
 		<!-- css -->
 		<link href="resources/css/login.css" rel="stylesheet" type="text/css" />
+		<link href="resources/css/signUp_ready.css" rel="stylesheet" type="text/css" />
 	
 		<!-- js -->
-		<script type="text/javascript" src="resources/js/login.js"></script>
+		<script type="text/javascript" src="resources/js/signIn.js"></script>
+		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
 	<body>
 		<jsp:include page="top.jsp" flush="false"></jsp:include>
@@ -33,7 +35,7 @@
 			</div>
 			<!-- login 버튼 -->		
 			<div class="login_float">
-				<button type="submit" onclick="doLogin();">로그인</button>
+				<button type="submit" id="doLogin" onclick="doLogin();">로그인</button>
 			</div>
 			
 			<!-- 아이디 / 비밀번호  찾기 -->
@@ -43,7 +45,23 @@
 		</div>
 		<!-- 회원가입 -->
 		<div>
-			<button type="submit" onclick="location.href='signUp_ready.do'">회원가입</button>
+			<!-- <button type="submit" onclick="location.href='signUp_ready.do'">회원가입</button> -->
+			<div class="join_center">
+			<!-- 일반로그인로그인--> 
+			<div class="join_ready_button">
+				<button class="sign_button" id="signUp" onclick="join()">일반회원가입</button>
+				<!-- 네이버로그인-->
+				<button class="sign_button" id="b_naver" onclick="join()">네이버</button>
+				<!-- 다음로그인-->
+				<button class="sign_button" id="b_daum" onclick="join()">다음</button>
+				<!-- 구글로그인-->
+				<button class="sign_button" d="b_google" onclick="join()">구글</button>
+				<!-- 페이스북로그인-->
+				<button class="sign_button" id="b_facebook" onclick="join()">페이스북</button>
+				<!-- 카카오로그인-->
+				<button class="sign_button" id="b_kakao" onclick="join()">카카오</button>
+			</div>
+		</div>
 		</div>
 	</div>
 		
