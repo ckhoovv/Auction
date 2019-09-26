@@ -19,7 +19,7 @@ import com.auction.project.DTO.MemberDTO;
 public class AdminController {
 	@Autowired
 	Admin_memberDAO amDAO;
-	
+	 
 	@RequestMapping("admin_main.do")
 	public ModelAndView admin_main() {
 		ModelAndView mv = new ModelAndView();
