@@ -44,9 +44,10 @@
 			</ul></li>
 
 			<li style="width: 150px;"><a href="#">경매승인</a></li>
+			<li style="width: 150px;"><a href="#">고객센터</a></li>
 			
 			<li style="margin-left: 20px; vertical-align: middle;">
-				<form action="admin_member_select.do" method="post">
+				<form action="admin_member_select.do" method="get">
 					<input type="text" name="email"> 
 					<input type="submit" value="검색">
 				</form>

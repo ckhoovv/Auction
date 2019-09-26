@@ -8,10 +8,10 @@
 </head>
 <body>
 <hr>
-이메일  :${dto.email }<br>
-비번  :${dto.pw }<br>
-이름  :${dto.name }<br>
-전번  :${dto.tel }<br>
-생년월일  :${dto.birth }<br>
+${memberSelectOne}
+이메일  :${memberDTO.email }<br>
+이름  :${memberDTO.name }<br>
+전번  :${memberDTO.tel }<br>
+생년월일  :${memberDTO.birth }<br>
 </body>
 </html>

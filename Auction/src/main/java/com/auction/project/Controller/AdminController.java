@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -62,7 +63,7 @@ public class AdminController {
 		
 		mv.addObject("email",req.getParameter("email"));
 		mv.addObject("addressList", list);
-
+		
 		mv.setViewName("admin_address_update_pop");
 		
 		return mv;
@@ -72,7 +73,6 @@ public class AdminController {
 	@RequestMapping("admin_member_update.do")
 	public ModelAndView admin_member_update(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
-		
 		AddressDTO addressDTO = new AddressDTO();
 		
 		addressDTO.setMember_email(req.getParameter("member_email"));
@@ -86,13 +86,79 @@ public class AdminController {
 		mv.setViewName("admin_address_update");
 		return mv;
 	}
-//	
+	
+	
+	@RequestMapping("admin_member_select.do")
+	public ModelAndView admin_member_select(HttpServletRequest req) {
+		ModelAndView mv = new ModelAndView();
+		MemberDTO memberDTO = new MemberDTO();
+		
+		memberDTO.setEmail(req.getParameter("email"));
+		memberDTO.setName(req.getParameter("name"));
+		memberDTO.setTel(req.getParameter("tel"));
+		memberDTO.setBirth(req.getParameter("birth"));
+		
+//		amDAO.select(memberDTO);
+		mv.addObject("memberSelectOne", memberDTO);
+		mv.setViewName("admin_member_select");
+		return mv;
+	}
+	
+	
+//	@RequestMapping("signUp_insert.do")
+//	public String signUp_insert(MemberDTO memberDTO, AddressDTO addressDTO, Model model) {
+//		suiDAO.insert_member(memberDTO);
+//		addressDTO.setMember_email(memberDTO.getEmail());
+//		addressDTO.setPlace("hoem");
+//		addressDTO.setRecipient("choo");
+//		suiDAO.insert_address(addressDTO);
+//		
+//		MemberDTO memberInsertDTO = suiDAO.select_member(memberDTO);
+//		/* AddressDTO addressInsertDTO = suiDAO.select_address(addressDTO); */
+//		model.addAttribute("memberInsertDTO", memberInsertDTO);
+//		/* model.addAttribute("addressInsertDTO", addressInsertDTO); */
+//		
+//		return "signUp_result";
+	
+	
+	
+	
+	
 //	@RequestMapping("admin_member_select.do")
-//	public void admin_member_select(memberDTO mDTO, Model model) {
-//		memberDTO mDTO = amDAO.select(mDTO);//혹시 memberDTO를 클래스로 인식을 못하나?
-//		model.addAttribute("mDTO", mDTO);
-//	
+//	public void admin_member_select(MemberDTO memberDTO, Model model) {
+//		memberDTO = amDAO.select(memberDTO);
+//		model.addAttribute("mDTO", memberDTO);
+//	        
 //	}
-//	
+	
+//	@RequestMapping("경매.do")
+//	public ModelAndView admin_member_selecㄴㄴㄴt(HttpServletRequest req) {
+//		ModelAndView mv = new ModelAndView();
+//		MemeberAuthorityDTO memeberAuthorityDTO = new MemeberAuthorityDTO();
+//		
+//		memeberAuthorityDTO.setEmail(req.getParameter("email"));
+//
+//		String auth = mauthDAO.select(memeberAuthorityDTO);
+//		
+//		mv.addObject("auth", auth);
+//		
+//		mv.setViewName("admin_member");
+//		return mv;
+//	        
+//	}
+//	public void aaaa(){	
+//		MemberDTO memberDTO = amDAO.select(memberDTO);
+//		memberDTO.setStack(memberDTO.getStack() +1 );
+//		if(memberDTO.getStack() >= 3) {
+//			memberDTO.setIllegal("Y");
+//			amDAO.updateIllegalMember(memberDTO); // 해당 아이디의 스택을 1 증가시키면서 일리걸 컬럼을 Y로 업데이트, 
+//												  // UPDATE member SET stack = ${stack}, illegal = ${illegal} WHERE id = ${id}
+//		} else {
+//			amDAO.updateMemberStack(memberDTO); // 해당 아이디의 스택을 1 증가로 업데이트
+//												// UPDATE member SET  stack = ${stack} WHERE id = ${id}
+//		}
+//			
+//		
+//	}
 
 }
