@@ -98,7 +98,7 @@ public class AdminController {
 		memberDTO.setTel(req.getParameter("tel"));
 		memberDTO.setBirth(req.getParameter("birth"));
 		
-//		amDAO.select(memberDTO);
+		amDAO.select(memberDTO);
 		mv.addObject("memberSelectOne", memberDTO);
 		mv.setViewName("admin_member_select");
 		return mv;

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!-- <html xmlns="http://www.w3.org/1999/xhtml"> -->
 <html>
@@ -12,8 +11,7 @@
 		<link href="resources/css/style.css" rel="stylesheet" type="text/css" />
 		<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 		<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    	<script type="text/javascript" src="resources/js/main.js" charset="UTF-8"></script>
-    	<script type="text/javascript" src="resources/js/signIn.js" charset="UTF-8"></script>
+    	<script type="text/javascript" src="resources/main.js" charset="UTF-8"></script>
 	</head>
 	<body>
 		<!-- --------------경매TOP부분---------------->
@@ -27,24 +25,12 @@
 	        <i class="lock"> 로그인을 하시면 다양한 정보를 보실 수 있습니다.</i>
 	        <ul class="nav-ul">
 	        	<li class="nav-li">
-	        	<!-- login session -->
-					<c:choose>
-					    <c:when test="${not empty sessionEmail}">
-						    <p>
-			        			<a class="nav_a" href="#"><b>사조경매가 처음이신가요?</b></a> 
-			        			<a class="nav_a" href="sessionLogout.do">로그아웃</a> 
-			        			<a class="nav_a" href="#">마이페이지</a>
-			        		</p>
-		        		</c:when>
-		        		<c:otherwise>
-		        		<p>
-		        			<a class="nav_a" href="#"><b>사조경매가 처음이신가요?</b></a> 
-		        			<a class="nav_a" href="signIn.do">로그인</a> 
-		        			<a class="nav_a" href="signUp_ready.do">회원가입</a> 
-		        			<a class="nav_a" href="#">마이페이지</a>
-		        		</p>
-	    				</c:otherwise>
-					</c:choose>
+	        		<p>
+	        			<a class="nav_a" href="#"><b>사조경매가 처음이신가요?</b></a> 
+	        			<a class="nav_a" href="signIn.do">로그인</a> 
+	        			<a class="nav_a" href="signUp_ready.jsp">회원가입</a> 
+	        			<a class="nav_a" href="#">마이페이지</a>
+	        		</p>
 	        	</li>
 	        </ul>
 	    </div>
@@ -66,13 +52,6 @@
 	    			</ul>
 	    		</li>
 	    		<li style="width: 150px;">
-	    			<a href="#">고객센터</a>
-	    			<ul class="li-2-submenu">
-	    				<li><a href="#">정은경매</a></li>
-	    				<li><a href="#">정은경매</a></li>
-	    			</ul>
-	    		</li>
-	    		<li style="width: 150px;">
 	    			<a href="#">물품등록</a>
 	    			<ul class="li-2-submenu">
 	    				<li><a href="#">기훈경매</a></li>
@@ -80,11 +59,17 @@
 	    			</ul>
 	    		</li>
 	    		<li style="width: 150px;">
-	    			<a href="donation_main.do">기부</a>
+	    			<a href="capital.jsp">캐피탈</a>
 	    			<ul class="li-2-submenu">
-		    			<li><a href="donation_main.do">기부</a></li>
-		    			<li><a href="event_main.do">응모</a></li>
+	    				<li><a href="capitalApply.jsp">전화상담신청</a></li>
+	    				<li><a href="#">실시간톡톡상담</a></li>
 	    			</ul>
+	    		</li>
+	    		<li style="width: 150px;">
+	    			<a href="#">고객센터</a>
+	    		</li>
+	    		<li style="width: 150px;">
+	    			<a href="donation_main.jsp">기부</a>
 	    		</li>
     			<li>
     				<select style="margin-left: 20px;">

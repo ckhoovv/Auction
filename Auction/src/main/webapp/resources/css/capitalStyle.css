@@ -1,0 +1,19 @@
+@charset "UTF-8"";
+/* 이미지 텍스트 */
+.visul{
+	width:1000px;
+	height: 593;
+	position:realtive;
+	margin:0px auto;
+}
+.imageVisual{
+	width: 100%;
+	vertical-align: middle;
+}
+.txtVisual{
+	position: absolute;
+	top:250px;
+	text-align: center;
+	width:100%;
+	height: 100%;
+}
