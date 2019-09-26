@@ -18,6 +18,13 @@ public class SignController {
 	@RequestMapping("signIn.do")
 	public void signIn() {
 	}
+	
+	@RequestMapping("doLogin.do")
+	public String doLogin(MemberDTO memberDTO, Model model) {
+		MemberDTO memberloginDTO = suiDAO.login_member(memberDTO);
+		model.addAttribute("memberloginDTO", memberloginDTO);
+		return "login_check";
+	}
 
 	@RequestMapping("signUp_ready.do")
 	public void signUp_ready() {
@@ -37,9 +44,9 @@ public class SignController {
 		suiDAO.insert_address(addressDTO);
 		
 		MemberDTO memberInsertDTO = suiDAO.select_member(memberDTO);
-		/* AddressDTO addressInsertDTO = suiDAO.select_address(addressDTO); */
+		AddressDTO addressInsertDTO = suiDAO.select_address(addressDTO);
 		model.addAttribute("memberInsertDTO", memberInsertDTO);
-		/* model.addAttribute("addressInsertDTO", addressInsertDTO); */
+		model.addAttribute("addressInsertDTO", addressInsertDTO);
 		
 		return "signUp_result";
 	}

@@ -5,6 +5,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		
+		<!-- js -->
+		<script type="text/javascript" src="resources/js/signUp_result.js"></script>
+		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
 	<body>
 		<jsp:include page="top.jsp" flush="false"></jsp:include>
@@ -34,6 +38,9 @@
 			<tr align="center"> 
 				<th>전화번호 </th>
 				<td>${memberInsertDTO.tel}</td>
+			</tr>
+			<tr>
+				<th colspan="2"><button class="result_button">확인</button></th>
 			</tr>
 		</table>
 	</body>
