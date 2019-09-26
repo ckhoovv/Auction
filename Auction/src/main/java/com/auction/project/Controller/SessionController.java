@@ -10,7 +10,6 @@ import org.springframework.web.bind.support.SessionStatus;
 import com.auction.project.DAO.SignUpInsertDAO;
 import com.auction.project.DTO.MemberDTO;
 
-
 @Controller
 @SessionAttributes({"sessionEmail"}) // 세션 생성
 public class SessionController {
