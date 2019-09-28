@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.auction.project.DTO.TestDTO" alias="tDTO"></typeAlias>
+		<typeAlias type="com.auction.project.DTO.AddressDTO" alias="addressDTO"></typeAlias>
+		<typeAlias type="com.auction.project.DTO.MemberDTO" alias="memberDTO"></typeAlias>
+		<typeAlias type="com.auction.project.DTO.DonationDTO" alias="donationDTO"></typeAlias>
+		<typeAlias type="com.auction.project.DTO.Donation_ListDTO" alias="donation_listDTO"></typeAlias>
+	</typeAliases>
+	<mappers>
+		<mapper resource="mapper/testMapper.xml" />
+		<mapper resource="mapper/signUpMapper.xml" />
+		<mapper resource="mapper/AdminMemberMapper.xml" />
+		<mapper resource="mapper/donationMapper.xml" />
+	</mappers>
+</configuration>

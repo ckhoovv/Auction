@@ -7,8 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.auction.project.DTO.DonationDTO;
+import com.auction.project.DTO.Donation_ListDTO;
 
-@Repository //DBìš© bean
+@Repository //DB¿ë bean
 public class DonationDAO {
 	
 	@Autowired
@@ -17,4 +18,15 @@ public class DonationDAO {
 	public List<DonationDTO> selectAll(){
 		return mybatis.selectList("donationDAO.selectAll");
 	}
+	
+	public DonationDTO select_donation(DonationDTO donationDTO) {
+		return mybatis.selectOne("donationDAO.select_donation", donationDTO);
+	}
+	public Donation_ListDTO count_donation(Donation_ListDTO donation_listDTO) {
+		return mybatis.selectOne("donationDAO.count_donation", donation_listDTO);
+	}
+	public List<Donation_ListDTO> count_donation() {
+		return mybatis.selectList("donationDAO.count_donation");
+	}
+	
 }
