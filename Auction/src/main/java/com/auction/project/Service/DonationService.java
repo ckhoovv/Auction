@@ -38,7 +38,4 @@ public class DonationService implements DonationInterface{
 		List<Donation_ListDTO> list_count = donationDAO.count_donation();
 		return list_count;
 	}
-	
-	
-	
 }

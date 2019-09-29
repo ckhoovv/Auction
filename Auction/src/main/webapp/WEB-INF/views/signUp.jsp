@@ -13,7 +13,7 @@
 		<h1>회원가입</h1>
 		<h2>기본정보</h2>
 		<div class="table_center">
-			<form action="signUp_insert.do">
+			<form action="signUp.do">
 				<table>
 					<tr>
 						<th>이메일</th>
@@ -42,8 +42,8 @@
 						<td><input type="text" name="tel"></td>
 					</tr>
 					<tr>
-						<td><input type="hidden" name="place" value="hoem"></td>
-						<td><input type="hidden" name="recipient" value="choo"></td>
+						<!-- <td><input type="hidden" name="place" value="hoem"></td>
+						<td><input type="hidden" name="recipient" value="choo"></td> -->
 						<td colspan="2"><input type="submit" value="전송"></td>
 					</tr>
 				</table>

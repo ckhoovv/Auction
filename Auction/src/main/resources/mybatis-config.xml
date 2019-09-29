@@ -7,6 +7,7 @@
 		<typeAlias type="com.auction.project.DTO.TestDTO" alias="tDTO"></typeAlias>
 		<typeAlias type="com.auction.project.DTO.AddressDTO" alias="addressDTO"></typeAlias>
 		<typeAlias type="com.auction.project.DTO.MemberDTO" alias="memberDTO"></typeAlias>
+		<typeAlias type="com.auction.project.DTO.SignUpDTO" alias="signUpDTO"></typeAlias>
 		<typeAlias type="com.auction.project.DTO.DonationDTO" alias="donationDTO"></typeAlias>
 		<typeAlias type="com.auction.project.DTO.Donation_ListDTO" alias="donation_listDTO"></typeAlias>
 	</typeAliases>

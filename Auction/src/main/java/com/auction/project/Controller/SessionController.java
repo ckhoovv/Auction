@@ -7,15 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import com.auction.project.DAO.SignUpInsertDAO;
-import com.auction.project.DTO.MemberDTO;
+import com.auction.project.DAO.SignUpDAO;
 
 @Controller
 @SessionAttributes({"sessionEmail"}) // 세션 생성
 public class SessionController {
 
    @Autowired
-   SignUpInsertDAO signUpInsertDAO;
+   SignUpDAO signUpDAO;
    
    @RequestMapping("sessionLogin.do")
    public String sessionLogin(String email, Model model) {   

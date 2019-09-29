@@ -2,13 +2,14 @@
  * 
  */
 $(function(){
-	/* 일반 로그인, 소셜 로그인 구분 */
+	 /*일반 로그인, 소셜 로그인 구분*/ 
 	$(".sign_button").click(function(){
 		var id_check = $(this).attr("id");
+		alert(id_check)
 		location.href=id_check+'.do';
 	});
 	
-	/* 로그인 유효성 검사 */
+	 /*로그인 유효성 검사*/ 
 	$("#doLogin").click(function(){
 		var email = $("#email").val();
 		var pw = $("#pw").val();

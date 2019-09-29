@@ -5,49 +5,57 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.auction.project.DAO.SignUpInsertDAO;
-import com.auction.project.DTO.AddressDTO;
-import com.auction.project.DTO.MemberDTO;
+import com.auction.project.DTO.SignUpDTO;
+import com.auction.project.Service.SignUpService;
 
 @Controller
 public class SignController {
 
 	@Autowired
-	SignUpInsertDAO suiDAO; // 로그인 DAO
+	SignUpService signUpService; // 로그인 DAO
 
 	@RequestMapping("signIn.do")
 	public void signIn() {
 	}
 	
 	@RequestMapping("doLogin.do")
-	public String doLogin(MemberDTO memberDTO, Model model) {
-		MemberDTO memberloginDTO = suiDAO.login_member(memberDTO);
-		model.addAttribute("memberloginDTO", memberloginDTO);
-		return "login_check";
+	public void doLogin(SignUpDTO signUpDTO, Model model) {
+		model.addAttribute("sdto", signUpService.doLogin(signUpDTO));
 	}
+	
+//	@RequestMapping("doLogin.do")
+//	public String doLogin(SignUpDTO signUpDTO, Model model) {
+//		SignUpDTO memberloginDTO = signUpDAO.login_member(signUpDTO);
+//		model.addAttribute("memberloginDTO", memberloginDTO);
+//		return "login_check";
+//	}
 
-	@RequestMapping("signUp_ready.do")
-	public void signUp_ready() {
-	}
+
+//	@RequestMapping("signUp.do")
+//	public void signUp() {
+//
+//	}
 
 	@RequestMapping("signUp.do")
-	public void signUp() {
-
-	}
-
-	@RequestMapping("signUp_insert.do")
-	public String signUp_insert(MemberDTO memberDTO, AddressDTO addressDTO, Model model) {
-		suiDAO.insert_member(memberDTO);
-		addressDTO.setMember_email(memberDTO.getEmail());
-		addressDTO.setPlace("hoem");
-		addressDTO.setRecipient("choo");
-		suiDAO.insert_address(addressDTO);
+	public void signUp_insert(SignUpDTO signUpDTO, Model model) {
+		signUpService.SignUp_insert(signUpDTO);
 		
-		MemberDTO memberInsertDTO = suiDAO.select_member(memberDTO);
-		AddressDTO addressInsertDTO = suiDAO.select_address(addressDTO);
-		model.addAttribute("memberInsertDTO", memberInsertDTO);
-		model.addAttribute("addressInsertDTO", addressInsertDTO);
-		
-		return "signUp_result";
+		model.addAttribute("selectsdto", signUpService.signUp_select(signUpDTO));
 	}
+	
+//	@RequestMapping("signUp.do")
+//	public String signUp_insert(SignUpDTO signUpDTO, AddressDTO addressDTO, Model model) {
+//		signUpDAO.insert_member(signUpDTO);
+//		addressDTO.setMember_email(signUpDTO.getEmail());
+//		addressDTO.setPlace("hoem");
+//		addressDTO.setRecipient("choo");
+//		signUpDAO.insert_address(signUpDTO);
+//		
+//		MemberDTO memberInsertDTO = signUpDAO.select_member(signUpDTO);
+//		AddressDTO addressInsertDTO = signUpDAO.select_address(addressDTO);
+//		model.addAttribute("memberInsertDTO", memberInsertDTO);
+//		model.addAttribute("addressInsertDTO", addressInsertDTO);
+//		
+//		return "signUp_result";
+//	}
 }
