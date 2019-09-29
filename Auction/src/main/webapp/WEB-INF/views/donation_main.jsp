@@ -1,3 +1,4 @@
+<%@page import="com.auction.project.DTO.Donation_ListDTO"%>
 <%@page import="java.io.Console"%>
 <%@page import="java.util.List"%>
 <%@page import="com.auction.project.DTO.DonationDTO"%>
@@ -71,12 +72,13 @@
 					<ul>
 					<%
 						List<DonationDTO> list = (List<DonationDTO>) request.getAttribute("list");
+						List<Donation_ListDTO> count_list = (List<Donation_ListDTO>) request.getAttribute("count_list");
 						for(int i = 0; i < list.size(); i++) {
 							DonationDTO dto = list.get(i);
 					%>
 					<li class="card_contents" style="float: left;">
 						<div class="card_header">
-						<a href="donation_detail.do" style="text-decoration: none;">
+						<a href="donation_detail.do?dona_num=<%= dto.getDona_num() %>" style="text-decoration: none;">
 							<img src="resources/img/<%= dto.getDona_num()%>.jpg">
 							<h1 class="card_title"><%= dto.getDona_tit()%></h1>
 						</a>

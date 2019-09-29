@@ -38,6 +38,14 @@
 		where dona_num = #{dona_num}
 		group by dona_num
 	</select>
+	<select id="count_list"  resultMap="list_rsMap">
+		select distinct dona_num
+		   ,sum(dona_money) as dona_money
+		from d_list
+		group by dona_num
+	</select>
+	
+	
 	
 	<!-- <select id="count_donation" resultMap="rsMap">
 		SELECT a.dona_num d_detail / 기부번호

@@ -18,7 +18,7 @@ public class DonationController {
 	
 	@RequestMapping("/donation_main.do")
 	public void selectAll(Model model) {
-		
+		model.addAttribute("count_list", donationService.count_list());
 		model.addAttribute("list", donationService.selectAll());
 	}
 	@RequestMapping("donation_detail.do")
