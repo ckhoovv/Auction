@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <!-- <html xmlns="http://www.w3.org/1999/xhtml"> -->
 <html>
@@ -23,16 +24,31 @@
 	        	</div>
 	        </form>
 	        <i class="lock"> 로그인을 하시면 다양한 정보를 보실 수 있습니다.</i>
-	        <ul class="nav-ul">
-	        	<li class="nav-li">
-	        		<p>
-	        			<a class="nav_a" href="#"><b>사조경매가 처음이신가요?</b></a> 
-	        			<a class="nav_a" href="signIn.do">로그인</a> 
-	        			<a class="nav_a" href="signUp_ready.jsp">회원가입</a> 
-	        			<a class="nav_a" href="#">마이페이지</a>
-	        		</p>
-	        	</li>
-	        </ul>
+	        <c:choose>
+			    <c:when test="${not empty sessionScope.userLoginInfo}">
+			        <ul class="nav-ul">
+			        	<li class="nav-li">
+			        		<p>
+			        			<a class="nav_a" href="#"><b>사조경매가 처음이신가요?</b></a> 
+			        			<a class="nav_a" href="signIn.do">로그인</a> 
+			        			<a class="nav_a" href="signUp_ready.jsp">회원가입</a> 
+			        		</p>
+			        	</li>
+			        </ul>
+			    </c:when>
+			    <c:otherwise>
+			        <ul class="nav-ul">
+			        	<li class="nav-li">
+			        		<p>
+			        			<a class="nav_a" href="#"><b>환영합니다.</b></a> 
+			        			<a class="nav_a" href="sessionLogout.do">로그아웃</a> 
+			        			<a class="nav_a" href="#">마이페이지</a>
+			        		</p>
+			        	</li>
+			        </ul>
+			    </c:otherwise>
+			</c:choose>
+	        
 	    </div>
 	    <div class="menubar" style="height: 100px;">
 	    	<ul>

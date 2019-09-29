@@ -27,9 +27,9 @@ public class SignUpService implements SignUpInterface {
 
 	@Override
 	public void SignUp_insert(SignUpDTO signUpDTO) {
-//		signUpDAO.insert_member(signUpDTO);
-//		signUpDTO.setPlace("home");
-//		signUpDTO.setRecipient("choo");
-//		signUpDAO.insert_address(signUpDTO);
+		signUpDAO.insert_member(signUpDTO);
+		signUpDTO.setPlace("home");
+		signUpDTO.setRecipient("choo");
+		signUpDAO.insert_address(signUpDTO);
 	}
 }

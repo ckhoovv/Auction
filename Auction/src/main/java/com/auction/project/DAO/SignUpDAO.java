@@ -21,7 +21,7 @@ public class SignUpDAO {
 	}
 	
 	public SignUpDTO insert_address(SignUpDTO signUpDTO) {
-		return mybatis.selectOne("signUpDAO.insert_addressr", signUpDTO);
+		return mybatis.selectOne("signUpDAO.insert_address", signUpDTO);
 	}
 
 	public SignUpDTO signUp_select(SignUpDTO signUpDTO) {

@@ -13,7 +13,7 @@
 		<h1>회원가입</h1>
 		<h2>기본정보</h2>
 		<div class="table_center">
-			<form action="signUp.do">
+			<form action="signUp_result.do">
 				<table>
 					<tr>
 						<th>이메일</th>

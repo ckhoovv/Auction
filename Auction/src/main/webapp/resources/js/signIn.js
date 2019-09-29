@@ -5,7 +5,6 @@ $(function(){
 	 /*일반 로그인, 소셜 로그인 구분*/ 
 	$(".sign_button").click(function(){
 		var id_check = $(this).attr("id");
-		alert(id_check)
 		location.href=id_check+'.do';
 	});
 	
@@ -23,6 +22,7 @@ $(function(){
             	var check = result.split(",");
             	var email = check[0];
             	var pw = check[1];
+        		alert(email+pw)
             	if(email == null || email == "") {
             		alert("아이디와 비밀번호를 확인해주세요.")
             		$("#email").val("")

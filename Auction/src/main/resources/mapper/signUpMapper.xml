@@ -61,9 +61,9 @@
 	<insert id="insert_member" parameterType="signUpDTO">
 		INSERT INTO member VALUES(#{email},#{pw},#{name},#{tel},#{birth})
 	</insert>
- 	<!-- <insert id="insert_address" parameterType="signUpDTO">
+  	<insert id="insert_address" parameterType="signUpDTO">
 		INSERT INTO address VALUES(#{email},#{place},#{recipient},#{tel},#{addr1},#{addr2},#{addr3})
-	</insert> -->
+	</insert>
 
 	<update id="update" parameterType="signUpDTO">
 		UPDATE tablename1
