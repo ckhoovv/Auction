@@ -23,26 +23,27 @@
 	        		<span id="clock"></span> <br />
 	        	</div>
 	        </form>
+	        <button>${sessionScope.sessionEmail }</button>
 	        <i class="lock"> 로그인을 하시면 다양한 정보를 보실 수 있습니다.</i>
 	        <c:choose>
-			    <c:when test="${not empty sessionScope.userLoginInfo}">
-			        <ul class="nav-ul">
-			        	<li class="nav-li">
-			        		<p>
-			        			<a class="nav_a" href="#"><b>사조경매가 처음이신가요?</b></a> 
-			        			<a class="nav_a" href="signIn.do">로그인</a> 
-			        			<a class="nav_a" href="signUp_ready.jsp">회원가입</a> 
-			        		</p>
-			        	</li>
-			        </ul>
-			    </c:when>
-			    <c:otherwise>
+			    <c:when test="${not empty sessionScope.sessionEmail}">
 			        <ul class="nav-ul">
 			        	<li class="nav-li">
 			        		<p>
 			        			<a class="nav_a" href="#"><b>환영합니다.</b></a> 
 			        			<a class="nav_a" href="sessionLogout.do">로그아웃</a> 
 			        			<a class="nav_a" href="#">마이페이지</a>
+			        		</p>
+			        	</li>
+			        </ul>
+			    </c:when>
+			    <c:otherwise>
+			    	<ul class="nav-ul">
+			        	<li class="nav-li">
+			        		<p>
+			        			<a class="nav_a" href="#"><b>사조경매가 처음이신가요?</b></a> 
+			        			<a class="nav_a" href="signIn.do">로그인</a> 
+			        			<a class="nav_a" href="signUp_ready.jsp">회원가입</a> 
 			        		</p>
 			        	</li>
 			        </ul>
