@@ -37,10 +37,9 @@
 			<li style="width: 150px;"><a href="admin_member.do">회원관리</a></li>
 			
 			<li style="width: 150px;"><a href="#">게시물관리</a>
-			<ul class="li-3-submenu">
-				<li><a href="#">중고</a></li>
-				<li><a href="#">경매</a></li>
-				<li><a href="#">신고 접수된 게시글</a></li>
+			<ul class="li-2-submenu">
+				<li><a href="admin_npro_list.do">중고</a></li>
+				<li><a href="admin_apro_list.do">경매</a></li>
 			</ul></li>
 
 			<li style="width: 150px;"><a href="#">경매승인</a></li>

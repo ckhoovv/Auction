@@ -25,5 +25,9 @@ public class CapitalController {
 	public String capitalApply() {
 		return "capitalApply";
 	}
+	@RequestMapping("capitalResult.do")
+	public String capitalResult() {
+		return "capitalResult";
+	}
 	
 }

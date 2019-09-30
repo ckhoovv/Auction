@@ -121,6 +121,13 @@
 	    				<li><a href="event_main.do">응모</a></li>
 	    			</ul>
 	    		</li>
+	    		<li style="width: 150px;">
+	    			<a href="donation_main.do">캐피탈</a>
+	    			<ul class="li-2-submenu">
+	    				<li><a href="capital.do">전화상담신청</a></li>
+	    				<li><a href="#">실시간톡톡상담</a></li>
+	    			</ul>
+	    		</li>
     			<li>
     				<select style="margin-left: 20px;">
 	    				<option value=1>전체</option>
