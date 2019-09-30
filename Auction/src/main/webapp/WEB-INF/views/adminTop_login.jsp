@@ -10,6 +10,7 @@
 <link href="resources/css/style.css" rel="stylesheet" type="text/css" />
 <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 <script type="text/javascript" src="resources/js/main.js" charset="UTF-8"></script>
+<link href="resources/css/bootstrapCss/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
 	<!-- --------------경매TOP부분-------------- -->
@@ -45,12 +46,6 @@
 			<li style="width: 150px;"><a href="#">경매승인</a></li>
 			<li style="width: 150px;"><a href="#">고객센터</a></li>
 			
-			<li style="margin-left: 20px; vertical-align: middle;">
-				<form action="admin_member_select.do" method="get">
-					<input type="text" name="email"> 
-					<input type="submit" value="검색">
-				</form>
-			</li>
 		</ul>
 	</div>
 	

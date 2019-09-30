@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="adminTop_login.jsp" flush="false"></jsp:include>
 <b>전체 중고 게시물</b>
-<table>
+<table class="table">
 	<tr align="center">
 		<td class="title">등록자</td>
 		<td class="title">물품번호</td>
