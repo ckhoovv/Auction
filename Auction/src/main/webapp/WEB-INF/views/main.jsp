@@ -15,7 +15,6 @@
     	<script type="text/javascript" src="resources/js/signIn.js" charset="UTF-8"></script>
 	</head>
 	<body>
-	<button id="checkcheck">확인${sessionEmail }</button>
 		<jsp:include page="top.jsp" flush="false"></jsp:include>
 		<!-- --------------경매body부분---------------->
 		<div class="home__slider">

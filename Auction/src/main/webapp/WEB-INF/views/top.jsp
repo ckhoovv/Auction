@@ -23,7 +23,6 @@
 	        		<span id="clock"></span> <br />
 	        	</div>
 	        </form>
-	        <button>${sessionScope.sessionEmail }</button>
 	        <i class="lock"> 로그인을 하시면 다양한 정보를 보실 수 있습니다.</i>
 	        <c:choose>
 			    <c:when test="${not empty sessionScope.sessionEmail}">
