@@ -44,6 +44,7 @@
 			</ul></li>
 
 			<li style="width: 150px;"><a href="#">경매승인</a></li>
+			<li style="width: 150px;"><a href="#">전화예약</a></li>
 			<li style="width: 150px;"><a href="#">고객센터</a></li>
 			
 		</ul>

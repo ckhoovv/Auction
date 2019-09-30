@@ -78,7 +78,7 @@
 	    			<a href="capital.do">캐피탈</a>
 	    			<ul class="li-2-submenu">
 	    				<li><a href="capitalApply.do">전화상담신청</a></li>
-	    				<li><a href="#">실시간톡톡상담</a></li>
+	    				<li><a href="capitalChatbot.do">실시간톡톡상담</a></li>
 	    			</ul>
 	    		</li>
 	    		<li style="width: 150px;">

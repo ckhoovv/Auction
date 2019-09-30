@@ -86,9 +86,6 @@
   </tr>
  </table>
 </form>
-
-		
-		
 	<div class="imageVisual"><img src="resources/img/information.PNG"></img></div>
 <jsp:include page="footer.jsp" flush="false"></jsp:include>
 </body>

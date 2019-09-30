@@ -29,5 +29,9 @@ public class CapitalController {
 	public String capitalResult() {
 		return "capitalResult";
 	}
+	@RequestMapping("capitalChatbot.do")
+	public String capitalChatbot() {
+		return "capitalChatbot";
+	}
 	
 }
