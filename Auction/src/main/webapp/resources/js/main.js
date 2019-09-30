@@ -13,8 +13,6 @@ function printTime() {
    }
    window.onload = printTime;
    
-   
-   
    $(document).ready(function() {
 	      var main = $('.bxslider').bxSlider({
 	         mode : 'fade',

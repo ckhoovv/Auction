@@ -12,8 +12,10 @@
 		<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 		<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     	<script type="text/javascript" src="resources/js/main.js" charset="UTF-8"></script>
+    	<script type="text/javascript" src="resources/js/signIn.js" charset="UTF-8"></script>
 	</head>
 	<body>
+	<button id="checkcheck">확인${sessionEmail }</button>
 		<jsp:include page="top.jsp" flush="false"></jsp:include>
 		<!-- --------------경매body부분---------------->
 		<div class="home__slider">

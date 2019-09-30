@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="aproDAO">
+
+   <select id="selectAll" resultMap="rsMap">
+      SELECT * FROM A_PRO
+   </select>
+   
+   <delete id="delete" parameterType="aproDTO">
+      DELETE FROM A_PRO 
+      WHERE 
+         a_pro_register = #{a_pro_register}
+   </delete>
+
+   <resultMap type="aproDTO" id="rsMap">
+      <result property="a_pro_register" column="a_pro_register" />
+      <result property="a_pro_num" column="a_pro_num" />
+      <result property="a_pro_name" column="a_pro_name" />
+      <result property="a_pro_price" column="a_pro_price" />
+      <result property="a_pro_start_yy" column="a_pro_start_yy" />
+      <result property="a_pro_start_mm" column="a_pro_start_mm" />
+      <result property="a_pro_start_dd" column="a_pro_start_dd" />
+      <result property="a_pro_start_hh" column="a_pro_start_hh" />
+      <result property="a_pro_start_mi" column="a_pro_start_mi" />
+      <result property="a_pro_start_ss" column="a_pro_start_ss" />
+      <result property="a_pro_end_yy" column="a_pro_end_yy" />
+      <result property="a_pro_end_mm" column="a_pro_end_mm" />
+      <result property="a_pro_end_dd" column="a_pro_end_dd" />
+      <result property="a_pro_end_hh" column="a_pro_end_hh" />
+      <result property="a_pro_end_mi" column="a_pro_end_mi" />
+      <result property="a_pro_end_ss" column="a_pro_end_ss" />
+      <result property="a_pro_date" column="a_pro_date" />
+   </resultMap>
+   
+</mapper>

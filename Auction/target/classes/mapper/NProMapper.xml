@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="nproDAO">
+
+   <select id="selectAll" resultMap="rsMap">
+      SELECT * FROM N_PRO
+   </select>
+   
+   <delete id="delete" parameterType="nproDTO">
+      DELETE FROM N_PRO 
+      WHERE 
+         n_pro_register = #{n_pro_register}
+   </delete>
+
+   <resultMap type="nproDTO" id="rsMap">
+      <result property="n_pro_register" column="n_pro_register" />
+      <result property="n_pro_num" column="n_pro_num" />
+      <result property="n_pro_name" column="n_pro_name" />
+      <result property="n_pro_price" column="n_pro_price" />
+      <result property="n_pro_amount" column="n_pro_amount" />
+      <result property="n_pro_size" column="n_pro_size" />
+      <result property="n_pro_color" column="n_pro_color" />
+   </resultMap>
+   
+</mapper>
