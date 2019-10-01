@@ -56,8 +56,8 @@
 	    		<li style="width: 150px;">
 	    			<a href="#">온라인경매</a>
 	    			<ul class="li-2-submenu">
-	    				<li><a href="#">민영경매</a></li>
-	    				<li><a href="#">동원경매</a></li>
+	    				<li><a href="test1.do">민영경매</a></li>
+	    				<li><a href="test2.do">동원경매</a></li>
 	    			</ul>
 	    		</li>
 	    		<li style="width: 150px;">

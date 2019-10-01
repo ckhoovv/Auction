@@ -9,6 +9,7 @@ import com.auction.project.DTO.TestDTO;
 
 @Controller
 public class TestController {
+	
 	@Autowired
 	TestDAO dao;
 	
@@ -16,5 +17,13 @@ public class TestController {
 	public String insert(TestDTO testDTO) {
 		dao.insert(testDTO);
 		return "Test";
+	}
+	@RequestMapping("test1.do")
+	public String test1() {
+		return "test1";
+	}
+	@RequestMapping("test2.do")
+	public String test2() {
+		return "test2";
 	}
 }
