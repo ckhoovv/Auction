@@ -11,14 +11,24 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.auction.project.DAO.A_proDAO;
 import com.auction.project.DAO.Admin_memberDAO;
+import com.auction.project.DAO.N_proDAO;
+import com.auction.project.DTO.A_proDTO;
 import com.auction.project.DTO.AddressDTO;
 import com.auction.project.DTO.MemberDTO;
+import com.auction.project.DTO.N_proDTO;
 
 @Controller
 public class AdminController {
 	@Autowired
 	Admin_memberDAO amDAO;
+	
+	@Autowired
+	N_proDAO nproDAO;
+	
+	@Autowired
+	A_proDAO aproDAO;
 	 
 	@RequestMapping("admin_main.do")
 	public ModelAndView admin_main() {
@@ -86,23 +96,69 @@ public class AdminController {
 		mv.setViewName("admin_address_update");
 		return mv;
 	}
-	
-	
-	@RequestMapping("admin_member_select.do")
-	public ModelAndView admin_member_select(HttpServletRequest req) {
+	@RequestMapping("admin_npro_list.do")
+	public ModelAndView admin_npro_list() {
 		ModelAndView mv = new ModelAndView();
-		MemberDTO memberDTO = new MemberDTO();
 		
-		memberDTO.setEmail(req.getParameter("email"));
-		memberDTO.setName(req.getParameter("name"));
-		memberDTO.setTel(req.getParameter("tel"));
-		memberDTO.setBirth(req.getParameter("birth"));
+		List<N_proDTO> list = nproDAO.selectAll();
+		mv.addObject("nproList", list);
 		
-		amDAO.select(memberDTO);
-		mv.addObject("memberSelectOne", memberDTO);
-		mv.setViewName("admin_member_select");
+		mv.setViewName("admin_npro_list");
 		return mv;
 	}
+	
+	@RequestMapping("admin_npro_delete.do")
+	public ModelAndView admin_npro_delete(HttpServletRequest req) {
+		ModelAndView mv = new ModelAndView();
+		N_proDTO nproDTO = new N_proDTO();
+		
+		nproDTO.setN_pro_register(req.getParameter("n_pro_register"));
+		
+		nproDAO.delete(nproDTO);
+		
+		mv.setViewName("redirect:admin_npro_list.do");
+		return mv;
+	}
+	
+	@RequestMapping("admin_apro_list.do")
+	public ModelAndView admin_apro_list() {
+		ModelAndView mv = new ModelAndView();
+		
+		List<A_proDTO> list = aproDAO.selectAll();
+		mv.addObject("aproList", list);
+		
+		mv.setViewName("admin_apro_list");
+		return mv;
+	}
+	
+	@RequestMapping("admin_apro_delete.do")
+	public ModelAndView admin_apro_delete(HttpServletRequest req) {
+		ModelAndView mv = new ModelAndView();
+		A_proDTO aproDTO = new A_proDTO();
+		
+		aproDTO.setA_pro_register(req.getParameter("a_pro_register"));
+		
+		aproDAO.delete(aproDTO);
+		
+		mv.setViewName("redirect:admin_apro_list.do");
+		return mv;
+	}
+	
+	@RequestMapping("admin_report_list.do")
+	public ModelAndView admin_report_list() {
+		ModelAndView mv = new ModelAndView();
+		
+		List<A_proDTO> alist = aproDAO.selectAll();
+		mv.addObject("aproList", alist);
+		
+		List<N_proDTO> nlist = nproDAO.selectAll();
+		mv.addObject("nproList", nlist);
+		
+		mv.setViewName("admin_report_list");
+		return mv;
+	}
+	
+
 	
 	
 //	@RequestMapping("signUp_insert.do")

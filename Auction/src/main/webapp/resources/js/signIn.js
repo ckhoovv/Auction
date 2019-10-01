@@ -22,7 +22,6 @@ $(function(){
             	var check = result.split(",");
             	var email = check[0];
             	var pw = check[1];
-        		alert(email+pw)
             	if(email == null || email == "") {
             		alert("아이디와 비밀번호를 확인해주세요.")
             		$("#email").val("")

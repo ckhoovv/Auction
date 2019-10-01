@@ -3,7 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="adminTop_login.jsp" flush="false"></jsp:include>
 <b>전체 회원정보</b>
-<table>
+<table class="table">
+
 	<tr align="center">
 		<td class="title">이메일</td>
 		<td class="title">이름</td>

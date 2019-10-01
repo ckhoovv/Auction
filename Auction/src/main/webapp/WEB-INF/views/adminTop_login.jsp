@@ -10,6 +10,7 @@
 <link href="resources/css/style.css" rel="stylesheet" type="text/css" />
 <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 <script type="text/javascript" src="resources/js/main.js" charset="UTF-8"></script>
+<link href="resources/css/bootstrapCss/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
 	<!-- --------------경매TOP부분-------------- -->
@@ -37,21 +38,15 @@
 			<li style="width: 150px;"><a href="admin_member.do">회원관리</a></li>
 			
 			<li style="width: 150px;"><a href="#">게시물관리</a>
-			<ul class="li-3-submenu">
-				<li><a href="#">중고</a></li>
-				<li><a href="#">경매</a></li>
-				<li><a href="#">신고 접수된 게시글</a></li>
+			<ul class="li-2-submenu">
+				<li><a href="admin_npro_list.do">중고</a></li>
+				<li><a href="admin_apro_list.do">경매</a></li>
 			</ul></li>
 
 			<li style="width: 150px;"><a href="#">경매승인</a></li>
+			<li style="width: 150px;"><a href="#">전화예약</a></li>
 			<li style="width: 150px;"><a href="#">고객센터</a></li>
 			
-			<li style="margin-left: 20px; vertical-align: middle;">
-				<form action="admin_member_select.do" method="get">
-					<input type="text" name="email"> 
-					<input type="submit" value="검색">
-				</form>
-			</li>
 		</ul>
 	</div>
 	
