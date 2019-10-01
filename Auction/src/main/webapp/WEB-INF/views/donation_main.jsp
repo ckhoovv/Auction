@@ -73,7 +73,7 @@
 					<%
 						List<DonationDTO> list = (List<DonationDTO>) request.getAttribute("list");
 						for(int i = 0; i < list.size(); i++) {
-							DonationDTO dto = list.get(i);
+							DonationDTO dto = list.get(i); 
 					%>
 					<li class="card_contents" style="float: left;">
 						<div class="card_header">
