@@ -22,11 +22,6 @@ public class DonationService implements DonationInterface{
 		List<DonationDTO> list = donationDAO.selectAll();
 		return list;
 	}
-	@Override 
-	public List<Donation_ListDTO> count_list() {
-		List<Donation_ListDTO> list_count = donationDAO.count_list();
-		return list_count;
-	}
 	
 	@Override
 	public DonationDTO select_donation(DonationDTO donationDTO) {

@@ -22,7 +22,7 @@
 	</head>
 	<body>
 		<!-- 로그인후에 상단바 -->
-		<jsp:include page="top_login.jsp" flush="false"></jsp:include>
+		<jsp:include page="top.jsp" flush="false"></jsp:include>
 		
 		<!-- 기부관련 슬라이드  -->
 		<div class="home__slider">
@@ -72,7 +72,6 @@
 					<ul>
 					<%
 						List<DonationDTO> list = (List<DonationDTO>) request.getAttribute("list");
-						List<Donation_ListDTO> count_list = (List<Donation_ListDTO>) request.getAttribute("count_list");
 						for(int i = 0; i < list.size(); i++) {
 							DonationDTO dto = list.get(i);
 					%>

@@ -18,9 +18,6 @@ public class DonationDAO {
 	public List<DonationDTO> selectAll(){
 		return mybatis.selectList("donationDAO.selectAll");
 	}
-	public List<Donation_ListDTO> count_list() {
-		return mybatis.selectList("donationDAO.count_list");
-	}
 	
 	public DonationDTO select_donation(DonationDTO donationDTO) {
 		return mybatis.selectOne("donationDAO.select_donation", donationDTO);

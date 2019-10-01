@@ -15,8 +15,16 @@
 		, a.dona_end_yy
 		, a.dona_end_mm
 		, a.dona_end_dd
+		, a.hope_money
+		, ((b.dona_money/a.hope_money)*100) as hope
 		FROM d_detail a
-		WHERE a.dona_num = #{dona_num}
+		   , (select x.dona_num
+		           , sum(x.dona_money) as dona_money
+		        from D_LIST x
+		       where x.dona_num = #{dona_num}
+		       group by x.dona_num) b
+		WHERE a.dona_num = b.dona_num 
+		  and a.dona_num = #{dona_num}
 	</select>
 	<select id="select_list" parameterType="donation_listDTO" resultMap="list_rsMap">
 		select b.sq
@@ -36,12 +44,6 @@
 		   ,sum(dona_money) as dona_money
 		from d_list
 		where dona_num = #{dona_num}
-		group by dona_num
-	</select>
-	<select id="count_list"  resultMap="list_rsMap">
-		select distinct dona_num
-		   ,sum(dona_money) as dona_money
-		from d_list
 		group by dona_num
 	</select>
 	
@@ -79,6 +81,7 @@
 		<result property="dona_end_yy" column="dona_end_yy" />
 		<result property="dona_end_mm" column="dona_end_mm" />
 		<result property="dona_end_dd" column="dona_end_dd" />
+		<result property="hope_money" column="hope_money" />
 	</resultMap>
 
 	<resultMap type="donation_listDTO" id="list_rsMap">
