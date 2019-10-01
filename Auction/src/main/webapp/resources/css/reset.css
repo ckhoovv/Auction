@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+
+/* reset */
+html, body, div, span, object, param, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+address, big, cite, code, del, dfn, em, img, ins,
+q, s, samp, small, strike, strong, sub, sup, tt, var, b,
+u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, br {
+margin: 0;
+padding: 0;
+border: 0 none;
+}
+html {
+width: 100%;
+height: 100%;
+}
+
+/* font */
+body {
+text-align: left;
+font-size: 12px;
+line-height: 1.3;  /*725.2015-10-06 */
+font-family: "굴림", Gulim, Tahoma, sans-serif;
+font-weight: normal;
+color: #333;
+}
+.font11 {
+font-size: 11px;
+font-family: "돋움", Dotum, Tahoma, sans-serif;
+}
+.fontc3 {
+color: #333;
+}
+.fontc6 {
+color: #666;
+}
+.fontc8 {
+color: #888;
+}
+.fontc9 {
+color: #999;
+}
+.red {
+color: #fe434c;
+}
+
+/* anchor */
+a {
+text-decoration:none;
+color: #333;
+}
+a:hover {
+text-decoration:underline;
+color: #333;
+}
+a:active {
+text-decoration:none;
+}
+
+/* list */
+dl, ul, ol, menu, li {
+list-style:none;
+}
+
+/* input and img */
+input,select,textarea,button {
+vertical-align:middle;
+margin: 0;
+padding: 0;
+font-family: "굴림", Gulim, Tahoma, sans-serif;
+}
+input.ckbox {
+margin-top: -3px;
+}
+
+/* etc */
+blockquote, q {
+quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+content:'';
+content:none;
+}
+img, input, select, textarea, button, iframe {
+vertical-align:middle;
+}
+button {
+background-color:transparent;
+cursor:pointer;
+}
+address,caption,cite,code,dfn,em,var {
+font-style:normal;
+font-weight:normal;
+}
+/* clear */
+.cma {
+margin: 0 !important;
+}
+.cmt {
+margin-top: 0 !important;
+}
+.cmr {
+margin-right: 0 !important;
+}
+.cmb {
+margin-bottom: 0 !important;
+}
+.cml {
+ margin-left: 0 !important;
+}
+.cpa {
+padding: 0 !important;
+}
+.cpt {
+padding-top: 0 !important;
+}
+.cpr {
+padding-right: 0 !important;
+}
+.cpb {
+padding-bottom: 0 !important;
+}
+.cpl {
+padding-left: 0 !important;
+}
+.cba {
+border: 0 !important;
+}
+.cbt {
+border-top: 0 !important;
+}
+.cbr {
+border-right: 0 !important;
+}
+.cbb {
+border-bottom: 0 !important;
+}
+.cbl {
+border-left: 0 !important;
+}
+.cbg {
+background: 0 none !important;
+}
+.clh {
+line-height: 100% !important;
+}
+.cul {
+text-decoration: none !important;
+}
+/* hidden */
+hr, .skip, .hide, legend, caption {
+overflow: hidden;
+visibility: hidden;
+position: absolute ;
+display: none;
+width: 0;
+height: 0;
+font-size: 0;
+line-height: 0;
+text-indent: -9999px;
+}
