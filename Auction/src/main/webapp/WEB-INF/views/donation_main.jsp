@@ -85,6 +85,7 @@
 								<span>%</span>
 								</strong>
 								<strong class="donation_money">
+								
 									<span class="text">원</span>
 								</strong>
 							</div>
