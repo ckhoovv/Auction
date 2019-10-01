@@ -85,7 +85,7 @@
 	    </div>
 	    <div class="menubar" style="height: 100px;">
 	    	<ul>
-	    		<li><a href="#"><img class="auction" src="resources/img/img1.PNG"></a></li>
+	    		<li><a href="main.do"><img class="auction" src="resources/img/img1.PNG"></a></li>
 	    		<li style="width: 150px;">
 	    			<a href="#">온라인경매</a>
 	    			<ul class="li-2-submenu">

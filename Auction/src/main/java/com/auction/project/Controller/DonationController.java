@@ -17,7 +17,8 @@ public class DonationController {
 	DonationService donationService;
 	
 	@RequestMapping("/donation_main.do")
-	public void selectAll(Model model) {
+	public void selectAll(Donation_ListDTO donation_listDTO, Model model) {
+		model.addAttribute("count_all", donationService.count_all(donation_listDTO));
 		model.addAttribute("list", donationService.selectAll());
 	}
 	@RequestMapping("donation_detail.do")

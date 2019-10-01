@@ -14,4 +14,5 @@ public interface DonationInterface {
 	
 	public Donation_ListDTO count_donation(Donation_ListDTO donation_listDTO);
 	
+	public Donation_ListDTO count_all(Donation_ListDTO donation_listDTO);
 }

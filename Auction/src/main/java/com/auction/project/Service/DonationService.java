@@ -33,4 +33,10 @@ public class DonationService implements DonationInterface{
 		Donation_ListDTO count = donationDAO.count_donation(donation_listDTO);
 		return count;
 	}
+	
+	@Override
+	public Donation_ListDTO count_all(Donation_ListDTO donation_listDTO) {
+		Donation_ListDTO count_all = donationDAO.count_all(donation_listDTO);
+		return count_all;
+	}
 }
