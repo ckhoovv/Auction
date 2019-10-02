@@ -70,28 +70,34 @@
 			
 					<!-- 기부항목 -->
 					<ul>
-					<c:forEach items="${list}" var="list" varStatus="i">
+					  <% 
+					  List<DonationDTO> list = (List<DonationDTO>)request.getAttribute("list");
+					         for(int i = 0; i < list.size(); i++) {
+					            DonationDTO dto = list.get(i);
+					      %>
 					<li class="card_contents" style="float: left;">
 						<div class="card_header">
-						<a href="donation_detail.do?dona_num=<c:out value="${list.dona_num }"/>" style="text-decoration: none;">
-							<img src="resources/img/<c:out value="${list.dona_num }"/>.jpg">
-							<h1 class="card_title"><c:out value="${list.dona_tit }"/></h1>
+						<a href="donation_detail.do?dona_num=<%= dto.getDona_num()%>" style="text-decoration: none;">
+							<img src="resources/img/<%= dto.getDona_num()%>.jpg">
+							<h1 class="card_title"><%= dto.getDona_tit()%></h1>
 						</a>
 							<div class="graph_wrap">
 								<div class="graph_bar">
-									<span class="donation_bar" style="width: 24%"></span>
+									<span class="donation_bar" style="width: <%=dto.getHope() %>%"></span>
 								</div>
-								<strong class="donation_percent">25
+								<strong class="donation_percent"><%=dto.getHope() %>
 								<span>%</span>
 								</strong>
 								<strong class="donation_money">
-								
+								<%= dto.getDona_money() %>
 									<span class="text">원</span>
 								</strong>
 							</div>
 						</div>
 					</li>
-					</c:forEach>
+					      <%
+					         }
+					      %>
 					</ul> 
 		</div>
 		

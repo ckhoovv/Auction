@@ -79,7 +79,25 @@
 	</resultMap>
 
 	<select id="selectAll" resultMap="rsMap">
-		SELECT * FROM d_detail
+		SELECT a.dona_num		<!-- d_detail / 기부번호 -->
+			, a.dona_tit			<!-- d_detail / 기부제목 -->
+			, a.dona_tit_sub		<!-- d_detail / 기부 서브 제목 -->
+			, a.dona_con			<!-- d_detail / 기부 내용 -->
+			, a.dona_start_yy		<!-- d_detail / 기부 시작(년,월,일)-->
+			, a.dona_start_mm
+			, a.dona_start_dd
+			, a.dona_end_yy			<!-- d_detail / 기부 마감(년,월,일)-->
+			, a.dona_end_mm
+			, a.dona_end_dd
+			, a.hope_money			<!-- d_detail / 기부 희망 금액-->
+			, ((b.dona_money/a.hope_money)*100) as hope	<!-- d_detail / 기부 퍼센트-->
+			, b.dona_money
+			FROM d_detail a
+			   , (select x.dona_num						<!-- d_detail / 기부 총금액 -->
+			           , sum(x.dona_money) as dona_money
+			        from D_LIST x
+			       group by x.dona_num) b
+			WHERE a.dona_num = b.dona_num(+) 
 	</select>
 
 	<insert id="insert_donation" parameterType="donationDTO">
