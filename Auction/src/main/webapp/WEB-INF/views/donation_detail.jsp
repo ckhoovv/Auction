@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 		<head>
@@ -12,7 +13,7 @@
 		</head>
 	<body>
 		<!-- 로그인후에 상단바 -->
-		<jsp:include page="top_login.jsp" flush="false"></jsp:include>
+		<jsp:include page="top.jsp" flush="false"></jsp:include>
 		
 		<div class="container">
 		<!-- 기부 배너스크롤 -->
@@ -20,35 +21,59 @@
 			<div class="graph_wrap">
 				<div class="graph_status">
 					<span class="per">
-						<strong class="num">24</strong>
+						<strong class="num">${dto.hope}</strong>
 						%
 					</span>
 				</div>
+				<script type="text/javascript">
+					
+				</script>
 				<div class="graph_bar">
-					<span class="donation_bar" style="width: 24%"></span>
+					<span class="donation_bar" id="donation_bar" style=" width: ${dto.hope}%"></span>
 				</div>
 				<div class="term_area">
 					<p>
-						<strong>${dto.dona_start_yy}.${dto.dona_start_mm}.${dto.dona_start_dd}
-								~
-								${dto.dona_end_yy}.${dto.dona_end_mm}.${dto.dona_end_dd}</strong>
+						<strong>
+							${dto.dona_start_yy}.${dto.dona_start_mm}.${dto.dona_start_dd}
+							~
+							${dto.dona_end_yy}.${dto.dona_end_mm}.${dto.dona_end_dd}
+						</strong>
 						<span>까지</span>
 					</p>
 					<div>
+					<input type="hidden" id="end_year" value="${dto.dona_end_yy}">
+					<input type="hidden" id="end_month" value="${dto.dona_end_mm}">
+					<input type="hidden" id="end_day" value="${dto.dona_end_dd}">
 						<span class="d_day">
-						D
-						<em class="bar">-</em>
-						20
+							<script type="text/javascript">
+								var end_year = $("#end_year").val();
+							    var end_month = $("#end_month").val();
+							    var end_day = $("#end_day").val();
+							    
+							    var dat1 = new Date();
+							    var year = dat1.getFullYear();
+							    var month = (dat1.getMonth() + 1);
+							    var day = dat1.getDate();
+							    
+							    var now = new Date(year, month, day);
+							    var dat2 = new Date(end_year, end_month, end_day);
+							     
+							    // 날짜 차이 알아 내기
+							    var diff = dat2 - now;
+							    var currDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
+							    document.write("D-" + parseInt(diff/currDay));
+							</script>
 						</span>
 					</div>
 				</div>
+				
 				<div class="num_area">
 					<p class="status_num">
 						<strong>${count.dona_money}</strong>
 						<span>원</span>
 					</p>
 					<p class="purpose_num">
-						<strong>6,000,000</strong>
+						<strong>${dto.hope_money}</strong>
 						<span>원 목표</span>
 					</p>
 				</div>
@@ -77,7 +102,7 @@
 					<h3 class="title">${dto.dona_tit}</h3>
 					<div class="tab_cont">
 						<img alt="" src="resources/img/donation_detail_sub.jpg">
-						<img alt="" src="resources/img/donation_detail.jpg">
+						<img alt="" src="resources/img/${dto.dona_num}.jpg">
 					<ul class="intro_lst editor_base">
 						<li>
 							<dl>

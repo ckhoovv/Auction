@@ -1,0 +1,681 @@
+@charset "UTF-8";
+@import url("//script.auction.co.kr/style/css/common/ctbnpcp.css");
+article, 
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
+audio, canvas, video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+audio:not([controls]) {
+	display: none;
+}
+[hidden] {
+	display: none;
+}
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn {
+	font-style: italic;
+}
+mark {
+	color: #000;
+	background: #ff0;
+}
+pre {
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+q, blockquote {
+	quotes: none;
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+	content: '';
+	content: none;
+}
+em {
+	font-style: normal;
+}
+small {
+	font-size: 75%;
+}
+sub, sup {
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+img {
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+legend {
+	border: 0;
+	*margin-left: -7px;
+}
+ul, ol {
+	list-style: none;
+}
+button, input {
+	line-height: normal;
+	/**overflow: visible;*/
+}
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+	cursor: pointer;
+	-webkit-appearance: button;
+}
+.button {
+	cursor: pointer;
+}
+input[type='search'] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+input[type='search']::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+button,
+input,
+select,
+textarea {
+	font-size: 100%;
+}
+textarea {
+	padding: 3px;
+	border: 1px solid #b9b9b9;
+	overflow: auto;
+	color: #333;
+	line-height: 1.25em;
+	vertical-align: top;
+	resize: vertical;
+	scrollbar-face-color: #eee;
+	scrollbar-highlight-color: #969696;
+	scrollbar-3dlight-color: #fff;
+	scrollbar-darkshadow-color: #fff;
+	scrollbar-shadow-color: #969696;
+	scrollbar-arrow-color: #969696;
+	scrollbar-track-color: #eee;
+}
+input.txt{
+	height: 1.35em;
+	font-size: 100%;
+	line-height: 1.35em;
+	vertical-align: middle;
+	padding: 2px 4px 0;
+	border: 1px solid #999;
+}
+input.txts{
+	height: 1.35em;
+	font-size: 12px;
+	color: #888;
+	line-height: 1.35em;
+	vertical-align: middle;
+	padding: 3px 4px 0;
+	border: 1px solid #999;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+ul,
+ol,
+dl,
+dd,
+figure,
+form,
+fieldset,
+pre {
+	padding: 0;
+	margin: 0;
+}
+html {
+	overflow-y: auto;overflow-y: scroll \9;
+	color: #333333;
+	font: 12px/1.25 Tahoma, Gulim, '굴림', sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+html,
+body {
+	height: 100%;
+}
+body.iframescroll{
+	background: #fff;
+	scrollbar-face-color: #eee;
+	scrollbar-highlight-color: #969696;
+	scrollbar-3dlight-color: #fff;
+	scrollbar-darkshadow-color: #fff;
+	scrollbar-shadow-color: #969696;
+	scrollbar-arrow-color: #969696;
+	scrollbar-track-color: #eee;
+	overflow: auto;
+}
+body.sco{
+	overflow: auto;
+	overflow-x: hidden;
+}
+body.syo{
+	overflow: auto;
+}
+button,
+input,
+select,
+textarea {
+	font-family: Tahoma, Gulim, '굴림', sans-serif;
+}
+pre,
+code,
+kbd,
+samp {
+	font-family: monospace, serif;
+	_font-family: 'Courier New', monospace;
+	font-size: 1em;
+}
+fieldset {
+	border: 0;
+}
+hr {
+	display: none;
+}
+a {
+	color: #333333;
+	text-decoration: none;
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover,
+a:hover span,
+a:hover strong {
+	text-decoration: underline;
+}
+a:hover, a:active {
+	outline: 0;
+}
+a.linknoline{
+	text-decoration:none;
+}
+a.linknoline:hover{
+	text-decoration:none;
+}
+a.olnk{
+	color:#FF6600;
+	text-decoration:underline
+}
+a.olnk:hover{
+	color:#FF6600;
+	text-decoration:underline;
+	font-weight:normal
+}
+a.uline{
+	text-decoration:underline
+}
+.ff1{
+	font-family:Dotum, '돋움', sans-serif;
+}
+.ff2{
+	font-family:Gulim, '굴림', sans-serif;
+}
+.ff3{
+	font-family:Verdana, sans-serif;
+}
+.ff4{
+	font-family:Tahoma, Gulim, '굴림', sans-serif;
+}
+.ff5{
+	font-family:Arial, sans-serif;
+}
+.fss{
+	font-size:0.9em;
+}
+.fc{
+	font-size:11px !important
+}
+.fsm{
+	font-size:12px;
+}
+.fsl{
+	font-size:1.2em;
+}
+.fsxl{
+	font-size:1.4em;
+}
+.fwn{
+	font-weight:normal;
+}
+.fwb{
+	font-weight:bold;
+}
+.price{
+	color:#F94209;
+}
+.seller,
+.name{
+	color:#333333;
+}
+.gray{
+	color:#666666;
+}
+.gray2{
+	color:#888888;
+}
+.gray3{
+	color:#737373;
+}
+.gre{
+	color:#478500;
+}
+.org{
+	color:#ff6600;
+}
+.bro{
+	color:#8c6210;
+}
+.dbro{
+	color:#800000;
+}
+.wbro{
+	color:#C56A42;
+}
+.pblu{
+	color:#856BF0;
+}
+img.line{
+	border:1px solid #E5E5E5;
+}
+a:hover img.line{
+	border:1px solid #F00F00;
+}
+img.lineon{
+	border:1px solid #F00F00;
+}
+span.uline{
+	text-decoration:underline;
+}
+.selecton{
+	color:#F94209
+}
+.lhs{
+	line-height:1.15em;
+}
+.lhm{
+	line-height:1.35em;
+}
+.lhl{
+	line-height:1.55em;
+}
+.lhxl{
+	line-height:1.7em;
+}
+.lsm{
+	letter-spacing:-0.15em;
+}
+.lsms{
+	letter-spacing:-0.05em;
+}
+.lsmxs{
+	letter-spacing:-0.25em;
+}
+.lsmo{
+	letter-spacing:0em;
+}
+.lhms{
+	line-height:1.45em;
+}
+.keep{
+	word-break:keep-all;
+}
+.break{
+	word-break:break-all;
+}
+.al{
+	text-align:left;
+}
+.ac{
+	text-align:center;
+}
+.ar{
+	text-align:right;
+}
+.vt{
+	vertical-align:top;
+}
+.vm{
+	vertical-align:middle;
+}
+.vb{
+	vertical-align:bottom;
+}
+.block{
+	display:block;
+}
+.inline{
+	display:inline;
+}
+.inlineblock{
+	display:inline-block;
+}
+.hide{
+	display:none !important;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.fn{
+	float:none;
+}
+.forfloats{
+	width:100%;
+	display:table;
+}
+.clear{
+	clear:both;
+}
+.mt{
+	margin-top:20px;
+}
+.mtxxxs{
+	margin-top:2px;
+}
+.mtxxs{
+	margin-top:5px;
+}
+.mtxs{
+	margin-top:10px;
+}
+.mts{
+	margin-top:15px;
+}
+.mtl{
+	margin-top:25px;
+}
+.mtxl{
+	margin-top:30px;
+}
+.mtxxl{
+	margin-top:35px;
+}
+.mtxxxl{
+	margin-top:40px;
+}
+.uxa-mgb5{
+	margin-bottom:5px;
+}
+div.scrollybase{
+	background:#FFF;
+	background-image:none;
+	scrollbar-face-color:#EEEEEE;
+	scrollbar-highlight-color:#969696;
+	scrollbar-3dlight-color:#FFFFFF;
+	scrollbar-darkshadow-color:#FFFFFF;
+	scrollbar-shadow-color:#969696;
+	scrollbar-arrow-color:#969696;
+	scrollbar-track-color:#EEEEEE;
+}
+.mt3{
+	margin-top:-3px;
+}
+body.uxc-stopbgl {
+	background:url(//pics.auction.co.kr/common/bg_sitestop01.gif) repeat-x 0 0;
+}
+div.uxc-stopbg{
+	background:url(//pics.auction.co.kr/common/bg_sitestop02.jpg) no-repeat top center;
+}
+div.uxc-spcont{
+	width:900px;
+	margin:0 auto;
+}
+	div.uxc-spcont h1{
+		padding:46px 0 0 33px;
+	}
+div.uxc-stoptop {
+	height:428px;
+	padding:13px 28px 0;
+}
+	div.uxc-stoptop h2 {
+		margin-bottom:23px;
+	}
+	div.uxc-stoptop .imgtxt {
+		text-align:center;
+	}
+	div.uxc-stoptop .uxc-stoptime {
+		width:369px;
+		height:24px;
+		margin:78px auto 6px;
+		padding-top:10px;
+		background:url(//pics.auction.co.kr/common/st_searchbg.gif) no-repeat 0 0;
+		font-weight:bold;
+		color:#ff6300;
+		text-align:center;
+	}
+div.uxc-spabout {
+	height:30px;
+	margin-top:16px;
+	text-align:center;
+}
+	div.uxc-spabout .abouttxt {
+		display:inline-block;
+		color:#333;
+		letter-spacing:-1px;
+	}
+		div.uxc-spabout .abouttxt strong {
+			color:#6369d9;
+		}
+	div.uxc-spabout .aboutgo {
+		display:inline-block;
+		margin-left:5px;
+		padding-left:9px;
+		border-left:1px solid #cdcdcd;
+		letter-spacing:-1px;
+	}
+		div.uxc-spabout .aboutgo a {
+			padding-right:10px;
+			font-size:11px;
+			font-weight:bold;
+			background:url(//pics.auction.co.kr/common/arrow02.gif) no-repeat 100% 1px;
+		}
+div.uxc-spsearcharea {
+	overflow:hidden;
+	width:667px;
+	height:139px;
+	margin:18px auto 0;
+}
+	div.uxc-spsearcharea div.icon {
+		float:left;
+		width:110px;
+	}
+	div.uxc-spsearcharea div.spsearch {
+		float:right;
+		width:484px;
+		padding-left:62px;
+	}
+		div.uxc-spsearcharea div.spsearch .spsearchtxt {
+			margin:0 0 21px -62px;
+		}
+		div.uxc-spsearcharea div.spsearch div.spsearchbox {
+			width:295px;
+			height:34px;
+			padding:3px 0 0 18px;
+			text-align:left;
+			background:url(//pics.auction.co.kr/common/stop_searchbox.gif) no-repeat 0 0;
+		}
+			div.uxc-spsearcharea div.spsearch div.spsearchbox input.sptxt {
+				width:215px;
+				border:1px solid #fff;
+				margin-top:4px;
+				vertical-align:middle;
+			}
+			div.uxc-spsearcharea div.spsearch div.spsearchbox input.btn{
+				margin:0 0 0 21px;
+				padding:5px;
+				vertical-align:middle;
+			}
+div.uxc-spcopy {
+	padding:18px 0 23px;
+	text-align:center;
+}
+div.uxa-erbg{
+	background:url(//pics.auction.co.kr/common/bg_error02.jpg) no-repeat top center;
+}
+div.uxa-econt{
+	width:900px;
+	margin:0 auto;
+}
+	div.uxa-econt h1{
+		padding:7px 0 0 31px;
+	}
+div.uxa-etop{
+	width:100%;
+	margin:18px auto 0;
+	*margin:11px auto 0;
+	text-align:center;
+	color:#777;
+}
+	div.uxa-etop h2{
+		padding-bottom:26px;
+	}
+	div.uxa-etop p.txt {
+		color:#777;
+		line-height:150%;
+		height:54px;
+		*height:57px;
+	}
+	div.uxa-etop div.txt {
+		color:#777;
+	}
+	div.uxa-etop p span.er{
+		color:#000;
+		font-weight:bold;
+	}
+	div.uxa-etop p a{
+		color:#777;
+		text-decoration:underline;
+	}
+div.uxa-esearchbox{
+	width:451px;
+	height:48px;
+	padding:3px 0 0 18px;
+	margin:22px auto 12px;
+	text-align:left;
+	background:url(//pics.auction.co.kr/common/er_searchbg.gif) no-repeat 0 0;
+}
+	div.uxa-esearchbox input{
+		vertical-align:middle;
+	}
+	div.uxa-esearchbox input.ertxt{
+		width:340px;
+		border:1px solid #fff;
+		margin-top:3px;
+	}
+	div.uxa-esearchbox input.btn{
+		margin:0 0 0 20px;
+		*margin:0 0 0 18px;
+		margin:0 0 0 18px \0/ie8+9;
+	}
+div.uxa-erbtn{
+	margin:0 auto;
+	padding:45px 0 26px 0;
+	width:100%;
+}
+div.uxa-errbtn{
+	width:100%;
+	text-align:center;
+}
+div.uxa-ercate{
+	width:100%;
+	overflow:hidden;
+}
+div.uxa-ercatebox{
+	float:left;
+}
+div.uxa-ercopy{
+	text-align:center;
+	margin:60px 0 17px;
+}
+div.uxa-ercatebox ul.cate{
+	margin:10px 1px 0 15px;
+}
+div.uxa-ercatebox ul.cate li{
+	margin:0;
+	padding:0;
+	border:1px solid #fff;
+}
+div.uxa-ercatebox ul.cate li a{
+	font-size:11px;
+	color:#707274;
+	display:block;
+	padding:2px 0 1px;
+}
+.invisible {
+	overflow:hidden;
+	visibility:hidden;
+	position:absolute;
+	width:0;
+	height:0;
+	font-size:0;
+	line-height:0;
+}
+.memqna01 .memqna_tit {
+	overflow:hidden;
+}
+#txtAddress1{margin:3px 0;}/*2014-06-26*/
+
+/* 2014-07-28 공통 레이어 팝업 스타일 */
+.layer_popup_con{z-index:100012;position:fixed;top:50%;left:50%;display:none;background:#fff;}
+.layer_popup_dim{width:100%;height:100%;position:fixed;top:0;left:0;z-index:10011;background:url("//pics.auction.co.kr/common/hp/bg_dim.png") repeat 0 0;}
+.layer_popup_con .layer_popup_close {display:block;position:absolute;right:27px;top:27px;width:27px;height:27px;z-index:1;}
+.layer_popup_con .layer_popup_close a {display:block;width:27px;height:27px;background:url('//pics.auction.co.kr/renewal/common/header/header.png') -130px -210px no-repeat;overflow:hidden;text-indent:-99999px;} /* BI개편헤더 725.2015.07.29 */
+/* //2014-07-28 공통 레이어 팝업 스타일 */
+
+
+/* 2014-11-26 UDO-538  */
+.pop-content td #uploadfile { opacity: 0;}
+.pop-content td .change + .guide { letter-spacing: -1px; vertical-align: 6px; margin-left:30px;}

@@ -5,26 +5,34 @@
 <mapper namespace="donationDAO">
 
 	<select id="select_donation" parameterType="donationDTO" resultMap="rsMap">
-		SELECT a.dona_num
-		, a.dona_tit
-		, a.dona_tit_sub
-		, a.dona_con
-		, a.dona_start_yy
+		SELECT a.dona_num		<!-- d_detail / 기부번호 -->
+		, a.dona_tit			<!-- d_detail / 기부제목 -->
+		, a.dona_tit_sub		<!-- d_detail / 기부 서브 제목 -->
+		, a.dona_con			<!-- d_detail / 기부 내용 -->
+		, a.dona_start_yy		<!-- d_detail / 기부 시작(년,월,일)-->
 		, a.dona_start_mm
 		, a.dona_start_dd
-		, a.dona_end_yy
+		, a.dona_end_yy			<!-- d_detail / 기부 마감(년,월,일)-->
 		, a.dona_end_mm
 		, a.dona_end_dd
+		, a.hope_money			<!-- d_detail / 기부 희망 금액-->
+		, ((b.dona_money/a.hope_money)*100) as hope	<!-- d_detail / 기부 퍼센트-->
 		FROM d_detail a
-		WHERE a.dona_num = #{dona_num}
+		   , (select x.dona_num						<!-- d_detail / 기부 총금액 -->
+		           , sum(x.dona_money) as dona_money
+		        from D_LIST x
+		       where x.dona_num = #{dona_num}
+		       group by x.dona_num) b
+		WHERE a.dona_num = b.dona_num 
+		  and a.dona_num = #{dona_num}
 	</select>
 	<select id="select_list" parameterType="donation_listDTO" resultMap="list_rsMap">
-		select b.sq
-		, b.dona_num
-		, b.dona_tit
-		, b.member_email
-		, b.dona_money
-		, b.dona_date_yy
+		select b.sq			<!-- d_list / 기부시퀀스 -->
+		, b.dona_num		<!-- d_list / 기부번호 -->
+		, b.dona_tit		<!-- d_list / 기부 제목 -->
+		, b.member_email    <!-- d_list / 기부한 사람 -->
+		, b.dona_money		<!-- d_list / 기부한 금액-->
+		, b.dona_date_yy    <!-- d_list / 기부한 날짜 (년,월,일)-->
 		, b.dona_date_mm
 		, b.dona_date_dd
 		from d_list b
@@ -33,40 +41,17 @@
 	
 	<select id="count_donation" parameterType="donation_listDTO" resultMap="list_rsMap">
 		select distinct dona_num
-		   ,sum(dona_money) as dona_money
+		     , sum(dona_money) as dona_money <!-- d_list / 기부한 총 금액 -->
 		from d_list
 		where dona_num = #{dona_num}
 		group by dona_num
 	</select>
-	<select id="count_list"  resultMap="list_rsMap">
-		select distinct dona_num
-		   ,sum(dona_money) as dona_money
-		from d_list
-		group by dona_num
+	
+	<select id="count_all" parameterType="donation_listDTO" resultMap="list_rsMap">
+	select count(distinct member_email) as member_email <!-- d_list / 기부 참여 총 인원 -->
+	 	 , sum(dona_money) as dona_money				<!-- d_list / 기부한 총 금액 -->
+	from d_list
 	</select>
-	
-	
-	
-	<!-- <select id="count_donation" resultMap="rsMap">
-		SELECT a.dona_num d_detail / 기부번호
-		, a.dona_tit	  d_detail / 기부제목
-		, a.dona_tit_sub  d_detail / 기부서브제목
-		, a.dona_con	  d_detail / 기부내용
-		, a.dona_start_yy d_detail / 기부시작년월일
-		, a.dona_start_mm
-		, a.dona_start_dd
-		, a.dona_end_yy   d_detail / 기부마감년월일
-		, a.dona_end_mm
-		, a.dona_end_dd
-		, dona_money	  d_list / 기부한 금액
-		FROM d_detail a
-		, (select dona_num
-		, sum(dona_money) as dona_money
-		from d_list
-		group by dona_num) b
-		WHERE a.dona_num = b.dona_num
-	</select> -->
-
 
 	<resultMap type="donationDTO" id="rsMap">
 		<result property="dona_num" column="dona_num" />
@@ -79,6 +64,7 @@
 		<result property="dona_end_yy" column="dona_end_yy" />
 		<result property="dona_end_mm" column="dona_end_mm" />
 		<result property="dona_end_dd" column="dona_end_dd" />
+		<result property="hope_money" column="hope_money" />
 	</resultMap>
 
 	<resultMap type="donation_listDTO" id="list_rsMap">
@@ -93,7 +79,25 @@
 	</resultMap>
 
 	<select id="selectAll" resultMap="rsMap">
-		SELECT * FROM d_detail
+		SELECT a.dona_num		<!-- d_detail / 기부번호 -->
+			, a.dona_tit			<!-- d_detail / 기부제목 -->
+			, a.dona_tit_sub		<!-- d_detail / 기부 서브 제목 -->
+			, a.dona_con			<!-- d_detail / 기부 내용 -->
+			, a.dona_start_yy		<!-- d_detail / 기부 시작(년,월,일)-->
+			, a.dona_start_mm
+			, a.dona_start_dd
+			, a.dona_end_yy			<!-- d_detail / 기부 마감(년,월,일)-->
+			, a.dona_end_mm
+			, a.dona_end_dd
+			, a.hope_money			<!-- d_detail / 기부 희망 금액-->
+			, ((b.dona_money/a.hope_money)*100) as hope	<!-- d_detail / 기부 퍼센트-->
+			, b.dona_money
+			FROM d_detail a
+			   , (select x.dona_num						<!-- d_detail / 기부 총금액 -->
+			           , sum(x.dona_money) as dona_money
+			        from D_LIST x
+			       group by x.dona_num) b
+			WHERE a.dona_num = b.dona_num(+) 
 	</select>
 
 	<insert id="insert_donation" parameterType="donationDTO">

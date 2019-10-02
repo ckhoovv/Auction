@@ -22,7 +22,7 @@
 	</head>
 	<body>
 		<!-- 로그인후에 상단바 -->
-		<jsp:include page="top_login.jsp" flush="false"></jsp:include>
+		<jsp:include page="top.jsp" flush="false"></jsp:include>
 		
 		<!-- 기부관련 슬라이드  -->
 		<div class="home__slider">
@@ -54,13 +54,13 @@
 									<i class="people">참여</i>
 								</dt>
 								<dd class="dd_content">
-									<span class="point">1,234,111</span>명
+									<span class="point">${count_all.member_email}</span>명
 								</dd>
 								<dt class="dt_title">
 									<i class="people">기부금액</i>
 								</dt>
 								<dd class="dd_content">
-									<span class="point">111,112,341</span>원
+									<span class="point">${count_all.dona_money}</span>원
 								</dd>
 							</dl>
 						</a>
@@ -70,36 +70,35 @@
 			
 					<!-- 기부항목 -->
 					<ul>
-					<%
-						List<DonationDTO> list = (List<DonationDTO>) request.getAttribute("list");
-						List<Donation_ListDTO> count_list = (List<Donation_ListDTO>) request.getAttribute("count_list");
-						for(int i = 0; i < list.size(); i++) {
-							DonationDTO dto = list.get(i);
-					%>
+					  <% 
+					  List<DonationDTO> list = (List<DonationDTO>)request.getAttribute("list");
+					         for(int i = 0; i < list.size(); i++) {
+					            DonationDTO dto = list.get(i);
+					      %>
 					<li class="card_contents" style="float: left;">
 						<div class="card_header">
-						<a href="donation_detail.do?dona_num=<%= dto.getDona_num() %>" style="text-decoration: none;">
+						<a href="donation_detail.do?dona_num=<%= dto.getDona_num()%>" style="text-decoration: none;">
 							<img src="resources/img/<%= dto.getDona_num()%>.jpg">
 							<h1 class="card_title"><%= dto.getDona_tit()%></h1>
 						</a>
 							<div class="graph_wrap">
 								<div class="graph_bar">
-									<span class="donation_bar" style="width: 24%"></span>
+									<span class="donation_bar" style="width: <%=dto.getHope() %>%"></span>
 								</div>
-								<strong class="donation_percent">25
+								<strong class="donation_percent"><%=dto.getHope() %>
 								<span>%</span>
 								</strong>
 								<strong class="donation_money">
-									100,000
+								<%= dto.getDona_money() %>
 									<span class="text">원</span>
 								</strong>
 							</div>
 						</div>
 					</li>
-					<%
-						}
-					%>
-					</ul>
+					      <%
+					         }
+					      %>
+					</ul> 
 		</div>
 		
 		<hr style="color: black; size: 100px;">

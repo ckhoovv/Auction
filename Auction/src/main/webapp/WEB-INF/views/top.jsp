@@ -25,18 +25,7 @@
 	        </form>
 	        <i class="lock"> 로그인을 하시면 다양한 정보를 보실 수 있습니다.</i>
 	        <c:choose>
-			    <c:when test="${not empty sessionScope.userLoginInfo}">
-			        <ul class="nav-ul">
-			        	<li class="nav-li">
-			        		<p>
-			        			<a class="nav_a" href="#"><b>사조경매가 처음이신가요?</b></a> 
-			        			<a class="nav_a" href="signIn.do">로그인</a> 
-			        			<a class="nav_a" href="signUp_ready.jsp">회원가입</a> 
-			        		</p>
-			        	</li>
-			        </ul>
-			    </c:when>
-			    <c:otherwise>
+			    <c:when test="${not empty sessionScope.sessionEmail}">
 			        <ul class="nav-ul">
 			        	<li class="nav-li">
 			        		<p>
@@ -46,18 +35,29 @@
 			        		</p>
 			        	</li>
 			        </ul>
+			    </c:when>
+			    <c:otherwise>
+			    	<ul class="nav-ul">
+			        	<li class="nav-li">
+			        		<p>
+			        			<a class="nav_a" href="#"><b>사조경매가 처음이신가요?</b></a> 
+			        			<a class="nav_a" href="signIn.do">로그인</a> 
+			        			<a class="nav_a" href="signUp_ready.jsp">회원가입</a> 
+			        		</p>
+			        	</li>
+			        </ul>
 			    </c:otherwise>
 			</c:choose>
 	        
 	    </div>
 	    <div class="menubar" style="height: 100px;">
 	    	<ul>
-	    		<li><a href="#"><img class="auction" src="resources/img/img1.PNG"></a></li>
+	    		<li><a href="main.do"><img class="auction" src="resources/img/img1.PNG"></a></li>
 	    		<li style="width: 150px;">
 	    			<a href="#">온라인경매</a>
 	    			<ul class="li-2-submenu">
-	    				<li><a href="#">민영경매</a></li>
-	    				<li><a href="#">동원경매</a></li>
+	    				<li><a href="test1.do">민영경매</a></li>
+	    				<li><a href="test2.do">동원경매</a></li>
 	    			</ul>
 	    		</li>
 	    		<li style="width: 150px;">

@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<!-- 로그인후에 상단바 -->
-		<jsp:include page="top_login.jsp" flush="false"></jsp:include>
+		<jsp:include page="top.jsp" flush="false"></jsp:include>
 		<!-- --------------응모body부분---------------->
 		<!-- 이벤트 메인 이미지 -->
 		<div class="event_top_img">

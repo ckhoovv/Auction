@@ -12,8 +12,29 @@ public class DonationDTO {
 	private String dona_end_yy;
 	private String dona_end_mm;
 	private String dona_end_dd;
+	private int hope_money;
+	private int hope;
+	private int dona_money;
+
 	
-	
+	public final int getDona_money() {
+		return dona_money;
+	}
+	public final void setDona_money(int dona_money) {
+		this.dona_money = dona_money;
+	}
+	public final int getHope() {
+		return hope;
+	}
+	public final void setHope(int hope) {
+		this.hope = hope;
+	}
+	public final int getHope_money() {
+		return hope_money;
+	}
+	public final void setHope_money(int hope_money) {
+		this.hope_money = hope_money;
+	}
 	public final String getDona_num() {
 		return dona_num;
 	}
