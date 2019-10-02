@@ -82,7 +82,7 @@
 	    			</ul>
 	    		</li>
 	    		<li style="width: 150px;">
-	    			<a href="#">고객센터</a>
+	    			<a href="customer_service.do">고객센터</a>
 	    		</li>
 	    		<li style="width: 150px;">
 	    			<a href="donation_main.do">기부</a>
