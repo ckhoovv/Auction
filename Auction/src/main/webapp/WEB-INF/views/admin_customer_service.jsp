@@ -14,6 +14,7 @@
 			<script type="text/javascript" src="resources/js/jquery-1.10.1.min.js"></script>
 			<script type="text/javascript" src="resources/js/jquery.easing.1.3.js"></script>
 			<script type="text/javascript" src="resources/js/boardSlide.js"></script>
+			<script type="text/javascript" src="resources/js/customer_service.js"></script>
 	</head>
 	<body>
 	<jsp:include page="top.jsp" flush="false"></jsp:include>
@@ -21,6 +22,12 @@
 	<%
 		List<CServiceDTO> list = (List<CServiceDTO>) request.getAttribute("list");
 	%>
+	
+	<div class="add">
+		<input type="button" value="추가" onclick="cs_addPopup();" />
+		<input type="button" value="수정" onclick="cs_updatePopup();" />
+		<input type="button" value="삭제" onclick="cs_deletePopup();" />
+	</div>
 	
 	<div class="wrap">
 		<ul class="faq_list board_slide">
@@ -42,6 +49,7 @@
 			%>
 		</ul>		
 	</div>
+	
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('.faq_list').boardSlide({

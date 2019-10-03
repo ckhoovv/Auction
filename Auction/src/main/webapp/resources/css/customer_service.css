@@ -22,4 +22,6 @@ a:hover{text-decoration:none}
 .board_slide .item .hidden{display:none;position:relative;overflow:hidden}
 .board_slide .item .hidden .txt{position:relative;padding:28px 30px 28px 60px;font-size:13px;color:#555;line-height:26px;border-top:solid 1px #c0c0c0;background:#f8f8f8}
 .board_slide .item .hidden .txt > strong{position:absolute;left:31px;top:26px;font-size:20px;color:#e8340c}
-			
+
+
+.add { float: right; margin-right: 25%;}

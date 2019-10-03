@@ -16,8 +16,16 @@ public class CServiceService implements CServiceInterface {
 	CServiceDAO cserviceDAO;
 
 	@Override
+	public void cs_insert(CServiceDTO cserviceDTO) {
+		cserviceDTO.setId(0);
+		cserviceDAO.cs_insert(cserviceDTO);
+	}
+	
+	@Override
 	public List<CServiceDTO> selectAll() {
 		List<CServiceDTO> list = cserviceDAO.selectAll();
 		return list;
 	}
+
+	
 }

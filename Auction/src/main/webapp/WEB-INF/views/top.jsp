@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 		<link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 		<link href="resources/css/style.css" rel="stylesheet" type="text/css" />
-		<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+		<!-- <script src="https://code.jquery.com/jquery-1.11.3.js"></script> -->
 		<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     	<script type="text/javascript" src="resources/js/main.js" charset="UTF-8"></script>
 	</head>

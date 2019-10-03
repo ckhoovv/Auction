@@ -23,19 +23,18 @@
 	
 	<!-- 참고  -->
 	<insert id="insert" parameterType="cserviceDTO">
-		INSERT INTO c_service VALUES(#{id},#{write},#{content},#{title})
+		INSERT INTO c_service (id,c_tit,c_con) VALUES(seq.NEXTVAL,#{c_tit},#{c_con})
 	</insert>
 
 	<update id="update" parameterType="cserviceDTO">
 		UPDATE c_service
-		SET
-		columnname1=#{param1}
+		SET c_tit=#{c_tit}
+		  , c_con=#{c_con}
 		WHERE
-		columnname2 = #{param2}
+		id = #{id}
 	</update>
 
 	<delete id="delete" parameterType="cserviceDTO">
-		DELETE FROM c_service WHERE
-		columnname1 = #{param1}
+		DELETE FROM c_service WHERE id = #{id}
 	</delete>
 </mapper>
