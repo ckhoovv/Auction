@@ -15,6 +15,8 @@
     	<script type="text/javascript" src="resources/js/event_alert.js" charset="UTF-8"></script>
     	<script type="text/javascript" src="resources/js/popup.js" charset="UTF-8"></script>
 	</head>
+	
+	
 	<body>
 		<!-- 로그인후에 상단바 -->
 		<jsp:include page="top.jsp" flush="false"></jsp:include>
@@ -28,7 +30,7 @@
 			<span class="now">
 				<!-- 레이어 선택시  focus 위치 -->
 				<span>나의 응모권수</span>
-				<strong class="mycoupon_cnt">100</strong>개
+				<strong class="mycoupon_cnt">1000</strong>개
 			</span>
 			<button type="button" class="winner_view" onclick="popup();">당첨자 보기</button>
 		</div>
@@ -62,7 +64,7 @@
 						<br>
 							<span class="event_count">
 									현재
-								<strong class="all_count">123</strong>
+								<strong class="all_count" id="monthlyApply<%= i %>Cnt">0</strong>
 									건 응모중
 							</span>
 						<!-- 응모레이어 모음 -->
@@ -114,14 +116,14 @@
 						<h1 class="product_title">에어프라이기</h1>
 							<span>응모권  
 								<strong class="coupon_amount">200</strong>개 X
-									<input class="input_count" id="monthlyApply<%= i %>" type="text" style="width: 26px; height: 14px; margin: 0 5px;">회
+									<input class="input_count" id="monthlyApply<%= i %>" type="text">회
 								<strong class="all_coupon" id="monthlyApply<%= i %>Sum" style="color: #B7950B;">총 0개</strong>
 							</span>
 						<button class="event_btn" onclick="applyCheck('200','monthlyApply<%= i %>');">응모하기</button>
 						<br>
 							<span class="event_count">
 									현재
-								<strong class="all_count">123</strong>
+								<strong class="all_count" id="monthlyApply<%= i %>Cnt">0</strong>
 									건 응모중
 							</span>
 							<!-- 응모레이어 모음 -->
@@ -157,7 +159,7 @@
 			
 			<!-- 응모 경품 세번째줄 -->
 			<% 
-				for(int i = 6; i<9; i++) { 
+				for(int i = 6; i < 9; i++) { 
 			%>
 			<div class="product_list">
 				<ul class="event_ul">
@@ -171,14 +173,14 @@
 						<h1 class="product_title">나이키 더플백</h1>
 							<span>응모권  
 								<strong class="coupon_amount">100</strong>개 X
-									<input class="input_count" id="monthlyApply<%= i %>" type="text" style="width: 26px; height: 14px; margin: 0 5px;">회
+									<input class="input_count" id="monthlyApply<%= i %>" type="text">회
 								<strong class="all_coupon" id="monthlyApply<%= i %>Sum" style="color: #B7950B;">총 0개</strong>
 							</span>
 						<button class="event_btn" onclick="applyCheck('100','monthlyApply<%= i %>');">응모하기</button>
 						<br>
 							<span class="event_count">
 									현재
-								<strong class="all_count">123</strong>
+								<strong class="all_count" id="monthlyApply<%= i %>Cnt">0</strong>
 									건 응모중
 							</span>
 							

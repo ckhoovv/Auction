@@ -1,26 +1,110 @@
-
-.login_center {
-	border: 3px solid blue;
-	margin: auto;
-	text-align: center;
-	margin: 100px;
-	padding: 50px;
+.loginWrap {
+	width: 894px;
+	height: 300px;
+	background: #FDFEFE;
+	border-top: 2px solid #2874A6;
+	border-bottom: 1px solid #797D7F;
+	border-left: 1px solid #797D7F;
+	border-right: 1px solid #797D7F;
+	margin-top: 100px;
+	margin-left: 300px;
 }
 
-.lgoin_align {
-	display: inline-block;
-	background: #ffff00;
-}
-
-.login_float {
+.loginform {
 	float: left;
+	width: 400px;
+	height: 150px;
+	background: #D5DBDB;
+	border: 1px solid #797D7F;
+	margin-top: 30px;
+	margin-left: 60px;
 }
 
-.login_float button {
-	width: 70px;	
-	height: 40px;
+.loginId {
+	font-size: 15px;
+	margin-left: 25px;
+	margin-top: 45px;
 }
 
-.lgin_inline {
-	margin: 10px;
+.loginPw {
+	font-size: 15px;
+	margin-top: 8px;
+	margin-left: 10px;
+}
+
+.loginBtn {
+	float: right;
+	margin-top: -78px;
+	margin-right: 8px;
+}
+
+.loginBtn button {
+	width: 150px;
+	height: 100px;
+	font-size: 20px;
+	background: #114da5;
+	border: 1px solid #3498DB;
+	color: #fff;
+}
+
+.MemberContainer {
+	float: left;
+	width: 400px;
+	height: 80px;
+	margin-top: 20px;
+	margin-left: 60px;
+}
+
+.join_member {
+	float: left;
+	margin-left: 8px;
+	width: 300px;
+	height: 70px;
+}
+
+.join_member p {
+	font-size: 15px;
+}
+
+.join_member button {
+	float: right;
+	margin-top: -40px;
+	margin-right: -90px;
+	width: 150px;
+	background: #fff;
+	border: 1px solid #797D7F;
+}
+
+.find_member {
+	float: left;
+	margin-left: 8px;
+	width: 300px;
+	height: 70px;
+	margin-top: -30px;
+}
+
+.find_member p {
+	font-size: 15px;
+}
+
+.find_member button {
+	float: right;
+	margin-top: -40px;
+	margin-right: -90px;
+	width: 150px;
+	background: #fff;
+	border: 1px solid #797D7F;
+}
+
+.other_login {
+	float: right;
+	width: 400px;
+	height: 250px;
+	margin-top: -155px;
+	margin-right: 10px;
+}
+
+.other_login img {
+	margin-left: 27px;
+	margin-top: 2px;
 }
