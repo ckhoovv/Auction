@@ -46,8 +46,14 @@ public class CustomerServiceController {
 	
 	@RequestMapping("insert_popup.do")
 	public String insert_popup(CServiceDTO cserviceDTO) {
-		System.out.println(cserviceDTO.getC_tit());
 		cserviceService.cs_insert(cserviceDTO);
+		
+		return "admin_customer_service";
+	}
+	
+	@RequestMapping("delete_popup.do")
+	public String delete_popup(CServiceDTO cserviceDTO) {
+		cserviceService.cs_delete(cserviceDTO);
 		
 		return "admin_customer_service";
 	}

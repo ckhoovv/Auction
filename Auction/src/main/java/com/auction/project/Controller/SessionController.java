@@ -20,7 +20,11 @@ public class SessionController {
 	public String sessionLogin(String email, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		session.setAttribute("sessionEamil", email);
-		return "main";
+		if(email.equals("root")) {
+			return "admin_main";
+		} else {
+			return "main";
+		}
 	}
 
 	@RequestMapping("sessionLogout.do")

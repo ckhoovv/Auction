@@ -16,7 +16,15 @@ public class CServiceDAO {
 	SqlSessionTemplate mybatis;
 	
 	public CServiceDTO cs_insert(CServiceDTO cserviceDTO) {
-		return mybatis.selectOne("cservicedao.insert", cserviceDTO);
+		return mybatis.selectOne("cserviceDAO.insert", cserviceDTO);
+	}
+	
+	public CServiceDTO cs_delete(CServiceDTO cserviceDTO) {
+		return mybatis.selectOne("cserviceDAO.delete", cserviceDTO);
+	}
+	
+	public CServiceDTO cs_update(CServiceDTO cserviceDTO) {
+		return mybatis.selectOne("cserviceDAO.update", cserviceDTO);
 	}
 	
 	public List<CServiceDTO> selectAll(){
