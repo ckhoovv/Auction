@@ -5,6 +5,32 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<script type="text/javascript">
+			$(function() {
+				$("#submit").click(function(){
+					var c_tit = $("#c_tit").val(); 
+					var c_con = $("#c_con").val();
+					alert(c_tit);
+					alert(c_con);
+					$.ajax({
+			            url:"insert_popup.do",
+			            data: {
+			            	"c_tit" : c_tit,
+			            	"c_con" : c_con
+			            },
+			            
+			            success: function(result){
+			            	alert("추가완료");
+							window.opener.location.reload();
+							window.close();
+			            },
+			            error : function(xhr, status) {
+			               alert(xhr + " : " + status);
+			            }
+			        });// end ajax
+				})
+			});
+		</script>
 	</head>
 	<body>
 		<form action="insert_popup.do">

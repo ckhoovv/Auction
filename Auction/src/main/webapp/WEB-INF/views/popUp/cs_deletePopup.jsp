@@ -5,6 +5,27 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<script type="text/javascript">
+			$(function() {
+				$("#submit").click(function(){
+					var id = $("#id").val(); 
+					$.ajax({
+			            url:"delete_popup.do",
+			            data: {
+			            	"id" : id,
+			            },
+			            success: function(result){
+			            	alert("추가완료");
+							window.opener.location.reload();
+							window.close();
+			            },
+			            error : function(xhr, status) {
+			               alert(xhr + " : " + status);
+			            }
+			        });// end ajax
+				})
+			});
+		</script>
 	</head>
 	<body>
 		<form action="delete_popup.do">

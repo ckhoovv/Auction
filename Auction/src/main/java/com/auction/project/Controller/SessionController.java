@@ -17,10 +17,14 @@ public class SessionController {
 	SignUpDAO signUpDAO;
 
 	@RequestMapping("sessionLogin.do")
-	public String sessionLogin(String email, HttpServletRequest request) {
+	public String sessionLogin(String email, String name, HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		session.setAttribute("sessionEamil", email);
-		if(email.equals("root")) {
+		String[] arr = email.split(",");
+		
+		session.setAttribute("sessionEmail", arr[0]);
+		session.setAttribute("sessionName", arr[1]);
+		
+		if(arr[0].equals("root")) {
 			return "admin_main";
 		} else {
 			return "main";
