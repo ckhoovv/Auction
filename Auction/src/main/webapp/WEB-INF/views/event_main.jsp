@@ -141,7 +141,7 @@
 							<br>
 							<button type="button" onclick="closeLayer('monthlyApply<%= i %>LayerCnt');" style="cursor: pointer;">확인</button>
 						</div>
-						<div class="ly_check" id="monthlyApply<%= i %>LayerApply" style="display: none;">
+						<div class="ly_check" id="monthlyApply<%= i %>LayerApply"style="display: none;">
 							응모시
 							<strong id="monthlyApply<%= i %>SumView">총 0개</strong>
 							를 차감합니다.
