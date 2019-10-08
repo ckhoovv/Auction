@@ -8,7 +8,7 @@ table	{font-size:12px;border-collapse:collapse;margin:0;padding:0;}
 
 /*popup layout*/
 div.top{height:54px;}
-div.top h1.h1{margin:16px 0 0 7px;padding:0 0 0 37px;font-size:16px;color:#fff;background:url(../images/popup/bul_h1.gif) no-repeat left;}
+div.top h1.h1{margin:16px 0 0 7px;padding:0 0 0 37px;font-size:16px;color:#fff;background:url(resources/img/bul_h1.gif) no-repeat left;}
 div.top h1.h1 img{vertical-align:middle;margin:0 0 3px 0;}
 div.contents{padding:17px 20px;}
 :root div.contents{padding:1px 20px 17px 20px;}
@@ -219,8 +219,8 @@ body.pop-cheer { width:300px; height:400px; background:none;}
 .culture .top { height:37px; background:url(../images/popup/top_bg.gif) repeat-x 0 0; }
 .culture .top h1.h1 { margin:0; padding:10px 0 0 20px; font-family:굴림; font-size:14px; background:none; }
 .culture .top h1.h1 span { color:#ede8e1; }
-.culture .contents { margin:6px 0 0 8px; padding:0; width:384px; background:url(../images/popup/content_topbg.gif) no-repeat 0 0;}
-.culture .contents-bg { padding:17px; background:url(../images/popup/content_Btmbg.gif) no-repeat 0 bottom;}
+.culture .contents { margin:6px 0 0 8px; padding:0; width:384px; background:url(resources/img/content_topbg.gif) no-repeat 0 0;}
+.culture .contents-bg { padding:17px; background:url(resources/img/content_Btmbg.gif) no-repeat 0 bottom;}
 :root .culture .contents { padding:0; }
 .culture .contents .select { margin-bottom:10px; }
 .culture .contents table.dataH0102 { width:350px; border:none; }
@@ -375,8 +375,18 @@ ul.zipNoti span {color:#598190;}
 /* 20130611 벳볼경품 당첨자보기 */
 .betgift h2 {margin:20px 0 5px 0; background:none; padding:0;}
 .betgift h2.first {margin-top:0;}
-.betgift .contents { margin:6px 0 0 8px; padding:0; width:484px; background:url(../img/content_topbg2.gif) no-repeat 0 0;}
-.betgift .contents-bg { padding:17px; background:url(../img/content_Btmbg2.gif) no-repeat 0 bottom;}
+.betgift .contents { margin:6px 0 0 8px; padding:0; width:484px; background:url(../images/popup/content_topbg2.gif) no-repeat 0 0;}
+.betgift .contents-bg { padding:17px; background:url(../images/popup/content_Btmbg2.gif) no-repeat 0 bottom;}
 .betgift .contents table.dataH0102 {width:433px; border:none; }
 .betgift .gift-noti {font-size:11px; color:#756855; margin:12px 0 15px 2px; line-height:15px;}
 
+/* 20140107 우편번호 검색 팝업 수정*/
+.zipTop { width:476px; border:3px solid #f1f1f1; padding:14px 14px 12px 14px; margin-bottom:20px; }
+.zipTop input { margin:3px 0 5px 0; }
+.zipTop .noti { font-size:11px;  background:url(../images/popup/crm_notice.gif) no-repeat 0 2px; padding-left:10px; color:#949494; }
+.zipTop .noti a { color:#598190; text-decoration:none;}
+.zipNoti { float:left; width:500px; padding-bottom:20px;}
+.zipNoti strong { float:left; width:45px; background:#e6e6e6; color:#666; font-size:11px; font-weight:normal; padding:4px 4px 0 4px; }
+.zipNoti ul { float:left; padding:2px 0 0 10px; margin:0;}
+.zipNoti ul li { list-style:none;font-size:11px; line-height:18px; background:url(../images/popup/donation_bul02.gif) no-repeat 0 6px; padding: 0 0 0 5px; margin:0;}
+.zipNoti ul span { color:#598190; }

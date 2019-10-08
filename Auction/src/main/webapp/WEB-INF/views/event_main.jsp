@@ -1,3 +1,5 @@
+<%@page import="com.auction.project.DTO.E_MainDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -43,7 +45,9 @@
 		<div class="event_list">
 		<!-- 응모 경품 첫번째줄 -->
 				<% 
-				for(int i =0; i<3; i++) { 
+				List<E_MainDTO> e_main = (List<E_MainDTO>)request.getAttribute("e_main");
+				for(int i =0; i<3; i++) {
+					E_MainDTO dto = e_main.get(i);
 				%>
 			<div class="product_list">
 				<ul class="event_ul">
@@ -54,7 +58,9 @@
 						</div>
 					</li>
 					<li class="product_content">
-							<h1 class="product_title">LG 노트북</h1>
+							<h1 class="product_title"><%= dto.getE_product() %>
+								<strong><%= dto.getE_amount() %>개</strong>
+							</h1>
 							<span>응모권  
 								<strong class="coupon_amount">300</strong>개 X
 									<input class="input_count" id="monthlyApply<%= i %>" type="text">회
@@ -64,7 +70,7 @@
 						<br>
 							<span class="event_count">
 									현재
-								<strong class="all_count" id="monthlyApply<%= i %>Cnt">0</strong>
+								<strong class="all_count" id="monthlyApply<%= i %>Cnt"><%= dto.getE_count()%></strong>
 									건 응모중
 							</span>
 						<!-- 응모레이어 모음 -->
@@ -102,7 +108,8 @@
 			
 			<!-- 응모 경품 두번째줄 -->
 			<% 
-				for(int i = 3; i<6; i++) { 
+				for(int i = 3; i<6; i++) {
+					E_MainDTO dto = e_main.get(i);
 			%>
 			<div class="product_list">
 				<ul class="event_ul">
@@ -113,7 +120,9 @@
 						</div>
 					</li>
 					<li class="product_content">
-						<h1 class="product_title">에어프라이기</h1>
+						<h1 class="product_title"><%= dto.getE_product() %>
+							<strong><%= dto.getE_amount() %>개</strong>
+						</h1>
 							<span>응모권  
 								<strong class="coupon_amount">200</strong>개 X
 									<input class="input_count" id="monthlyApply<%= i %>" type="text">회
@@ -123,7 +132,7 @@
 						<br>
 							<span class="event_count">
 									현재
-								<strong class="all_count" id="monthlyApply<%= i %>Cnt">0</strong>
+								<strong class="all_count" id="monthlyApply<%= i %>Cnt"><%= dto.getE_count()%></strong>
 									건 응모중
 							</span>
 							<!-- 응모레이어 모음 -->
@@ -159,7 +168,8 @@
 			
 			<!-- 응모 경품 세번째줄 -->
 			<% 
-				for(int i = 6; i < 9; i++) { 
+				for(int i = 6; i < 9; i++) {
+					E_MainDTO dto = e_main.get(i);
 			%>
 			<div class="product_list">
 				<ul class="event_ul">
@@ -170,7 +180,9 @@
 						</div>
 					</li>
 					<li class="product_content">
-						<h1 class="product_title">나이키 더플백</h1>
+						<h1 class="product_title"><%= dto.getE_product() %>
+							<strong><%= dto.getE_amount() %>개</strong>
+						</h1>
 							<span>응모권  
 								<strong class="coupon_amount">100</strong>개 X
 									<input class="input_count" id="monthlyApply<%= i %>" type="text">회
@@ -180,7 +192,7 @@
 						<br>
 							<span class="event_count">
 									현재
-								<strong class="all_count" id="monthlyApply<%= i %>Cnt">0</strong>
+								<strong class="all_count" id="monthlyApply<%= i %>Cnt"><%= dto.getE_count()%></strong>
 									건 응모중
 							</span>
 							

@@ -73,7 +73,7 @@
 				</div>
 				<div class="loginPw">
 				<strong>비밀번호</strong>
-				<input type="text" placeholder="비밀번호" name="pw" id="pw"/>
+				<input type="password" placeholder="비밀번호" name="pw" id="pw"/>
 				</div>
 				<div class="loginBtn">
 					<button type="button" id="doLogin">로그인</button>

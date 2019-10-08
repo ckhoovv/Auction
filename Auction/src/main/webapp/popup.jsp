@@ -13,11 +13,11 @@
 		</head>
 	<body>
 		<div class="culture betgift">
-			<div class="top">
+			<div class="top" style="background: #666;">
 				<h1 class="h1">응모 경품 당첨자 보기</h1>
 			</div>
 			<div class="contents">
-				<div class="contents-bg">
+				<div class="contents-bg" style="background: #fff;">
 					<div style="width: 100%; text-align: right;">
 						<select id="yearMonth" name="yearMonth" class="select" onchange="showWinner(this.options[this.options.selectedIndex].value)" style="width: 100px;">
 							<option value="201909">2019년 09월</option>
@@ -38,10 +38,10 @@
 								<col width="40%">
 							</colgroup>
 							<thead>
-								<tr>
-									<td>응모기간</td>
-									<td>경품명</td>
-									<td>당첨자</td>
+								<tr style="background: #FBEEE6;">
+									<td>&emsp;응모기간</td>
+									<td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;경품명</td>
+									<td>&emsp;&emsp;&emsp;&emsp;&emsp;당첨자</td>
 								</tr>
 							</thead>
 							<tbody>

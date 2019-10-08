@@ -13,6 +13,7 @@
 		<typeAlias type="com.auction.project.DTO.N_proDTO" alias="nproDTO"></typeAlias>
 		<typeAlias type="com.auction.project.DTO.A_proDTO" alias="aproDTO"></typeAlias>
 		<typeAlias type="com.auction.project.DTO.CServiceDTO" alias="cserviceDTO"></typeAlias>
+		<typeAlias type="com.auction.project.DTO.E_MainDTO" alias="e_mainDTO"></typeAlias>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/testMapper.xml" />
@@ -22,5 +23,6 @@
 		<mapper resource="mapper/NProMapper.xml" />
 		<mapper resource="mapper/AProMapper.xml" />
 		<mapper resource="mapper/cserviceMapper.xml" />
+		<mapper resource="mapper/eventMapper.xml" />
 	</mappers>
 </configuration>

@@ -39,7 +39,7 @@ function applyBtn(cntId){
 	console.log(now_count);
 	document.getElementById(cntId+"Cnt").innerHTML = now_count;
 	//확인 클릭시 필요한 총 응모권수 초기화
-	document.getElementById(cntId + "Sum").innerHTML = ("총 "+"0"+"개")
+	document.getElementById(cntId + "Sum").innerHTML = ("총 "+0+"개")
 	//확인클릭시 div창 닫기
 	document.getElementById(cntId+"LayerApply").style.display="none";
 	

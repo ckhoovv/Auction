@@ -7,7 +7,7 @@
 	border-left: 1px solid #797D7F;
 	border-right: 1px solid #797D7F;
 	margin-top: 100px;
-	margin-left: 300px;
+	margin-left: 470px;
 }
 
 .loginform {
@@ -25,6 +25,9 @@
 	margin-left: 25px;
 	margin-top: 45px;
 }
+.loginId input{
+	width: 150px;
+}
 
 .loginPw {
 	font-size: 15px;
@@ -32,9 +35,13 @@
 	margin-left: 10px;
 }
 
+.loginPw input {
+	width: 150px;
+}
+
 .loginBtn {
 	float: right;
-	margin-top: -78px;
+	margin-top: -72px;
 	margin-right: 8px;
 }
 
