@@ -5,6 +5,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 		<script type="text/javascript">
 			$(function() {
 				$("#submit").click(function(){
@@ -15,7 +16,7 @@
 			            	"id" : id,
 			            },
 			            success: function(result){
-			            	alert("추가완료");
+			            	alert("삭제완료");
 							window.opener.location.reload();
 							window.close();
 			            },
@@ -28,19 +29,17 @@
 		</script>
 	</head>
 	<body>
-		<form action="delete_popup.do">
-			<table>
-				<tr>
-					<th colspan="2"> 내용 삭제 </th>
-				</tr>
-				<tr>
-					<th> 글번호 </th>
-					<td><input type="text" name="id"/></td>
-				</tr>
-				<tr align="center">
-					<td colspan="2"><input type="submit" value="전송"/></td>
-				</tr>
-			</table>
-		</form>
+		<table>
+			<tr>
+				<th colspan="2"> 내용 삭제 </th>
+			</tr>
+			<tr>
+				<th> 글번호 </th>
+				<td><input type="text" id="id" name="id"/></td>
+			</tr>
+			<tr align="center">
+				<td colspan="2"><button id="submit">삭제하기</button></td>
+			</tr>
+		</table>
 	</body>
 </html>

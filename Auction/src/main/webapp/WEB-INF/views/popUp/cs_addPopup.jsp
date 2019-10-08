@@ -5,6 +5,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 		<script type="text/javascript">
 			$(function() {
 				$("#submit").click(function(){
@@ -18,7 +19,6 @@
 			            	"c_tit" : c_tit,
 			            	"c_con" : c_con
 			            },
-			            
 			            success: function(result){
 			            	alert("추가완료");
 							window.opener.location.reload();
@@ -33,23 +33,21 @@
 		</script>
 	</head>
 	<body>
-		<form action="insert_popup.do">
-			<table>
-				<tr>
-					<th colspan="2"> 내용 추가 </th>
-				</tr>
-				<tr>
-					<th>제목</th>
-					<td><input type="text" name="c_tit"/></td>
-				</tr>
-				<tr>
-					<th>내용</th>
-					<td><input type="text" name="c_con"/></td>
-				</tr>
-				<tr align="center">
-					<td colspan="2"><input type="submit" value="전송"/></td>
-				</tr>
-			</table>
-		</form>
+		<table>
+			<tr>
+				<th colspan="2"> 내용 추가 </th>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td><input type="text" id="c_tit" name="c_tit"/></td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><input type="text" id="c_con" name="c_con"/></td>
+			</tr>
+			<tr align="center">
+				<td colspan="2"><button id="submit">추가하기</button></td>
+			</tr>
+		</table>
 	</body>
 </html>
