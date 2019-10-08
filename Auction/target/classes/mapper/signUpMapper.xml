@@ -25,7 +25,9 @@
 			 , a.name	<!-- member  / 사용자 이름 -->
 			 , a.tel	<!-- member  / 사용자 전화번호 -->
 	 	  FROM member a
-		 WHERE a.email = #{email}
+	 	     , admin b
+		 WHERE a.email = b.id(+)
+		   and a.email = #{email}
 		   and a.pw = #{pw}
 	</select>
 

@@ -16,17 +16,19 @@ $(function(){
             url:"doLogin.do",
             data: {
             	"email" : email,
-            	"pw" : pw
+            	"pw" : pw,
+            	"name" : name
             },
             success: function(result){
             	var check = result.split(",");
             	var email = check[0];
             	var pw = check[1];
+            	var name = check[2];
             	if(email == null || email == "") {
             		alert("아이디와 비밀번호를 확인해주세요.")
             		$("#email").val("")
             	} else {
-            		location.href='sessionLogin.do?email='+email;
+            		location.href='sessionLogin.do?email='+email+','+name;
             	}
             },
             error : function(xhr, status) {

@@ -16,6 +16,7 @@ public class SignUpService implements SignUpInterface {
 	@Override
 	public SignUpDTO doLogin(SignUpDTO signUpDTO) {
 		SignUpDTO sdto = signUpDAO.login_member(signUpDTO);
+		
 		return sdto;
 	}
 

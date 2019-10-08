@@ -36,7 +36,7 @@
 					CServiceDTO csDTO = list.get(i);
 			%>
 			<li class="item">
-				<div class="tit"><a href="#"><strong>Q</strong><%= csDTO.getC_tit() %></a></div>
+				<div class="tit"><a href="#"><strong><%= csDTO.getId() %>&emsp;Q</strong>&emsp;&emsp;&emsp;&emsp;<%= csDTO.getC_tit() %></a></div>
 				<div class="hidden">
 					<div class="txt">
 						<strong>A</strong>
