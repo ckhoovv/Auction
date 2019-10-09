@@ -10,6 +10,7 @@
 			$(function() {
 				$("#submit").click(function(){
 					var id = $("#id").val(); 
+					alert(id);
 					$.ajax({
 			            url:"delete_popup.do",
 			            data: {

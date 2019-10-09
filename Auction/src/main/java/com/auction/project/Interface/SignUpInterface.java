@@ -5,8 +5,7 @@ import com.auction.project.DTO.SignUpDTO;
 public interface SignUpInterface {
 
 	public SignUpDTO doLogin(SignUpDTO signUpDTO);			/* 로그인 */
-	
+	public SignUpDTO admin_doLogin(SignUpDTO signUpDTO);	/* 관리자 로그인 */
 	public void SignUp_insert(SignUpDTO signUpDTO); 		/* 회원가입 */
-	
 	public SignUpDTO signUp_select(SignUpDTO signUpDTO);  	/* 가입확인 */
 }

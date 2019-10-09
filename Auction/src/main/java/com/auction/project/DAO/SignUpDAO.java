@@ -31,6 +31,11 @@ public class SignUpDAO {
 	public SignUpDTO login_member(SignUpDTO signUpDTO) {
 		return mybatis.selectOne("signUpDAO.login_member", signUpDTO);
 	}
+
+	//관리자 로그인
+	public SignUpDTO login_admin(SignUpDTO signUpDTO) {
+		return mybatis.selectOne("signUpDAO.login_admin", signUpDTO);
+	}
 	
 	public AddressDTO select_address(AddressDTO addressDTO) {
 		return mybatis.selectOne("signUpDAO.select_address", addressDTO);

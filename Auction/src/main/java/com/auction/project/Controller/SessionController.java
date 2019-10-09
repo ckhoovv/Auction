@@ -22,11 +22,12 @@ public class SessionController {
 		String[] arr = email.split(",");
 		
 		session.setAttribute("sessionEmail", arr[0]);
-		session.setAttribute("sessionName", arr[1]);
+		
 		
 		if(arr[0].equals("root")) {
 			return "admin_main";
 		} else {
+			session.setAttribute("sessionName", arr[1]);
 			return "main";
 		}
 	}
