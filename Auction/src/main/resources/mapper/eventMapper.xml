@@ -10,6 +10,14 @@
 		<result property="e_amount" column="e_amount" />
 		<result property="e_count" column="e_count" />
 	</resultMap>
+	<resultMap type="e_listDTO" id="list_rsMap">
+		<result property="e_num" column="e_num" />
+		<result property="e_product" column="e_product" />
+		<result property="member_email" column="member_email" />
+		<result property="name" column="name" />
+		<result property="e_count" column="e_count" />
+		<result property="e_input_date" column="e_input_date" />
+	</resultMap>
 	
 	<select id="e_mainAll" resultMap="rsMap">
 		SELECT a.e_num
@@ -23,6 +31,23 @@
 	 	WHERE a.e_num = b.e_num(+)
 	 	ORDER BY a.e_num
 	</select>	
+	
+	<insert id="list_insert" parameterType="e_listDTO">
+		INSERT INTO e_list (seq
+						 , e_num
+						 , e_product
+						 , member_email
+						 , name
+						 , e_count
+						 , e_input_date) 
+		VALUES(e_list_seq.NEXTVAL
+		    , #{e_num}
+		    , #{e_product}
+		    , #{member_email}
+		    , #{name}
+		    , #{e_count}
+		    , (SYSDATE))
+	</insert>
 	
 	
 	<update id="update" parameterType="donationDTO">

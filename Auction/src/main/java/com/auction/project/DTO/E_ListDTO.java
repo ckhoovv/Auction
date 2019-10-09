@@ -7,9 +7,15 @@ public class E_ListDTO {
     private String name;
     private int e_count;
     private String e_input_date;
-	
+    private int seq;
     
-    public final String getE_num() {
+    public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
+	public final String getE_num() {
 		return e_num;
 	}
 	public final void setE_num(String e_num) {
