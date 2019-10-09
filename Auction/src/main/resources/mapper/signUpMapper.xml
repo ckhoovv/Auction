@@ -25,9 +25,15 @@
 			 , a.name	<!-- member  / 사용자 이름 -->
 			 , a.tel	<!-- member  / 사용자 전화번호 -->
 	 	  FROM member a
-	 	     , admin b
-		 WHERE a.email = b.id(+)
-		   and a.email = #{email}
+		 WHERE a.email = #{email}
+		   and a.pw = #{pw}
+	</select>
+	
+	<select id="login_admin" parameterType="signUpDTO" resultMap="rsMap">
+		SELECT a.id		<!-- admin  / 관리자 아이디 -->
+			 , a.pw		<!-- admin  / 관리자 비밀번호 -->
+	 	  FROM admin a
+		 WHERE a.id = #{email}
 		   and a.pw = #{pw}
 	</select>
 
@@ -42,6 +48,11 @@
 		<result property="addr1" column="addr1" />
 		<result property="addr2" column="addr2" />
 		<result property="addr3" column="addr3" />
+	</resultMap>
+	
+	<resultMap type="signUpDTO" id="admin_rsMap">
+		<result property="email" column="email" />
+		<result property="pw" column="pw" />
 	</resultMap>
 	
 	<select id="selectAll" resultMap="rsMap">

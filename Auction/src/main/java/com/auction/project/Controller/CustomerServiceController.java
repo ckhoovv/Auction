@@ -52,9 +52,8 @@ public class CustomerServiceController {
 	}
 	
 	@RequestMapping("delete_popup.do")
-	public void delete_popup(CServiceDTO cserviceDTO) {
-		cserviceService.cs_delete(cserviceDTO);
-		System.out.println(cserviceDTO.getId());
+	public void delete_popup(CServiceDTO cserviceDTO, Model model) {
+		model.addAttribute("cs_ddto", cserviceService.cs_delete(cserviceDTO));
 	}
 	
 //	@RequestMapping("delete_popup.do")
