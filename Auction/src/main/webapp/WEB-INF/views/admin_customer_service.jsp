@@ -17,7 +17,7 @@
 			<script type="text/javascript" src="resources/js/customer_service.js"></script>
 	</head>
 	<body>
-	<jsp:include page="top.jsp" flush="false"></jsp:include>
+	<jsp:include page="adminTop_login.jsp" flush="false"></jsp:include>
 	
 	<%
 		List<CServiceDTO> list = (List<CServiceDTO>) request.getAttribute("list");
@@ -49,8 +49,7 @@
 			%>
 		</ul>		
 	</div>
-	
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		$(document).ready(function(){
 			$('.faq_list').boardSlide({
 				speed : 300,
@@ -60,6 +59,6 @@
 				ease : 'easeOutCirc'
 			});
 		});
-	</script>
+	</script> -->
 	</body>
 </html>

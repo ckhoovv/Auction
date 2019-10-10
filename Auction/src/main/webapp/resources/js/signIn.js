@@ -12,28 +12,52 @@ $(function(){
 	$("#doLogin").click(function(){
 		var email = $("#email").val();
 		var pw = $("#pw").val();
-		$.ajax({
-            url:"doLogin.do",
-            data: {
-            	"email" : email,
-            	"pw" : pw,
-            	"name" : name
-            },
-            success: function(result){
-            	var check = result.split(",");
-            	var email = check[0];
-            	var pw = check[1];
-            	var name = check[2];
-            	if(email == null || email == "") {
-            		alert("아이디와 비밀번호를 확인해주세요.")
-            		$("#email").val("")
-            	} else {
-            		location.href='sessionLogin.do?email='+email+','+name;
-            	}
-            },
-            error : function(xhr, status) {
-               alert(xhr + " : " + status);
-            }
-        });// end ajax
+		if(email=="root") {
+			$.ajax({
+	            url:"admin_doLogin.do",
+	            data: {
+	            	"email" : email,
+	            	"pw" : pw,
+	            },
+	            success: function(result){
+	            	var check = result.split(",");
+	            	var id = check[0];
+	            	var pw = check[1];
+	            	if(email == null || email == "") {
+	            		alert("아이디와 비밀번호를 확인해주세요.")
+	            		$("#email").val("")
+	            	} else {
+	            		location.href='sessionLogin.do?email='+email+','+name;
+	            	}
+	            },
+	            error : function(xhr, status) {
+	               alert(xhr + " : " + status);
+	            }
+	        });// end ajax
+		} else {
+			$.ajax({
+	            url:"doLogin.do",
+	            data: {
+	            	"email" : email,
+	            	"pw" : pw,
+	            	"name" : name
+	            },
+	            success: function(result){
+	            	var check = result.split(",");
+	            	var email = check[0];
+	            	var pw = check[1];
+	            	var name = check[2];
+	            	if(email == null || email == "") {
+	            		alert("아이디와 비밀번호를 확인해주세요.")
+	            		$("#email").val("")
+	            	} else {
+	            		location.href='sessionLogin.do?email='+email+','+name;
+	            	}
+	            },
+	            error : function(xhr, status) {
+	               alert(xhr + " : " + status);
+	            }
+	        });// end ajax
+		}
 	});
 })

@@ -21,8 +21,9 @@ public class CServiceService implements CServiceInterface {
 	}
 	
 	@Override
-	public void cs_delete(CServiceDTO cserviceDTO) {
-		cserviceDAO.cs_delete(cserviceDTO);
+	public CServiceDTO cs_delete(CServiceDTO cserviceDTO) {
+		CServiceDTO cs_ddto = cserviceDAO.cs_delete(cserviceDTO);
+		return cs_ddto;
 	}
 	@Override
 	public List<CServiceDTO> selectAll() {

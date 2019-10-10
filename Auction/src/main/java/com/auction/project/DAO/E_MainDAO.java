@@ -17,8 +17,9 @@ public class E_MainDAO {
 	public List<E_MainDTO> e_mainAll(){
 		return mybatis.selectList("e_mainDAO.e_mainAll");
 	}
-	/*
-	 * public E_ListDTO list_insert(E_ListDTO e_listDTO) { return
-	 * mybatis.selectOne("e_mainDAO.list_insert", e_listDTO); }
-	 */
+
+	
+	public void list_insert (E_ListDTO e_listDTO) {
+		mybatis.insert("e_mainDAO.list_insert", e_listDTO);
+	}
 }

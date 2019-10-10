@@ -16,7 +16,12 @@ public class EventController {
 	
 	@RequestMapping("event_main.do")
 	public void e_mainAll(E_ListDTO e_listDTO, Model model) {
-		/* e_mainservice.list_insert(e_listDTO); */
+
 		model.addAttribute("e_main", e_mainservice.e_mainAll());
+	}
+	@RequestMapping("list_insert.do")
+	public String list_insert(E_ListDTO e_listDTO) {
+		e_mainservice.list_insert(e_listDTO);
+		return"redirect:event_main.do";
 	}
 }

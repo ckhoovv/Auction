@@ -7,7 +7,7 @@ import com.auction.project.DTO.SignUpDTO;
 
 public interface CServiceInterface {
 
-	public void cs_insert(CServiceDTO cserviceDTO); /* cs 추가 */ 
-	public void cs_delete(CServiceDTO cserviceDTO); /* cs 삭제 */ 		
-	public List<CServiceDTO> selectAll();			/* 질문조회 */ 
+	public void cs_insert(CServiceDTO cserviceDTO); 		/* cs 추가 */ 
+	public CServiceDTO cs_delete(CServiceDTO cserviceDTO); 	/* cs 삭제 */ 		
+	public List<CServiceDTO> selectAll();					/* 질문조회 */ 
 }

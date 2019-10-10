@@ -4,7 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.auction.project.DTO.TestDTO" alias="tDTO"></typeAlias>
 		<typeAlias type="com.auction.project.DTO.AddressDTO" alias="addressDTO"></typeAlias>
 		<typeAlias type="com.auction.project.DTO.MemberDTO" alias="memberDTO"></typeAlias>
 		<typeAlias type="com.auction.project.DTO.SignUpDTO" alias="signUpDTO"></typeAlias>
@@ -17,7 +16,6 @@
 		<typeAlias type="com.auction.project.DTO.E_ListDTO" alias="e_listDTO"></typeAlias>
 	</typeAliases>
 	<mappers>
-		<mapper resource="mapper/testMapper.xml" />
 		<mapper resource="mapper/signUpMapper.xml" />
 		<mapper resource="mapper/AdminMemberMapper.xml" />
 		<mapper resource="mapper/donationMapper.xml" />

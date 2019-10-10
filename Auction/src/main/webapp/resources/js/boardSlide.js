@@ -42,5 +42,15 @@
 		})	
 					
 	}
+	
+	$(document).ready(function(){
+		$('.faq_list').boardSlide({
+			speed : 300,
+			btn : $('.faq_list .tit'),
+			current : 0, 		// 초기 리스트 선택  , 0 = 비활성화
+			openType : false,  // true = 한개만 열리기
+			ease : 'easeOutCirc'
+		});
+	});
 				
 })(jQuery);

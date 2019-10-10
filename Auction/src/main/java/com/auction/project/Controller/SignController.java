@@ -23,6 +23,12 @@ public class SignController {
 		model.addAttribute("sdto", signUpService.doLogin(signUpDTO));
 		return "login_check";
 	}
+	
+	@RequestMapping("admin_doLogin.do")
+	public String admin_doLogin(SignUpDTO signUpDTO, Model model) {
+		model.addAttribute("a_sdto", signUpService.admin_doLogin(signUpDTO));
+		return "admin_login_check";
+	}
 
 	@RequestMapping("signUp.do")
 	public void signUp_insert() {

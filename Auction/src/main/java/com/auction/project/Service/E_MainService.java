@@ -15,13 +15,13 @@ public class E_MainService implements E_MainInterface{
 	@Autowired
 	E_MainDAO e_mainDAO;
 	
+	@Override
 	public List<E_MainDTO> e_mainAll(){
 		List<E_MainDTO> e_main = e_mainDAO.e_mainAll();
 		return e_main;
 	}
-	
-	/*
-	 * public void list_insert(E_ListDTO e_listDTO) {
-	 * e_mainDAO.list_insert(e_listDTO); }
-	 */
+	@Override
+	public void list_insert(E_ListDTO e_listDTO) {
+		e_mainDAO.list_insert(e_listDTO);
+	}
 }

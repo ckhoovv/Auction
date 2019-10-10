@@ -45,6 +45,21 @@
 		      ,#{name}
 		      ,#{e_count}
 		      ,#{e_input_date});
+		INSERT INTO e_list (seq
+						 , e_num
+						 , e_product
+						 , member_email
+						 , name
+						 , e_count
+						 , e_input_date) 
+		VALUES(e_list_seq.NEXTVAL
+		    , #{e_num}
+		    , #{e_product}
+		    , #{member_email}
+		    , #{name}
+		    , #{e_count}
+		    , (SYSDATE))
+>>>>>>> branch 'master' of https://github.com/ckhoovv/Auction
 	</insert>
 	
 	

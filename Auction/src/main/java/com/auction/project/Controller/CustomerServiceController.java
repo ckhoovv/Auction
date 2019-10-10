@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.auction.project.DTO.CServiceDTO;
+import com.auction.project.DTO.SignUpDTO;
 import com.auction.project.Service.CServiceService;
 
 @Controller
@@ -47,14 +48,17 @@ public class CustomerServiceController {
 	@RequestMapping("insert_popup.do")
 	public String insert_popup(CServiceDTO cserviceDTO) {
 		cserviceService.cs_insert(cserviceDTO);
-		
 		return "admin_customer_service";
 	}
 	
 	@RequestMapping("delete_popup.do")
-	public String delete_popup(CServiceDTO cserviceDTO) {
-		cserviceService.cs_delete(cserviceDTO);
-		
-		return "admin_customer_service";
+	public void delete_popup(CServiceDTO cserviceDTO, Model model) {
+		model.addAttribute("cs_ddto", cserviceService.cs_delete(cserviceDTO));
 	}
+	
+//	@RequestMapping("delete_popup.do")
+//	public String delete_popup(CServiceDTO cserviceDTO) {
+//		cserviceService.cs_delete(cserviceDTO);
+//		return "admin_customer_service";
+//	}
 }
