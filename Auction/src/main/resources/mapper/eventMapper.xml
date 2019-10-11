@@ -18,6 +18,13 @@
 		<result property="e_count" column="e_count" />
 		<result property="e_input_date" column="e_input_date" />
 	</resultMap>
+	<resultMap type="e_winnerDTO" id="winner_rsMap">
+		<result property="e_winner_seq" column="e_winner_seq" />
+		<result property="e_num" column="e_num" />
+		<result property="e_product" column="e_product" />
+		<result property="member_email" column="member_email" />
+		<result property="name" column="name" />
+	</resultMap>
 	
 	<select id="e_mainAll" resultMap="rsMap">
 		SELECT a.e_num
@@ -30,7 +37,11 @@
 	 					 GROUP BY x.e_num) b
 	 	WHERE a.e_num = b.e_num(+)
 	 	ORDER BY a.e_num
-	</select>	
+	</select>
+	
+	<select id="winnerAll" resultMap="winner_rsMap">
+	select * from e_winner order by e_num asc
+	</select>
 	
 	<insert id="list_insert" parameterType="e_listDTO">
 		INSERT INTO e_list (seq
@@ -47,6 +58,21 @@
 		    , #{name}
 		    , #{e_count}
 		    , (SYSDATE))
+	</insert>
+	
+	<insert id="insert_winner" parameterType="e_winnerDTO">
+		insert into e_winner(e_winner_seq,e_num,e_product,member_email,name)
+		(select e_winner_seq,e_num,e_product,member_email,name
+		  from (select rownum as e_winner_seq
+		   			 , e_num
+				     , e_product
+					 , member_email
+					 , name
+				  from e_list
+	             where e_num = #{e_num}
+	             order by dbms_random.value)
+	       		 where rownum <![CDATA[ <= ]]> 
+	     (select e_amount from E_MAIN where e_num = #{e_num}))
 	</insert>
 	
 	<update id="update" parameterType="donationDTO">

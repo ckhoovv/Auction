@@ -33,11 +33,6 @@ function applyBtn(cntId){
 	//응모 확인시
 	var selectCount = 0;
 	selectCount = document.getElementById(cntId).value;
-	//현재 응모건수 카운팅
-	var count = document.getElementById(cntId+"Cnt").innerHTML;
-	var now_count = parseInt(count) +parseInt(selectCount)
-	console.log(now_count);
-	document.getElementById(cntId+"Cnt").innerHTML = now_count;
 	//확인 클릭시 필요한 총 응모권수 초기화
 	document.getElementById(cntId + "Sum").innerHTML = ("총 "+0+"개")
 	//확인클릭시 div창 닫기

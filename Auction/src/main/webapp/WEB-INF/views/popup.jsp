@@ -1,3 +1,6 @@
+<%@page import="com.auction.project.DTO.E_WinnerDTO"%>
+<%@page import="com.auction.project.DTO.E_ListDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -44,38 +47,17 @@
 									<td>&emsp;&emsp;&emsp;&emsp;&emsp;당첨자</td>
 								</tr>
 							</thead>
-							<tbody>
+							<%
+							List<E_WinnerDTO> winnerAll = (List<E_WinnerDTO>)request.getAttribute("winnerAll");
+							for(int i = 0; i < winnerAll.size(); i++){
+								E_WinnerDTO dto = winnerAll.get(i);
+							%>
 								<tr>
-									<td>08.01~08.31</td>
-									<td>LG노트북</td>
-									<td>이름(아이디)</td>
+									<td>10.01~10.31</td>
+									<td><%= dto.getE_product() %></td>
+									<td><%= dto.getName() %>(<%= dto.getMember_email() %>)</td>
 								</tr>
-								<tr>
-									<td>08.01~08.31</td>
-									<td>LED마스크</td>
-									<td>이름(아이디)</td>
-								</tr>
-								<tr>
-									<td>08.01~08.31</td>
-									<td>LED마스크</td>
-									<td>이름(아이디)</td>
-								</tr>
-								<tr>
-									<td>08.01~08.31</td>
-									<td>LED마스크</td>
-									<td>이름(아이디)</td>
-								</tr>
-								<tr>
-									<td>08.01~08.31</td>
-									<td>LED마스크</td>
-									<td>이름(아이디)</td>
-								</tr>
-								<tr>
-									<td>08.01~08.31</td>
-									<td>LED마스크</td>
-									<td>이름(아이디)</td>
-								</tr>
-							</tbody>
+							<% } %>
 						</table>
 					</div>
 				</div>

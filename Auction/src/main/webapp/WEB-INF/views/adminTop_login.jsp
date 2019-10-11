@@ -11,19 +11,17 @@
 <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <link href="resources/css/style.css" rel="stylesheet" type="text/css" />
 <link href="resources/css/bootstrapCss/bootstrap.css" rel="stylesheet" />
+<script type="text/javascript" src="resources/js/main.js" charset="UTF-8"></script>
 </head>
 <body>
 	<!-- --------------경매TOP부분-------------- -->
 	<div class="nav">
-		<p>
-			<i class="xi-unlock-o"></i> <i class="lock"> 로그인을 하시면 다양한 정보를 보실
-				수 있습니다. </i>
+			<i class="xi-unlock-o"></i> 
 		<form id="form1" runat="server">
 			<div>
 				<span id="clock"></span> <br />
 			</div>
 		</form>
-		</p>
 		<ul class="nav-ul">
 			<li class="nav-li">
 				<p>
@@ -46,6 +44,12 @@
 			<li style="width: 150px;"><a href="#">경매승인</a></li>
 			<li style="width: 150px;"><a href="#">전화예약</a></li>
 			<li style="width: 150px;"><a href="admin_customer_service.do">고객센터</a></li>
+			<li style="width: 150px;"><a href="">기부관리</a> 
+				<ul class="li-2-submenu">
+					<li><a href="#">기부</a></li>
+					<li><a href="admin_event.do">응모</a></li>
+				</ul>
+			</li>
 			
 		</ul>
 	</div>

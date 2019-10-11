@@ -14,6 +14,8 @@
 		<typeAlias type="com.auction.project.DTO.CServiceDTO" alias="cserviceDTO"></typeAlias>
 		<typeAlias type="com.auction.project.DTO.E_MainDTO" alias="e_mainDTO"></typeAlias>
 		<typeAlias type="com.auction.project.DTO.E_ListDTO" alias="e_listDTO"></typeAlias>
+		<typeAlias type="com.auction.project.DTO.E_WinnerDTO" alias="e_winnerDTO"></typeAlias>
+		<typeAlias type="com.auction.project.DTO.ChargeDTO" alias="chargeDTO"></typeAlias>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/signUpMapper.xml" />
@@ -23,5 +25,6 @@
 		<mapper resource="mapper/AProMapper.xml" />
 		<mapper resource="mapper/cserviceMapper.xml" />
 		<mapper resource="mapper/eventMapper.xml" />
+		<mapper resource="mapper/chargeMapper.xml" />
 	</mappers>
 </configuration>

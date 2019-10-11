@@ -1,11 +1,12 @@
 <%@page import="com.auction.project.DTO.E_MainDTO"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!-- <html xmlns="http://www.w3.org/1999/xhtml"> -->
 <html>
 	<head>
+		<% request.setCharacterEncoding("UTF-8"); %>
 		<meta charset="UTF-8">
 		<title>-사조 경매-</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">

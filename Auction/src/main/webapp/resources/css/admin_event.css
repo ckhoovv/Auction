@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+.manage_winner {
+	width: 1000px;
+	height: 700px;
+	border: 1px solid black;
+	background: #fff;
+	margin-left: 25%;
+	margin-top: 50px;
+}
+
+.winner_btn {
+	width: 1000px;
+	height: 50px;
+	border-bottom: 1px solid #CACFD2;
+}
+
+.winner_btn strong {
+	margin-left: 10px;
+	font-size: 29px;
+	color: #2874A6;
+}
+
+.winner_btn button {
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+.winner_btn input {
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+.winner_btn form {
+	float: right;
+}
+
+.winner_list {
+	float: left;
+	width: 500px;
+	height: 650px;
+	border-right: 1px solid #CACFD2;
+	margin-right: 0px;
+}
+
+.winner_list ul {
+	list-style: none;
+	display: inline;
+}
+
+.winner_list li {
+	border-bottom: 1px solid black;
+}
+.event_list {
+	float: right;
+	width: 498px;
+	height: 550px;
+}
+.event_list ul {
+	list-style: none;
+	display: inline;
+}
+.event_list li {
+	border-bottom: 1px solid black;
+}
