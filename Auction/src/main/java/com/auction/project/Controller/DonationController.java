@@ -37,8 +37,8 @@ public class DonationController {
 		donationService.cal_dona(donation_listDTO);
 		chargeDTO.setMoney(donation_listDTO.getDona_money());
 		donationService.cal_chardona(chargeDTO);
-		Model a = model.addAttribute("f_money", donationService.cal_dona_select(chargeDTO).getMoney());
-		session.setAttribute("sessionMoney", a.asMap().get("f_money"));
+		Model money = model.addAttribute("f_money", donationService.cal_dona_select(chargeDTO).getMoney());
+		session.setAttribute("sessionMoney", money.asMap().get("f_money"));
 		return"redirect:donation_detail.do?dona_num="+donation_listDTO.getDona_num();
 	}
 }
