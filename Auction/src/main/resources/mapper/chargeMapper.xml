@@ -4,76 +4,22 @@
 
 <mapper namespace="chargeDAO">
 	
-	<resultMap type="e_mainDTO" id="rsMap">
-		<result property="e_num" column="e_num" />
-		<result property="e_product" column="e_product" />
-		<result property="e_amount" column="e_amount" />
-		<result property="e_count" column="e_count" />
-	</resultMap>
-	<resultMap type="e_listDTO" id="list_rsMap">
-		<result property="e_num" column="e_num" />
-		<result property="e_product" column="e_product" />
+	<resultMap type="chargeDTO" id="rsMap">
 		<result property="member_email" column="member_email" />
-		<result property="name" column="name" />
-		<result property="e_count" column="e_count" />
-		<result property="e_input_date" column="e_input_date" />
-	</resultMap>
-	<resultMap type="e_winnerDTO" id="winner_rsMap">
-		<result property="e_winner_seq" column="e_winner_seq" />
-		<result property="e_num" column="e_num" />
-		<result property="e_product" column="e_product" />
-		<result property="member_email" column="member_email" />
-		<result property="name" column="name" />
+		<result property="money" column="money" />
 	</resultMap>
 	
-	<select id="e_mainAll" resultMap="rsMap">
-		SELECT a.e_num
-	 		 , a.e_product
-	 		 , a.e_amount
-	 		 , b.e_count
-	 	FROM e_main a , (SELECT x.e_num
-	 					   	  , sum(x.e_count) as e_count
-	 					 FROM e_list x
-	 					 GROUP BY x.e_num) b
-	 	WHERE a.e_num = b.e_num(+)
-	 	ORDER BY a.e_num
-	</select>
-	
-	<select id="winnerAll" resultMap="winner_rsMap">
-	select * from e_winner order by e_num asc
-	</select>
-	
-	<insert id="list_insert" parameterType="e_listDTO">
-		INSERT INTO e_list (seq
-						 , e_num
-						 , e_product
-						 , member_email
-						 , name
-						 , e_count
-						 , e_input_date) 
-		VALUES(e_list_seq.NEXTVAL
-		    , #{e_num}
-		    , #{e_product}
-		    , #{member_email}
-		    , #{name}
-		    , #{e_count}
-		    , (SYSDATE))
+	<insert id="insert_money" parameterType="chargeDTO">
+		insert into member_money(member_email,money) values (#{member_email},#{money})
 	</insert>
-	
-	<insert id="insert_winner" parameterType="e_winnerDTO">
-		insert into e_winner(e_winner_seq,e_num,e_product,member_email,name)
-		(select e_winner_seq,e_num,e_product,member_email,name
-		  from (select rownum as e_winner_seq
-		   			 , e_num
-				     , e_product
-					 , member_email
-					 , name
-				  from e_list
-	             where e_num = #{e_num}
-	             order by dbms_random.value)
-	       		 where rownum <![CDATA[ <= ]]> 
-	     (select e_amount from E_MAIN where e_num = #{e_num}))
-	</insert>
+	<select id="moneyAll" resultMap="rsMap">
+		select * from member_money 
+	</select>
+	<select id="member_money" parameterType="chargeDTO" resultMap="rsMap">
+		select sum(money) as money
+			from member_money
+			where member_email=#{member_email}
+	</select>
 	
 	<update id="update" parameterType="donationDTO">
 		UPDATE tablename1
