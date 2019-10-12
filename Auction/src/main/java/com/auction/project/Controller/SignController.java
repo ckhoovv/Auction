@@ -12,7 +12,7 @@ import com.auction.project.Service.SignUpService;
 public class SignController {
 
 	@Autowired
-	SignUpService signUpService; // service 연결
+	SignUpService signUpService; // service �뿰寃�
 
 	@RequestMapping("signIn.do")
 	public void signIn() {

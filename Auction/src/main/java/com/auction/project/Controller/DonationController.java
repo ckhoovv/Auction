@@ -1,11 +1,15 @@
 package com.auction.project.Controller;
 
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.auction.project.DTO.ChargeDTO;
 import com.auction.project.DTO.DonationDTO;
 import com.auction.project.DTO.Donation_ListDTO;
 import com.auction.project.Service.DonationService;
@@ -25,5 +29,12 @@ public class DonationController {
 	public void select_donation(DonationDTO donationDTO,Donation_ListDTO donation_listDTO, Model model) {
 		model.addAttribute("count", donationService.count_donation(donation_listDTO));
 		model.addAttribute("dto", donationService.select_donation(donationDTO));
+	}
+	@RequestMapping("cal_dona.do")
+	public String cal_dona(Donation_ListDTO donation_listDTO,ChargeDTO chargeDTO, Model model) {
+		donationService.cal_dona(donation_listDTO);
+		chargeDTO.setMoney(donation_listDTO.getDona_money());
+		donationService.cal_chardona(chargeDTO);
+		return"redirect:donation_detail.do?dona_num="+donation_listDTO.getDona_num();
 	}
 }

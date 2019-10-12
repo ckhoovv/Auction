@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.auction.project.DTO.ChargeDTO;
 import com.auction.project.DTO.DonationDTO;
 import com.auction.project.DTO.Donation_ListDTO;
 
@@ -26,6 +27,12 @@ public class DonationDAO {
 	}
 	public Donation_ListDTO count_donation(Donation_ListDTO donation_listDTO) {
 		return mybatis.selectOne("donationDAO.count_donation", donation_listDTO);
+	}
+	public void cal_dona( Donation_ListDTO donation_listDTO) {
+		mybatis.insert("donationDAO.cal_dona", donation_listDTO);
+	}
+	public void cal_chardona(ChargeDTO chargeDTO) {
+		mybatis.insert("donationDAO.cal_chardona", chargeDTO);
 	}
 	
 }

@@ -11,6 +11,7 @@ public class SignUpDTO {
 	private String addr1;			//사용자 우편번호
 	private String addr2;			//사용자 주소
 	private String addr3;			//사용자 상세주소
+	private int money;				//사용자 충전금액
 	
 	public String getEmail() {
 		return email;
@@ -71,5 +72,11 @@ public class SignUpDTO {
 	}
 	public void setAddr3(String addr3) {
 		this.addr3 = addr3;
+	}
+	public int getMoney() {
+		return money;
+	}
+	public void setMoney(int money) {
+		this.money = money;
 	}
 }

@@ -19,13 +19,20 @@
 		   AND a.email = #{email}
 	</select>
 	<select id="login_member" parameterType="signUpDTO" resultMap="rsMap">
-		SELECT a.email	<!-- member  / 사용자 이메일 -->
-			 , a.pw		<!-- member  / 사용자 비밀번호 -->
-			 , a.birth	<!-- member  / 사용자 생년월일 -->
-			 , a.name	<!-- member  / 사용자 이름 -->
-			 , a.tel	<!-- member  / 사용자 전화번호 -->
-	 	  FROM member a
-		 WHERE a.email = #{email}
+		SELECT a.email	
+			 , a.pw		
+			 , a.birth	
+			 , a.name	
+			 , a.tel
+			 , b.money
+		  FROM member a
+		     , (select member_email
+		             , sum(money) as money
+		          from MEMBER_MONEY
+		         where member_email = #{email}
+		          group by member_email) b
+		 WHERE a.email = b.member_email
+		   and a.email = #{email}
 		   and a.pw = #{pw}
 	</select>
 	
@@ -48,6 +55,7 @@
 		<result property="addr1" column="addr1" />
 		<result property="addr2" column="addr2" />
 		<result property="addr3" column="addr3" />
+		<result property="money" column="money" />
 	</resultMap>
 	
 	<resultMap type="signUpDTO" id="admin_rsMap">

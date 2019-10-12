@@ -28,6 +28,7 @@ public class SessionController {
 			return "admin_main";
 		} else {
 			session.setAttribute("sessionName", arr[1]);
+			session.setAttribute("sessionMoney", arr[2]);
 			return "main";
 		}
 	}

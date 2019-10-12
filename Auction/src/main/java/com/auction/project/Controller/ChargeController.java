@@ -23,9 +23,10 @@ public class ChargeController {
 		chargeservice.insert_money(chargeDTO);
 		return"redirect:main.do";
 	}
-	@RequestMapping("top.do")
-	public void member_money(ChargeDTO chargeDTO, Model model) {
-		model.addAttribute("m_money", chargeservice.member_money(chargeDTO));
-	}
+	/*
+	 * @RequestMapping("top.do") public void member_money(ChargeDTO chargeDTO, Model
+	 * model) { model.addAttribute("m_money",
+	 * chargeservice.member_money(chargeDTO)); }
+	 */
 	
 }

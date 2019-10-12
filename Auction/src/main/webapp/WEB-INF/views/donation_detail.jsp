@@ -18,6 +18,7 @@
 		<div class="container">
 		<!-- 기부 배너스크롤 -->
 		<div class="banner_scroll">
+			<form action="cal_dona.do">
 			<div class="graph_wrap">
 				<div class="graph_status">
 					<span class="per">
@@ -80,22 +81,29 @@
 				<div class="account_area">
 					<p class="my_account">
 						<span>내 보유금액</span>
-						<strong>10,000</strong>
+						<strong>${sessionScope.sessionMoney}</strong>
 						<span>원</span>
 					</p>
 				</div>
 				<div class="input_area">
 					<span class="money">
-						<input type="text">
+						<input type="hidden" name="dona_num" value="${dto.dona_num}">
+						<input type="hidden" name="dona_tit" value="${dto.dona_tit}">
+						<input type="hidden" name="member_email" value="${sessionScope.sessionEmail}">
+						<input type="hidden" name="dona_date_yy" value="${year}">
+						<input type="hidden" name="dona_date_mm" value="${month}">
+						<input type="hidden" name="dona_date_dd" value="${day}">
+						<input type="text" name="dona_money">
 						<span>원</span>
 					</span>
 				</div>
 			</div>
 				<div class="donation_btn">
-					<a href="#">
+					<button type="submit">
 						<img src="resources/img/donation_btn.png" alt="모금함 기부하기">
-					</a>
+					</button>
 				</div>
+				</form>
 		</div>
 			<div class="collect_wrap">
 				<div class="collect_content">

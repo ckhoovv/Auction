@@ -27,8 +27,8 @@ public class ChargeService implements ChargeInterface{
 	
 	@Override
 	public ChargeDTO member_money(ChargeDTO chargeDTO) {
-		ChargeDTO dto = chargeDAO.member_money(chargeDTO);
-		return dto;
+		ChargeDTO m_money = chargeDAO.member_money(chargeDTO);
+		return m_money;
 	}
 	
 }

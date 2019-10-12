@@ -47,11 +47,12 @@ $(function(){
 	            	var email = check[0];
 	            	var pw = check[1];
 	            	var name = check[2];
+	            	var money = check[3];
 	            	if(email == null || email == "") {
 	            		alert("아이디와 비밀번호를 확인해주세요.")
 	            		$("#email").val("")
 	            	} else {
-	            		location.href='sessionLogin.do?email='+email+','+name;
+	            		location.href='sessionLogin.do?email='+email+','+name+','+money;
 	            	}
 	            },
 	            error : function(xhr, status) {

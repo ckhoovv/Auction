@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.auction.project.DAO.DonationDAO;
+import com.auction.project.DTO.ChargeDTO;
 import com.auction.project.DTO.DonationDTO;
 import com.auction.project.DTO.Donation_ListDTO;
 import com.auction.project.Interface.DonationInterface;
@@ -39,4 +40,15 @@ public class DonationService implements DonationInterface{
 		Donation_ListDTO count_all = donationDAO.count_all(donation_listDTO);
 		return count_all;
 	}
+
+	@Override
+	public void cal_dona(Donation_ListDTO donation_listDTO) {
+		donationDAO.cal_dona(donation_listDTO);
+	}
+
+	@Override
+	public void cal_chardona(ChargeDTO chargeDTO) {
+		donationDAO.cal_chardona(chargeDTO);
+	}
+
 }
