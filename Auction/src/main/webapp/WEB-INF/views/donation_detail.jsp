@@ -19,91 +19,91 @@
 		<!-- 기부 배너스크롤 -->
 		<div class="banner_scroll">
 			<form action="cal_dona.do">
-			<div class="graph_wrap">
-				<div class="graph_status">
-					<span class="per">
-						<strong class="num">${dto.hope}</strong>
-						%
-					</span>
-				</div>
-				<script type="text/javascript">
+				<div class="graph_wrap">
+					<div class="graph_status">
+						<span class="per">
+							<strong class="num">${dto.hope}</strong>
+							%
+						</span>
+					</div>
+					<script type="text/javascript">
+						
+					</script>
+					<div class="graph_bar">
+						<span class="donation_bar" id="donation_bar" style=" width: ${dto.hope}%"></span>
+					</div>
+					<div class="term_area">
+						<p>
+							<strong>
+								${dto.dona_start_yy}.${dto.dona_start_mm}.${dto.dona_start_dd}
+								~
+								${dto.dona_end_yy}.${dto.dona_end_mm}.${dto.dona_end_dd}
+							</strong>
+							<span>까지</span>
+						</p>
+						<div>
+						<input type="hidden" id="end_year" value="${dto.dona_end_yy}">
+						<input type="hidden" id="end_month" value="${dto.dona_end_mm}">
+						<input type="hidden" id="end_day" value="${dto.dona_end_dd}">
+							<span class="d_day">
+								<script type="text/javascript">
+									var end_year = $("#end_year").val();
+								    var end_month = $("#end_month").val();
+								    var end_day = $("#end_day").val();
+								    
+								    var dat1 = new Date();
+								    var year = dat1.getFullYear();
+								    var month = (dat1.getMonth() + 1);
+								    var day = dat1.getDate();
+								    
+								    var now = new Date(year, month, day);
+								    var dat2 = new Date(end_year, end_month, end_day);
+								     
+								    // 날짜 차이 알아 내기
+								    var diff = dat2 - now;
+								    var currDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
+								    document.write("D-" + parseInt(diff/currDay));
+								</script>
+							</span>
+						</div>
+					</div>
 					
-				</script>
-				<div class="graph_bar">
-					<span class="donation_bar" id="donation_bar" style=" width: ${dto.hope}%"></span>
-				</div>
-				<div class="term_area">
-					<p>
-						<strong>
-							${dto.dona_start_yy}.${dto.dona_start_mm}.${dto.dona_start_dd}
-							~
-							${dto.dona_end_yy}.${dto.dona_end_mm}.${dto.dona_end_dd}
-						</strong>
-						<span>까지</span>
-					</p>
-					<div>
-					<input type="hidden" id="end_year" value="${dto.dona_end_yy}">
-					<input type="hidden" id="end_month" value="${dto.dona_end_mm}">
-					<input type="hidden" id="end_day" value="${dto.dona_end_dd}">
-						<span class="d_day">
-							<script type="text/javascript">
-								var end_year = $("#end_year").val();
-							    var end_month = $("#end_month").val();
-							    var end_day = $("#end_day").val();
-							    
-							    var dat1 = new Date();
-							    var year = dat1.getFullYear();
-							    var month = (dat1.getMonth() + 1);
-							    var day = dat1.getDate();
-							    
-							    var now = new Date(year, month, day);
-							    var dat2 = new Date(end_year, end_month, end_day);
-							     
-							    // 날짜 차이 알아 내기
-							    var diff = dat2 - now;
-							    var currDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
-							    document.write("D-" + parseInt(diff/currDay));
-							</script>
+					<div class="num_area">
+						<p class="status_num">
+							<strong>${count.dona_money}</strong>
+							<span>원</span>
+						</p>
+						<p class="purpose_num">
+							<strong>${dto.hope_money}</strong>
+							<span>원 목표</span>
+						</p>
+					</div>
+					<div class="account_area">
+						<p class="my_account">
+							<span>내 보유금액</span>
+							<strong>${sessionScope.sessionMoney}</strong>
+							<span>원</span>
+						</p>
+					</div>
+					<div class="input_area">
+						<span class="money">
+							<input type="hidden" name="dona_num" value="${dto.dona_num}">
+							<input type="hidden" name="dona_tit" value="${dto.dona_tit}">
+							<input type="hidden" name="member_email" value="${sessionScope.sessionEmail}">
+							<input type="hidden" name="dona_date_yy" value="${year}">
+							<input type="hidden" name="dona_date_mm" value="${month}">
+							<input type="hidden" name="dona_date_dd" value="${day}">
+							<input type="text" name="dona_money">
+							<span>원</span>
 						</span>
 					</div>
 				</div>
-				
-				<div class="num_area">
-					<p class="status_num">
-						<strong>${count.dona_money}</strong>
-						<span>원</span>
-					</p>
-					<p class="purpose_num">
-						<strong>${dto.hope_money}</strong>
-						<span>원 목표</span>
-					</p>
-				</div>
-				<div class="account_area">
-					<p class="my_account">
-						<span>내 보유금액</span>
-						<strong>${sessionScope.sessionMoney}</strong>
-						<span>원</span>
-					</p>
-				</div>
-				<div class="input_area">
-					<span class="money">
-						<input type="hidden" name="dona_num" value="${dto.dona_num}">
-						<input type="hidden" name="dona_tit" value="${dto.dona_tit}">
-						<input type="hidden" name="member_email" value="${sessionScope.sessionEmail}">
-						<input type="hidden" name="dona_date_yy" value="${year}">
-						<input type="hidden" name="dona_date_mm" value="${month}">
-						<input type="hidden" name="dona_date_dd" value="${day}">
-						<input type="text" name="dona_money">
-						<span>원</span>
-					</span>
-				</div>
-			</div>
 				<div class="donation_btn">
 					<button type="submit">
 						<img src="resources/img/donation_btn.png" alt="모금함 기부하기">
 					</button>
 				</div>
-				</form>
+			</form>
 		</div>
 			<div class="collect_wrap">
 				<div class="collect_content">

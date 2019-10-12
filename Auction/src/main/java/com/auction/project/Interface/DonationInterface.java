@@ -21,4 +21,5 @@ public interface DonationInterface {
 	
 	public void cal_chardona(ChargeDTO chargeDTO);
 	
+	public ChargeDTO cal_dona_select(ChargeDTO chargeDTO);
 }

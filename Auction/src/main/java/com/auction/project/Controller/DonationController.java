@@ -30,11 +30,15 @@ public class DonationController {
 		model.addAttribute("count", donationService.count_donation(donation_listDTO));
 		model.addAttribute("dto", donationService.select_donation(donationDTO));
 	}
+	
 	@RequestMapping("cal_dona.do")
-	public String cal_dona(Donation_ListDTO donation_listDTO,ChargeDTO chargeDTO, Model model) {
+	public String cal_dona(Donation_ListDTO donation_listDTO,ChargeDTO chargeDTO, Model model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
 		donationService.cal_dona(donation_listDTO);
 		chargeDTO.setMoney(donation_listDTO.getDona_money());
 		donationService.cal_chardona(chargeDTO);
+		Model a = model.addAttribute("f_money", donationService.cal_dona_select(chargeDTO).getMoney());
+		session.setAttribute("sessionMoney", a.asMap().get("f_money"));
 		return"redirect:donation_detail.do?dona_num="+donation_listDTO.getDona_num();
 	}
 }

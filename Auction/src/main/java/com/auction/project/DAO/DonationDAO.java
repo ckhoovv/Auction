@@ -34,5 +34,7 @@ public class DonationDAO {
 	public void cal_chardona(ChargeDTO chargeDTO) {
 		mybatis.insert("donationDAO.cal_chardona", chargeDTO);
 	}
-	
+	public ChargeDTO cal_dona_select(ChargeDTO chargeDTO) {
+		return mybatis.selectOne("donationDAO.cal_dona_select", chargeDTO);
+	}
 }

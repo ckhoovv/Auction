@@ -18,5 +18,9 @@ public class ChargeDTO {
 		this.money = money;
 	}
 	
+	 @Override
+	 public String toString() {
+	  return "PersonDTO [" + member_email +"," + money;
+	 }  
 	
 }

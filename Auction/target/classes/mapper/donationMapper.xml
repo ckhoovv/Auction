@@ -105,6 +105,7 @@
 			       group by x.dona_num) b
 			WHERE a.dona_num = b.dona_num(+) 
 	</select>
+	
 	<insert id="insert_donation" parameterType="donationDTO">
 		INSERT INTO d_dtail
 		VALUES(#{dona_num},#{dona_tit},#{dona_tit_sub},#{dona_con}
@@ -112,17 +113,24 @@
 		,#{dona_end_yy},#{dona_end_mm},#{dona_end_dd})
 	</insert>
 	
-	
 	<insert id="cal_dona" parameterType="donation_listDTO">
 		INSERT INTO d_list
 		VALUES(d_list_sq.NEXTVAL,#{dona_num},#{dona_tit},#{member_email}
 		,#{dona_money},#{dona_date_yy},#{dona_date_mm},#{dona_date_dd})
 	</insert>
+	
+	<select id="cal_dona_select" parameterType="donationDTO" resultMap="charge_rsMap">
+		select member_email
+		     , sum(money) as money
+	 	  from member_money
+		 where member_email = #{member_email}
+		 group by member_email
+	</select>
+	
 	<insert id="cal_chardona" parameterType="chargeDTO">
 		INSERT INTO member_money
 		VALUES(#{member_email},-#{money})
 	</insert>
-	
 	
 	<update id="update" parameterType="donationDTO">
 		UPDATE tablename1

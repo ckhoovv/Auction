@@ -51,4 +51,10 @@ public class DonationService implements DonationInterface{
 		donationDAO.cal_chardona(chargeDTO);
 	}
 
+	@Override
+	public ChargeDTO cal_dona_select(ChargeDTO chargeDTO) {
+		ChargeDTO f_money = donationDAO.cal_dona_select(chargeDTO);
+		return f_money;
+	}
+
 }
