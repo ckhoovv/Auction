@@ -81,6 +81,7 @@
 	<resultMap type="chargeDTO" id="charge_rsMap">
 		<result property="member_email" column="member_email" />
 		<result property="money" column="money" />
+		<result property="coupon" column="coupon" />
 	</resultMap>
 	
 	
@@ -129,8 +130,9 @@
 	
 	<insert id="cal_chardona" parameterType="chargeDTO">
 		INSERT INTO member_money
-		VALUES(#{member_email},-#{money})
+		VALUES(#{member_email},-#{money},#{coupon})
 	</insert>
+	
 	
 	<update id="update" parameterType="donationDTO">
 		UPDATE tablename1

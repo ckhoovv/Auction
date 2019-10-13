@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.auction.project.DAO.E_MainDAO;
+import com.auction.project.DTO.ChargeDTO;
 import com.auction.project.DTO.E_ListDTO;
 import com.auction.project.DTO.E_MainDTO;
 import com.auction.project.DTO.E_WinnerDTO;
@@ -44,5 +45,11 @@ public class E_MainService implements E_MainInterface{
 	@Override
 	public void insert_winner(E_WinnerDTO e_winnerDTO) {
 		e_mainDAO.insert_winner(e_winnerDTO);
+	}
+	@Override
+	public ChargeDTO coupon_select(ChargeDTO chargeDTO) {
+		ChargeDTO coupon = e_mainDAO.coupon_select(chargeDTO);
+		System.out.println(coupon.getCoupon());
+		return coupon;
 	}
 }

@@ -31,7 +31,7 @@
 			<span class="now">
 				<!-- 레이어 선택시  focus 위치 -->
 				<span>나의 응모권수</span>
-				<strong class="mycoupon_cnt">1000</strong>개
+				<strong class="mycoup on_cnt">${coupon.coupon}</strong>개
 			</span>
 			<button type="button" class="winner_view" onclick="popup();">당첨자 보기</button>
 		</div>
@@ -60,27 +60,27 @@
 							<h1 class="product_title"><%= dto.getE_product() %>
 								<strong><%= dto.getE_amount() %>개</strong>
 							</h1>
-									<form action="list_insert.do">
-							<span>응모권  
-								<strong class="coupon_amount">300</strong>개 X
-									<input class="input_count" name="e_count" id="monthlyApply<%= i %>" type="text">회
-								<strong class="all_coupon" id="monthlyApply<%= i %>Sum" style="color: #B7950B;">총 0개</strong>
-							</span>
-							<div class="ly_check" id="monthlyApply<%= i %>LayerApply" style="display: none;">
-								응모시
-								<strong id="monthlyApply<%= i %>SumView">총 0개</strong>
-								를 차감합니다.
-								<br>
-								응모 하시겠습니까?
-								<br>
-									<input type="hidden" name="e_num" value="<%= dto.getE_num()%>">
-									<input type="hidden" name="e_product" value="<%=dto.getE_product() %>">
-									<input type="hidden" name="member_email" value="${ sessionScope.sessionEmail }">
-									<input type="hidden" name="name" value="${ sessionScope.sessionName }">
-								<button type="submit" id="insert_btn" onclick="applyBtn('monthlyApply<%= i %>');">확인</button>
-								<button type="button" onclick="closeLayer('monthlyApply<%= i %>LayerApply');" style="cursor: pointer;">취소</button>
-							</div>
-									</form>
+							<form action="list_insert.do">
+								<span>응모권  
+									<strong class="coupon_amount">300</strong>개 X
+										<input class="input_count" name="e_count" id="monthlyApply<%= i %>" type="text">회
+									<strong class="all_coupon" id="monthlyApply<%= i %>Sum" style="color: #B7950B;">총 0개</strong>
+								</span>
+								<div class="ly_check" id="monthlyApply<%= i %>LayerApply" style="display: none;">
+									응모시
+									<strong id="monthlyApply<%= i %>SumView">총 0개</strong>
+									를 차감합니다.
+									<br>
+									응모 하시겠습니까?
+									<br>
+										<input type="hidden" name="e_num" value="<%= dto.getE_num()%>">
+										<input type="hidden" name="e_product" value="<%=dto.getE_product() %>">
+										<input type="hidden" name="member_email" value="${ sessionScope.sessionEmail }">
+										<input type="hidden" name="name" value="${ sessionScope.sessionName }">
+									<button type="submit" id="insert_btn" onclick="applyBtn('monthlyApply<%= i %>');">확인</button>
+									<button type="button" onclick="closeLayer('monthlyApply<%= i %>LayerApply');" style="cursor: pointer;">취소</button>
+								</div>
+							</form>
 						<button class="event_btn" onclick="applyCheck('300','monthlyApply<%= i %>');">응모하기</button>
 						<br>
 							<span class="event_count">

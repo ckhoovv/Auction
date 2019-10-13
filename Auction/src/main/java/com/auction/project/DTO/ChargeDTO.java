@@ -3,8 +3,18 @@ package com.auction.project.DTO;
 public class ChargeDTO {
 	private String member_email;
 	private int money;
+	private double coupon;
 	
 	
+	
+	
+	
+	public double getCoupon() {
+		return coupon;
+	}
+	public void setCoupon(double coupon) {
+		this.coupon = coupon;
+	}
 	public String getMember_email() {
 		return member_email;
 	}

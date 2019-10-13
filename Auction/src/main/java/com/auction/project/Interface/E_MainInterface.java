@@ -2,6 +2,7 @@ package com.auction.project.Interface;
 
 import java.util.List;
 
+import com.auction.project.DTO.ChargeDTO;
 import com.auction.project.DTO.E_ListDTO;
 import com.auction.project.DTO.E_MainDTO;
 import com.auction.project.DTO.E_WinnerDTO;
@@ -15,4 +16,7 @@ public interface E_MainInterface {
 	public List<E_WinnerDTO> admin_winnerAll();
 	
 	public void insert_winner(E_WinnerDTO e_winnerDTO);
+
+	public ChargeDTO coupon_select(ChargeDTO chargeDTO);
+	
 }
