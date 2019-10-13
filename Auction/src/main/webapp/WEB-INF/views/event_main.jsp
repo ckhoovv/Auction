@@ -31,7 +31,7 @@
 			<span class="now">
 				<!-- 레이어 선택시  focus 위치 -->
 				<span>나의 응모권수</span>
-				<strong class="mycoup on_cnt">${coupon.coupon}</strong>개
+				<strong class="mycoup on_cnt" id="Mycoupon">${coupon.coupon}</strong>개
 			</span>
 			<button type="button" class="winner_view" onclick="popup();">당첨자 보기</button>
 		</div>

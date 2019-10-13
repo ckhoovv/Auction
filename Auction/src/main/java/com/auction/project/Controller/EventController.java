@@ -27,7 +27,7 @@ public class EventController {
 	@RequestMapping("list_insert.do")
 	public String list_insert(E_ListDTO e_listDTO, ChargeDTO chargeDTO, Model model) {
 		e_mainservice.list_insert(e_listDTO);
-
+		System.out.println(chargeDTO.getCoupon());
 		chargeDTO.setMember_email(e_listDTO.getMember_email());
 		model.addAttribute("coupon", e_mainservice.list_insert(chargeDTO));
 		return "redirect:event_main.do";

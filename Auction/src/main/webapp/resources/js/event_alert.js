@@ -5,11 +5,10 @@ function applyCheck(needPoint, cntId) {
 	var selectCount = 0;
 	selectCount = document.getElementById(cntId).value;
 	var sum = parseInt(needPoint * selectCount);
-	
 	if(selectCount == "" || selectCount == "0"){// 응모 횟수 입력 여부 
 		//응모횟수가 0또는 미입력시 div창 띄우기
 		document.getElementById(cntId+"LayerCnt").style.display="block";
-	}else if( sum > 1000 ){// 응모 포인트 부족 여부
+	}else if( sum > mycoupon ){// 응모 포인트 부족 여부
 		//응모에 필요한 총 응모권 수
 		document.getElementById(cntId + "Sum").innerHTML = ("총"+sum+"개");
 		//응모 포인트 부족시 div창 띄우기
