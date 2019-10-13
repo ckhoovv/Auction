@@ -12,47 +12,44 @@ import com.auction.project.Service.E_MainService;
 
 @Controller
 public class EventController {
-	 
-	@Autowired 
+
+	@Autowired
 	E_MainService e_mainservice;
-	
+
 	@RequestMapping("event_main.do")
 	public void e_mainAll(E_ListDTO e_listDTO, ChargeDTO chargeDTO, Model model) {
-		System.out.println(e_listDTO.getMember_email());
 		model.addAttribute("e_main", e_mainservice.e_mainAll());
 
-		chargeDTO.setMember_email(e_listDTO.getMember_email());
-		System.out.println(chargeDTO.getMember_email());
-		model.addAttribute("coupon", e_mainservice.coupon_select(chargeDTO)); 
+		chargeDTO.setMember_email("naver");
+		model.addAttribute("coupon", e_mainservice.list_insert(chargeDTO));
 	}
+
 	@RequestMapping("list_insert.do")
-	public String list_insert(E_ListDTO e_listDTO, ChargeDTO chargeDTO,Model model) {
+	public String list_insert(E_ListDTO e_listDTO, ChargeDTO chargeDTO, Model model) {
 		e_mainservice.list_insert(e_listDTO);
+
 		chargeDTO.setMember_email(e_listDTO.getMember_email());
-		model.addAttribute("coupon", e_mainservice.coupon_select(chargeDTO));
-		
-		return"redirect:event_main.do";
+		model.addAttribute("coupon", e_mainservice.list_insert(chargeDTO));
+		return "redirect:event_main.do";
 	}
+
 	@RequestMapping("popup.do")
 	public void winnerAll(Model model) {
 		model.addAttribute("winnerAll", e_mainservice.winnerAll());
 	}
 
-	/* 관리자 응모관련 */
-	
+	/* 愿�由ъ옄 �쓳紐④��젴 */
+
 	@RequestMapping("admin_event.do")
 	public void admin_winnerAll(Model model) {
 		model.addAttribute("winnerAll", e_mainservice.winnerAll());
 		model.addAttribute("e_main", e_mainservice.e_mainAll());
 	}
+
 	@RequestMapping("winner_insert.do")
 	public String insert_winner(E_WinnerDTO e_winnerDTO) {
 		e_mainservice.insert_winner(e_winnerDTO);
-		return"redirect:admin_event.do";
+		return "redirect:admin_event.do";
 	}
-	
-	
-	
-	
-	
+
 }

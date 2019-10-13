@@ -36,7 +36,7 @@ public class DonationController {
 		HttpSession session = request.getSession();
 		donationService.cal_dona(donation_listDTO);
 		chargeDTO.setMoney(donation_listDTO.getDona_money());
-		double coupon = donation_listDTO.getDona_money() * 0.01;
+		int coupon = (int) Math.floor(donation_listDTO.getDona_money() * 0.01);
 		chargeDTO.setCoupon(coupon);
 		donationService.cal_chardona(chargeDTO);
 		Model money = model.addAttribute("f_money", donationService.cal_dona_select(chargeDTO).getMoney());

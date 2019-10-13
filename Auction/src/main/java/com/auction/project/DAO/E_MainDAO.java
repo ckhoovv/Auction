@@ -36,6 +36,6 @@ public class E_MainDAO {
 	}
 	
 	public ChargeDTO coupon_select (ChargeDTO chargeDTO) {
-		return mybatis.selectOne("e_mainDAO.coupon_select", chargeDTO);
+	      return mybatis.selectOne("e_mainDAO.coupon_select", chargeDTO);
 	}
 }
