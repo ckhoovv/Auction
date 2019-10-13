@@ -24,6 +24,9 @@ public class E_MainDAO {
 	public void list_insert (E_ListDTO e_listDTO) {
 		mybatis.insert("e_mainDAO.list_insert", e_listDTO);
 	}
+	public void list_insert1 (ChargeDTO chargeDTO) {
+		mybatis.insert("e_mainDAO.minus_coupon", chargeDTO);
+	}
 	
 	public List<E_WinnerDTO> winnerAll(){
 		return mybatis.selectList("e_mainDAO.winnerAll");

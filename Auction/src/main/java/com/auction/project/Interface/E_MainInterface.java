@@ -11,6 +11,7 @@ public interface E_MainInterface {
 	public List<E_MainDTO> e_mainAll();
 	
 	public void list_insert(E_ListDTO e_listDTO);
+	public void list_insert1(ChargeDTO chargeDTO);
 	public ChargeDTO list_insert(ChargeDTO chargeDTO);
 	
 	public List<E_WinnerDTO> winnerAll();

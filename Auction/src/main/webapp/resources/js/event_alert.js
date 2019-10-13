@@ -5,6 +5,7 @@ function applyCheck(needPoint, cntId) {
 	var selectCount = 0;
 	selectCount = document.getElementById(cntId).value;
 	var sum = parseInt(needPoint * selectCount);
+	var mycoupon =$("#Mycoupon").text();
 	if(selectCount == "" || selectCount == "0"){// 응모 횟수 입력 여부 
 		//응모횟수가 0또는 미입력시 div창 띄우기
 		document.getElementById(cntId+"LayerCnt").style.display="block";
@@ -28,10 +29,15 @@ function closeLayer(obj){
 	document.getElementById(obj).style.display="none";			
 }
 
-function applyBtn(cntId){
-	//응모 확인시
+function applyBtn(needPoint,cntId){
 	var selectCount = 0;
 	selectCount = document.getElementById(cntId).value;
+	var sum = parseInt(needPoint * selectCount);
+	$('input[name=coupon]').attr('value',sum);
+	$('input[name=e_count]').attr('value',selectCount);
+	
+	
+	//응모 확인시
 	//확인 클릭시 필요한 총 응모권수 초기화
 	document.getElementById(cntId + "Sum").innerHTML = ("총 "+0+"개")
 	//확인클릭시 div창 닫기

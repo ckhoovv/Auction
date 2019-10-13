@@ -54,4 +54,9 @@ public class E_MainService implements E_MainInterface {
 		ChargeDTO coupon = e_mainDAO.coupon_select(chargeDTO);
 		return coupon;
 	}
+
+	@Override
+	public void list_insert1(ChargeDTO chargeDTO) {
+		e_mainDAO.list_insert1(chargeDTO);
+	}
 }

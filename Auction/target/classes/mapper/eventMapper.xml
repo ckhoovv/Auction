@@ -70,6 +70,10 @@
 		    , #{e_count}
 		    , (SYSDATE))
 	</insert>
+	<insert id="minus_coupon" parameterType="chargeDTO">
+		INSERT INTO member_money
+				VALUES(#{member_email},#{money},-#{coupon})
+	</insert>
 	
 	<insert id="insert_winner" parameterType="e_winnerDTO">
 		insert into e_winner(e_winner_seq,e_num,e_product,member_email,name)
