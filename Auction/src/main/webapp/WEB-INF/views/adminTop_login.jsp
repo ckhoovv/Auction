@@ -46,7 +46,7 @@
 			<li style="width: 150px;"><a href="admin_customer_service.do">고객센터</a></li>
 			<li style="width: 150px;"><a href="">기부관리</a> 
 				<ul class="li-2-submenu">
-					<li><a href="#">기부</a></li>
+					<li><a href="admin_donation.do">기부</a></li>
 					<li><a href="admin_event.do">응모</a></li>
 				</ul>
 			</li>

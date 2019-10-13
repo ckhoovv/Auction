@@ -43,4 +43,23 @@ public class DonationController {
 		session.setAttribute("sessionMoney", money.asMap().get("f_money"));
 		return"redirect:donation_detail.do?dona_num="+donation_listDTO.getDona_num();
 	}
+	
+	
+	
+	
+	
+	/* 관리자 기부 관련 */
+	@RequestMapping("admin_donation.do")
+	public void dona_list(DonationDTO donationDTO, Model model) {
+		model.addAttribute("dona_list", donationService.dona_list());
+	}
+	@RequestMapping("delete_donation.do")
+	public String dona_delete(DonationDTO donationDTO, Model model) {
+		model.addAttribute("dona_delete", donationService.dona_delete(donationDTO));
+		
+		return "redirect:admin_donation.do";
+	}
+	
+	
+	
 }

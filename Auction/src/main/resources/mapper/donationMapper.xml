@@ -84,6 +84,9 @@
 		<result property="coupon" column="coupon" />
 	</resultMap>
 	
+	<select id="dona_list" resultMap="rsMap">
+		select * from d_detail order by dona_num asc
+	</select>
 	
 	<select id="selectAll" resultMap="rsMap">
 		SELECT a.dona_num		<!-- d_detail / 기부번호 -->
@@ -142,9 +145,9 @@
 		columnname2 = #{param2}
 	</update>
 
-	<delete id="delete" parameterType="donationDTO">
-		DELETE FROM tablename1 WHERE
-		columnname1 = #{param1}
+	<delete id="dona_delete" parameterType="donationDTO">
+		DELETE FROM d_detail WHERE
+		dona_num = #{dona_num}
 	</delete>
 
 </mapper>

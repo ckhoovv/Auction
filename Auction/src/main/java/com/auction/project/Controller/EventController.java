@@ -44,7 +44,7 @@ public class EventController {
 		model.addAttribute("winnerAll", e_mainservice.winnerAll());
 	}
 
-	/* 愿�由ъ옄 �쓳紐④��젴 */
+	/* 관리자 응모 관련 */
 
 	@RequestMapping("admin_event.do")
 	public void admin_winnerAll(Model model) {
