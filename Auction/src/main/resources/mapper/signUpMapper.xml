@@ -31,7 +31,7 @@
 		          from MEMBER_MONEY
 		         where member_email = #{email}
 		          group by member_email) b
-		 WHERE a.email = b.member_email
+		 WHERE a.email = b.member_email(+)
 		   and a.email = #{email}
 		   and a.pw = #{pw}
 	</select>
@@ -83,7 +83,7 @@
 		INSERT INTO member VALUES(#{email},#{pw},#{name},#{tel},#{birth})
 	</insert>
   	<insert id="insert_address" parameterType="signUpDTO">
-		INSERT INTO address VALUES(#{email},#{place},#{recipient},#{tel},#{addr1},#{addr2},#{addr3})
+		INSERT INTO address VALUES(#{email},#{place},#{name},#{tel},#{addr1},#{addr2},#{addr3})
 	</insert>
 
 	<update id="update" parameterType="signUpDTO">

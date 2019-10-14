@@ -47,7 +47,7 @@
 <script>
 	function clickUpdateButton(a_num) {
 
-		var url = 'test4.do?a_num==' + a_num; <%-- 민영 페이지로 바꿀 것 --%>
+		var url = 'test4.do?a_num=' + a_num; <%-- 민영 페이지로 바꿀 것 --%>
 		var name = 'myPopup';
 		var option = 'scrollbars=no, left=400, top=200, width=700, height=400';
 		

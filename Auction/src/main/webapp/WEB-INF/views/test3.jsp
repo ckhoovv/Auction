@@ -150,6 +150,7 @@
 					alert("경매가 완료 되었습니다.");
 					$("#frm").submit();
 					location.href = "test3.do?a_num=" + a_num;
+					window.opener.location.reload();
 				}
 			}
 		});

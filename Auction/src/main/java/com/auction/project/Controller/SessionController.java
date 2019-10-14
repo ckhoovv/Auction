@@ -21,6 +21,7 @@ public class SessionController {
 		HttpSession session = request.getSession();
 		String[] arr = email.split(",");
 		
+		
 		session.setAttribute("sessionEmail", arr[0]);
 		
 		

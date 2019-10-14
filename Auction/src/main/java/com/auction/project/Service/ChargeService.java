@@ -30,5 +30,17 @@ public class ChargeService implements ChargeInterface{
 		ChargeDTO m_money = chargeDAO.member_money(chargeDTO);
 		return m_money;
 	}
+
+	@Override
+	public ChargeDTO member_select(ChargeDTO chargeDTO) {
+		ChargeDTO s_money = chargeDAO.member_select(chargeDTO);
+		return s_money;
+	}
+
+	@Override
+	public void member_delete(ChargeDTO chargeDTO) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

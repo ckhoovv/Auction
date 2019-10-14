@@ -27,4 +27,12 @@ public class ChargeDAO {
 	public ChargeDTO member_money(ChargeDTO chargeDTO) {
 		return mybatis.selectOne("chargeDAO.member_money", chargeDTO);
 	}
+	
+	public ChargeDTO member_select(ChargeDTO chargeDTO) {
+		return mybatis.selectOne("chargeDAO.member_select", chargeDTO);
+	}
+	
+	public void member_delete (ChargeDTO chargeDTO) {
+		mybatis.delete("chargeDAO.member_delete", chargeDTO);
+	}
 }

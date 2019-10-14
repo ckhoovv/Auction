@@ -10,7 +10,8 @@
 	</resultMap>
 	
 	<insert id="insert_money" parameterType="chargeDTO">
-		insert into member_money(member_email,money) values (#{member_email},#{money})
+		insert into member_money(member_money_seq,member_email,money) 
+						 values (member_money_seq.NEXTVAL,#{member_email},-#{money})
 	</insert>
 	<select id="moneyAll" resultMap="rsMap">
 		select * from member_money 
@@ -21,6 +22,15 @@
 			where member_email=#{member_email}
 	</select>
 	
+	<select id="member_select" parameterType="chargeDTO" resultMap="rsMap">
+		select *
+		  from (select * 
+				  from member_money
+				 where member_money_seq is not null
+				 order by member_money_seq desc)
+		 where rownum = 1
+	</select>
+	
 	<update id="update" parameterType="donationDTO">
 		UPDATE tablename1
 		SET
@@ -29,9 +39,13 @@
 		columnname2 = #{param2}
 	</update>
 
-	<delete id="delete" parameterType="donationDTO">
-		DELETE FROM tablename1 WHERE
-		columnname1 = #{param1}
+	<delete id="member_delete" parameterType="chargeDTO">
+		delete from member_money 
+		 where money = (select money
+		    		      from (select money
+		    		              from member_money
+		    		       		 order by rownum desc)
+		    		     where rownum = 1)
 	</delete>
 
 </mapper>

@@ -29,7 +29,6 @@
 			        		<p>
 			        			<a class="nav_a" href="#">보유 금액 : ${sessionScope.sessionMoney}</a>
 			        			<button type="button" onclick="location.href='charge_money.do'">충전</button>
-			        			<a class="nav_a" href="#">기부 금액 : 10000원</a> 
 			        			<a class="nav_a" href="#"><b>${ sessionScope.sessionName }님 환영합니다.</b></a> 
 			        			<a class="nav_a" href="sessionLogout.do">로그아웃</a> 
 			        			<a class="nav_a" href="myPage.do">마이페이지</a>

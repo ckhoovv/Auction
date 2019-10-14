@@ -72,7 +72,7 @@
 	</insert>
 	<insert id="minus_coupon" parameterType="chargeDTO">
 		INSERT INTO member_money
-				VALUES(#{member_email},#{money},-#{coupon})
+				VALUES(#{member_email},#{money},-#{coupon},member_money_seq.NEXTVAL)
 	</insert>
 	
 	<insert id="insert_winner" parameterType="e_winnerDTO">

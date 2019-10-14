@@ -1,14 +1,17 @@
 package com.auction.project.DTO;
 
 public class ChargeDTO {
+	private int member_money_seq;
 	private String member_email;
 	private int money;
 	private int coupon;
 	
-	
-	
-	
-	
+	public int getMember_money_seq() {
+		return member_money_seq;
+	}
+	public void setMember_money_seq(int member_money_seq) {
+		this.member_money_seq = member_money_seq;
+	}
 	public int getCoupon() {
 		return coupon;
 	}
@@ -32,5 +35,4 @@ public class ChargeDTO {
 	 public String toString() {
 	  return "PersonDTO [" + member_email +"," + money;
 	 }  
-	
 }
