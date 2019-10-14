@@ -27,10 +27,7 @@
 		<mapper resource="mapper/cserviceMapper.xml" />
 		<mapper resource="mapper/eventMapper.xml" />
 		<mapper resource="mapper/chargeMapper.xml" />
-<<<<<<< HEAD
 		<mapper resource="mapper/Fix_recordMapper.xml" />
-=======
 		<mapper resource="mapper/mypageMapper.xml" />
->>>>>>> branch 'master' of https://github.com/ckhoovv/Auction.git
 	</mappers>
 </configuration>
