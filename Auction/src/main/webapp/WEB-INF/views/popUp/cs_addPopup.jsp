@@ -5,16 +5,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
-		<script type="text/javascript">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  		<script type="text/javascript">
 			$(function() {
 				$("#submit").click(function(){
 					var c_tit = $("#c_tit").val(); 
 					var c_con = $("#c_con").val();
-					alert(c_tit);
-					alert(c_con);
 					$.ajax({
 			            url:"insert_popup.do",
+						type:"post",
 			            data: {
 			            	"c_tit" : c_tit,
 			            	"c_con" : c_con

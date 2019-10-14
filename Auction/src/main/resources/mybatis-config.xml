@@ -26,5 +26,6 @@
 		<mapper resource="mapper/cserviceMapper.xml" />
 		<mapper resource="mapper/eventMapper.xml" />
 		<mapper resource="mapper/chargeMapper.xml" />
+		<mapper resource="mapper/mypageMapper.xml" />
 	</mappers>
 </configuration>

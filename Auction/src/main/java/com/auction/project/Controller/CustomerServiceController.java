@@ -48,12 +48,13 @@ public class CustomerServiceController {
 	@RequestMapping("insert_popup.do")
 	public String insert_popup(CServiceDTO cserviceDTO) {
 		cserviceService.cs_insert(cserviceDTO);
-		return "admin_customer_service";
+		return "redirect:cs_addPopup.do";
 	}
 	
 	@RequestMapping("delete_popup.do")
-	public void delete_popup(CServiceDTO cserviceDTO, Model model) {
+	public String delete_popup(CServiceDTO cserviceDTO, Model model) {
 		model.addAttribute("cs_ddto", cserviceService.cs_delete(cserviceDTO));
+		return "redirect:cs_addPopup.do";
 	}
 	
 //	@RequestMapping("delete_popup.do")

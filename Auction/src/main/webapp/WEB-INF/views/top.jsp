@@ -33,7 +33,7 @@
 			        			<a class="nav_a" href="#">기부 금액 : 10000원</a> 
 			        			<a class="nav_a" href="#"><b>${ sessionScope.sessionName }님 환영합니다.</b></a> 
 			        			<a class="nav_a" href="sessionLogout.do">로그아웃</a> 
-			        			<a class="nav_a" href="#">마이페이지</a>
+			        			<a class="nav_a" href="myPage.do">마이페이지</a>
 			        		</p>
 			        	</li>
 			        </ul>
@@ -93,18 +93,6 @@
 	    				<li><a href="donation_main.do">기부</a></li>
 	    				<li><a href="event_main.do">응모</a></li>
 	    			</ul>
-	    		</li>
-    			<li>
-    				<select style="margin-left: 20px;">
-	    				<option value=1>전체</option>
-	    				<option value=1>물품제목</option>
-	    				<option value=1>판매자ID</option>
-	    			</select>
-	    		</li>
-	    		<li style="margin-left: 20px; vertical-align: middle;">
-	    			<form action="" method="post">
-	    				<input type="text" name="search"> <input type="submit" value="검색">
-	    			</form>
 	    		</li>
 		    </ul>
 		</div>
