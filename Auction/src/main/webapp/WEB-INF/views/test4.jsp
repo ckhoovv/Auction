@@ -76,12 +76,13 @@
 </head>
 <body>
 	<jsp:include page="top.jsp" flush="false"></jsp:include>
-	<form id="frm" action="insert.do" method="post">
+	<form id="frm" action="update.do" method="post">
 		<div class="item-register">
 			<ul>
 				<li class="prd-name">
+				<input type="hidden" name="a_num" value="${dto.a_num }">
 					<h4>상품명</h4> <input name="a_title" type="text"
-					id="title" size="82" class="text" value="" style="width: 540px;">
+					id="title" size="82" class="text" value="${dto.a_title }" style="width: 540px;">
 					<p class="tip">
 						<span>자가소비 목적으로 해외에서 직구한 상품을 온라인 등을 통해 되파는 경우, <br>관세법
 							위반으로 형사처벌 대상이 되오니 유의해 주시기 바랍니다.
@@ -104,7 +105,7 @@
 								<tbody>
 									<tr>
 										<th>경매 시작가</th>
-										<td><input id="AuctStartPrice" class="txt" maxlength="9"
+										<td><input id="AuctStartPrice" class="txt" maxlength="9" value="${dto.a_startmoney }"
 											size="9" type="text" name="a_startmoney"
 											style="text-align: Right; ime-mode: disabled; width: 171px; text-align: right; ime-mode: disabled; padding-right: 9px;">
 											원</td>
@@ -119,13 +120,13 @@
 									<tr>
 										<th>경매 마감시간</th>
 										<td class="deadline"><input name="a_endmonth"
-											id="EndMonth" maxlength="2" class="txt" type="text"
+											id="EndMonth" maxlength="2" class="txt" type="text" value="${dto.a_endmonth }"
 											style="text-align: Right; ime-mode: disabled; text-align: center; width: 37px">월 
-											<input name="a_endday" id="EndDay" maxlength="2" class="txt" type="text"
+											<input name="a_endday" id="EndDay" maxlength="2" class="txt" type="text" value="${dto.a_endday }"
 											style="text-align: Right; ime-mode: disabled; text-align: center; width: 35px">일 
-											<input name="a_endhour" id="EndHour" maxlength="2" class="txt" type="text"
+											<input name="a_endhour" id="EndHour" maxlength="2" class="txt" type="text" value="${dto.a_endhour }"
 											style="text-align: Right; ime-mode: disabled; text-align: center; width: 35px;">시
-											<input name="a_endmin" id="EndMin" maxlength="2" class="txt" type="text"
+											<input name="a_endmin" id="EndMin" maxlength="2" class="txt" type="text" value="${dto.a_endmin }"
 											style="text-align: Right; ime-mode: disabled; text-align: center; width: 35px;">분
 											<p>※ 경매 기간은 월/일 만 설정 가능합니다.</p></td>
 									</tr>
@@ -176,7 +177,7 @@
 							<table>
 								<tr>
 									<td width="750px"><textarea rows="10" cols="30" id="ir1"
-											name="a_content" style="width: 750px; height: 400px;"></textarea></td>
+											name="a_content" style="width: 750px; height: 400px;">${dto.a_content }</textarea></td>
 								</tr>
 							</table>
 						</div>

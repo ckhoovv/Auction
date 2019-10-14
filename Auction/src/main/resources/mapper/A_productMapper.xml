@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="a_productDAO">
+
+	<select id="select" parameterType="a_productDTO"
+		resultMap="rsMap">
+		SELECT * from a_product
+		WHERE a_num = #{a_num}
+	</select>
+
+	<resultMap type="a_productDTO" id="rsMap">
+		<result property="a_num" column="a_num" />
+		<result property="a_title" column="a_title" />
+		<result property="a_startmoney" column="a_startmoney" />
+		<result property="a_endmoney" column="a_endmoney" />
+		<result property="a_endmonth" column="a_endmonth" />
+		<result property="a_endday" column="a_endday" />
+		<result property="a_endhour" column="a_endhour" />
+		<result property="a_endmin" column="a_endmin" />
+		<result property="a_content" column="a_content" />
+		<result property="a_drive" column="a_drive" />
+		<result property="a_viewcount" column="a_viewcount" />
+	</resultMap>
+
+	<select id="selectAll" resultMap="rsMap">
+		SELECT * FROM a_product order
+		by a_num desc
+	</select>
+
+	<insert id="insert" parameterType="a_productDTO">
+		INSERT INTO a_product
+		(a_num,a_title,a_startmoney,a_endmoney,a_endmonth,a_endday,a_endhour,a_endmin,a_content,a_drive,a_viewcount)
+		VALUES(a_product_seq.NEXTVAL,#{a_title},#{a_startmoney},#{a_endmoney},#{a_endmonth},#{a_endday},#{a_endhour},#{a_endmin},#{a_content},#{a_drive},#{a_viewcount})
+	</insert>
+
+	<update id="update" parameterType="a_productDTO">
+		UPDATE a_product
+		SET
+		a_title=#{a_title},
+		a_startmoney=#{a_startmoney},
+		a_endmonth=#{a_endmonth},
+		a_endday=#{a_endday},
+		a_endhour=#{a_endhour},
+		a_endmin=#{a_endmin},
+		a_content=#{a_content},
+		a_drive=#{a_drive}
+		WHERE
+		a_num = #{a_num}
+	</update>
+	
+	<update id="moneyupdate" parameterType="a_productDTO">
+		UPDATE a_product
+		SET
+		a_endmoney = #{a_endmoney}
+		WHERE
+		a_num = #{a_num}
+	</update>
+
+	<update id="updatecount" parameterType="a_productDTO">
+		update a_product
+		set
+		a_viewcount = (select a_viewcount from a_product where a_num =
+		#{a_num}) + 1
+		where a_num = #{a_num}
+	</update>
+
+	<delete id="delete" parameterType="a_productDTO">
+		DELETE FROM member WHERE
+		id =
+		#{id}
+	</delete>
+
+</mapper>

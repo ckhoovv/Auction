@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* user review */
+.sprite__vip, 
+.sprite__vip--before:before, 
+.sprite__vip--after:after{background-image:url(//pics.auction.co.kr/pc/sprite/vip/sprite__vip.png);background-repeat:no-repeat;background-size:400px auto}
+
+.section__vip-overview{margin-top:30px}
+.section__vip-review{margin-top:20px}
+.box__vip-overview{overflow:hidden;padding:34px 0;border:1px solid #e5e5e5}
+.box__vip-overview .box__score,
+.box__vip-overview .box__graph{float:left;width:50%;box-sizing:border-box}
+.box__vip-overview .box__score .text__value{font-size:45px;line-height:66px;text-align:center}
+.box__vip-overview .box__score .box__star{width:206px;margin:7px auto 0}
+.box__vip-overview .box__score .box__star .sprite__vip{display:block;height:33px}
+.box__vip-overview .box__score .box__star .image__star{width:210px;background-position:0 -37px}
+.box__vip-overview .box__score .box__star .image__star-fill{background-position:0 0}
+.box__vip-overview .box__graph{border-left:1px solid #edf0f2}
+.box__vip-overview .box__graph .list{overflow:hidden;width:260px;margin:0 auto}
+.box__vip-overview .box__graph .list-item{float:left;position:relative;width:40px;margin-left:15px;padding:26px 0}
+.box__vip-overview .box__graph .list-item:first-child{margin-left:0}
+.box__vip-overview .box__graph .list-item:first-child .text__rate{font-weight:bold;color:#e63740}
+.box__vip-overview .box__graph .box__bar{overflow:hidden;width:8px;margin:0 auto;}
+.box__vip-overview .box__graph .box__bar .sprite__vip{display:block;width:8px;}
+.box__vip-overview .box__graph .box__bar .image__bar{overflow:hidden;position:relative;height:68px;border-radius:4px;background-position:-210px 0}
+.box__vip-overview .box__graph .box__bar .image__bar-fill{position:absolute;left:0;right:0;bottom:0;background-position:-222px 0}
+.box__vip-overview .box__graph .text__label,
+.box__vip-overview .box__graph .text__rate{position:absolute;left:0;right:0;font-size:14px;text-align:center}
+.box__vip-overview .box__graph .text__label{bottom:0;color:#777}
+.box__vip-overview .box__graph .text__rate{top:0;font-weight:bold;color:#999}
+.text__vip-review--none{margin:30px 0;padding:84px 0;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5}
+.text__vip-review--none .text{font-size:16px;color:#acacac;text-align:center}
+.text__vip-review--none .sprite__vip{display:block;width:80px;height:70px;margin:0 auto 18px;background-position:-178px -74px}
+.box__vip-review .box__count{border-top:1px solid #222;border-bottom:1px solid #e1e3eb;background-color:#f1f2f6;font-size:14px;font-weight:bold;line-height:33px;text-align:center}
+.box__list-thumbnail{position:relative;padding:19px 180px 19px 0;border-bottom:1px solid #e5e5e5}
+.box__list-thumbnail .list{overflow:hidden;margin-left:-2px}
+.box__list-thumbnail .list-item{overflow:hidden;float:left}
+.box__list-thumbnail .link{display:block;position:relative;width:60px;height:60px;margin:1px 2px;text-align:center;background-repeat:no-repeat;background-position:center center;background-size:cover}
+.box__list-thumbnail .link:after{content:'';position:absolute;top:0;right:0;bottom:0;left:0;border:1px solid #000;filter:alpha(opacity=7);opacity:0.07;}
+.lt-ie9 .box__list-thumbnail .link:after{content:none}
+.box__list-thumbnail .link .text{display:block;position:absolute;top:0;right:0;bottom:0;left:0;background-color:rgba(0,0,0,0.7);font-size:15px;color:#fff;line-height:60px;text-align:center}
+.lt-ie9 .box__list-thumbnail .link .text{background-color:rgba(0,0,0,.7);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr=#b3000000,endColorStr=#b3000000)";filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#b3000000,endColorStr=#b3000000);zoom:1}
+.box__switch{position:absolute;top:36px;right:0}
+.box__switch .text{display:inline-block;margin-right:4px;font-size:16px;line-height:30px;vertical-align:top;letter-spacing:-0.5px;}
+.box__switch .button.sprite__vip{display:inline-block;width:48px;height:30px;background-position:-317px 0}
+.box__switch .button--active.sprite__vip{background-position:-317px -34px}
+.box__list-review{display:none;padding:20px 0 0}
+.box__list-review.box__list-review--active{display:block}
+.box__review-sort .list{overflow:hidden;}
+.box__review-sort .list-item{float:left;position:relative;padding:0 13px 0 10px;background:url(//pics.auction.co.kr/pc/single/vip/image__bar-sort.gif) no-repeat 100% 3px;font-size:16px;letter-spacing:-0.5px;line-height:19px;}
+.box__review-sort .list-item:first-child{padding:0 10px 0 0;}
+.box__review-sort .list-item .link{color:#222}
+.box__review-sort .list-item .link--active{color:#e63740}
+.box__review-sort .list-item__score .link--active{color:#222}
+.box__review-sort .list-item__score{background:none;vertical-align:top}
+.box__review-sort .list-item__score .sprite__vip{display:inline-block;width:15px;height:19px;margin-left:6px;background-position:-234px -37px;vertical-align:top}
+.box__review-sort .list-item__score .link--active .sprite__vip{background-position:-253px -37px}
+.box__review-sort--score{display:none;margin:20px 0 0}
+.box__review-sort--score .list{overflow:hidden;}
+.box__review-sort--score .list-item{float:left;width:140px;height:44px;padding:0 0 0 4px;}
+.box__review-sort--score .list-item:first-child{padding:0}
+.box__review-sort--score .button{width:100%;height:44px;padding:11px 0 15px;line-height:19px;border:1px solid #e5e5e5}
+.box__review-sort--score .text__score,
+.box__review-sort--score .text__count{display:inline-block;vertical-align:top}
+.box__review-sort--score .text__score .sprite__vip{display:inline-block;width:13px;height:13px;background-position:-386px -46px}
+.box__review-sort--score .text__score .text{display:inline-block;font-size:15px;color:#222}
+.box__review-sort--score .text__count{font-size:13px;color:#888;}
+.box__review-sort--score .list-item.list-item--active .button,
+.box__review-sort--score .list-item .button:hover{border-color:#e63740}
+.box__review-sort--score .list-item.list-item--active .text__score .text{color:#e63740}
+.box__review-sort--score .list-item.list-item--active .text__score .sprite__vip{background-position:-369px -46px}
+.box__list-review .list__review{position:relative;}
+.box__list-review .list__review .list-item{padding:30px 0;border-top:1px solid #efefef;}
+.box__list-review .list__review .list-item:first-child{border:0}
+.box__review-item{position:relative;}
+.box__review-item .box__star .sprite__vip{display:block;height:14px}
+.box__review-item .box__star .image__star{width:79px;background-position:-234px -18px}
+.box__review-item .box__star .image__star-fill{background-position:-234px 0}
+.box__review-item .text__option{margin-top:11px;font-size:13px;color:#7286af}
+.box__review-item .text__option-selected{color:#888}
+.box__review-item .text__return{margin-top:11px;font-size:14px;color:#2e8de5}
+.box__review-item .text__option + .text__return{margin-top:8px}
+.box__review-item .box__review-text{position:relative;margin:8px 0 0;font-size:15px}
+.box__review-item .text__return + .box__review-text{margin-top:0}
+.box__review-item .box__review-text .text{max-width:650px;font-size:15px;line-height:22px}
+.box__review-item .box__review-text .button__view-more{display:block;color:#acacac;border:0}
+.box__review-item .box__review-text .button__view-more::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0}
+.box__review-item .box__list-thumbnail{margin-top:15px;padding:0;border:0}
+.box__review-item .box__list-thumbnail .list{overflow-x:auto;margin-right:-4px;white-space:nowrap}
+.box__review-item .box__list-thumbnail .list-item{overflow:hidden;padding:0;border:0}
+.box__review-item .box__list-thumbnail .link{display:block;width:140px;height:140px;background-repeat:no-repeat;background-position:center center;background-size:cover}
+.box__review-item .box__info{padding-right:170px;font-size:13px;color:#acacac}
+.box__review-item .box__star,
+.box__review-item .text__writer,
+.box__review-item .text__date,
+.box__review-item .box__smileclub{display:inline-block;vertical-align:top}
+.box__review-item .text__writer{padding:0 6px}
+.box__review-item .text__date{position:relative;padding-left:10px;background:url(//pics.auction.co.kr/pc/single/vip/image__bar-date.gif) no-repeat 0 2px;}
+.box__review-item .box__smileclub{margin-left:6px}
+.box__review-item .box__smileclub .sprite__vip{display:block;width:60px;height:16px;background-position:-263px -68px}
+.box__review-item .box__helpful{position:absolute;top:-10px;right:0}
+.box__review-item .box__helpful .text{display:inline-block;margin-right:3px;font-size:13px;color:#acacac;vertical-align:top;line-height:35px}
+.box__review-item .box__helpful .button{min-width:55px;height:35px;padding:0 12px;border:1px solid #e5e5e5;border-radius:18px;background-color:transparent}
+.box__review-item .box__helpful .sprite__vip{display:inline-block;position:relative;top:4px;width:19px;height:19px;background-position:-369px 0}
+.box__review-item .box__helpful .text__count{display:inline-block;margin-left:-2px;font-size:14px;line-height:28px;color:#000}
+.box__review-item .box__helpful .button--active{border-color:#e63740;background-color:#e63740;color:#fff}
+.box__review-item .box__helpful .button--active .sprite__vip{background-position:-369px -23px}
+.box__review-item .box__helpful .button--active .text__count{color:#fff}
+.box__seller-reply{margin-top:15px}
+.box__seller-reply .button{display:block;width:85px;height:24px;background-position:0 -74px}
+.box__seller-reply.box__seller-reply--active .button{background-position:-89px -74px}
+.box__seller-reply .box__seller-reply-text{display:none;position:relative;top:-1px;padding:20px;background-color:#f7f7f7;border:1px solid #e5e5e5}
+.box__seller-reply.box__seller-reply--active .box__seller-reply-text{display:block;}
+.box__seller-reply .box__seller-reply-text .text{font-size:14px;color:#333;line-height:22px}
+.box__seller-reply .text__date{padding:10px 0 0;background:none;font-size:13px;color:#acacac}
+.box__list-photoview{display:none;margin:-1px 0 0 -1px;border-bottom:1px solid #e5e5e5}
+.box__list-photoview.box__list-photoview--active{display:block;border-bottom:0}
+.box__list-photoview .list{overflow:hidden;margin:-5px 0 0 -4px}
+.box__list-photoview .list-item{float:left;padding:5px 0 0 5px}
+.box__list-photoview .link{overflow:hidden;display:block;position:relative;width:168px;height:168px;background-repeat:no-repeat;background-size:cover;background-position:center center;}
+.box__list-photoview .link:after{content:'';position:absolute;top:0;right:0;bottom:0;left:0;border:1px solid #000;filter:alpha(opacity=7);opacity:0.07;}
+.lt-ie9 .box__list-photoview .link:after{content:none}
+.box__vip-review .box__pagination{position:relative;padding:30px 200px;border-top:1px solid #ccc;text-align:center}
+.box__vip-review .box__list-photoview .box__pagination{border-color:#e5e5e5}
+.box__vip-review .box__page-jump{position:absolute;top:30px;right:0}
+.box__vip-review .box__pagination .link__page-number,
+.box__vip-review .box__pagination .box__page-jump .link__page-move,
+.box__vip-review .box__pagination .box__page-jump .form__text{display:inline-block;width:34px;height:34px;margin-left:-5px;background-color:#fafafa;border:1px solid #ccc;font-size:14px;color:#666;line-height:34px;text-decoration:none;vertical-align:top;text-align:center}
+.box__vip-review .box__pagination .box__page-jump .link__page-move{width:58px;background-color:#fff}
+.box__vip-review .box__pagination .link__page-move{display:inline-block;width:60px;height:36px;font-size:14px;color:#666;line-height:36px;text-decoration:none}
+.box__vip-review .box__pagination .link__page-move:hover{color:#333}
+.box__vip-review .box__pagination .link__page-number:hover,
+.box__vip-review .box__pagination .box__page-jump .link__page-move:hover{position:relative;background-color:#f7f7f7;border-color:#aaa}
+.box__vip-review .box__pagination .link__page-number--active,
+.box__vip-review .box__pagination .link__page-number--active:hover{position:relative;background-color:#fff;border-color:#222;font-weight:bold;color:#222;z-index:100;}
+.box__vip-review .box__pagination .link__page-move .sprite__vip{display:inline-block;width:6px;height:10px;margin:0 0 0 4px;background-position:-302px -51px}
+.box__vip-review .box__pagination .link__page-move.link__page-previous .sprite__vip{margin:0 4px 0 0;background-position:-302px -37px}
+.box__vip-review .box__pagination .link__page-move.link__page-next{margin-left:-4px}
+.box__vip-review .box__pagination .box__page-jump .form__text{width:38px;background-color:#fff}
+.box__vip-review .box__pagination .box__page-jump .text__total{margin-left:8px;font-size:14px;line-height:36px;color:#666}
+.box__unexposed-review{min-height:600px;padding:100px 230px;text-align:center;line-height:1.5;box-sizing:border-box}
+.box__unexposed-review .text{margin-top:12px;font-size:14px;color:#666}
+.text__unexposed-review{font-size:16px;color:#222;}
+
+.box__review-loading{position:absolute;top:0;left:0;right:0;bottom:0;background-color:rgba(255, 255, 255, 0.6)}
+.box__review-loading .image__loading{width:52px;height:52px;margin:68px auto 0;border:0;border-radius:0;background:url(//pics.auction.co.kr/pc/single/vip/image__loading@2x.gif) no-repeat center center;background-size:52px auto;}
+
+/* iframe layout */
+.box__layer-photo-viewer{display:none;position:fixed;top:50%;left:50%;width:1120px;height:720px;background-color:#fff;z-index:1010;}
+.box__layer-photo-viewer .box__frame{overflow:hidden;width:100%;height:100%;}
+
+.text__review-sort--none{padding:181px 0;}
+.text__review-sort--none .text{font-size:16px;color:#acacac;text-align:center}
+.text__review-sort--none .sprite__vip{display:block;width:80px;height:70px;margin:0 auto 18px;background-position:-178px -74px}

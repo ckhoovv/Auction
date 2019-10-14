@@ -17,6 +17,7 @@
 		<typeAlias type="com.auction.project.DTO.E_WinnerDTO" alias="e_winnerDTO"></typeAlias>
 		<typeAlias type="com.auction.project.DTO.ChargeDTO" alias="chargeDTO"></typeAlias>
 		<typeAlias type="com.auction.project.DTO.Fix_recordDTO" alias="fix_recordDTO"></typeAlias>
+		<typeAlias alias="a_productDTO" type="com.auction.project.DTO.A_productDTO"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/signUpMapper.xml" />
@@ -29,5 +30,6 @@
 		<mapper resource="mapper/chargeMapper.xml" />
 		<mapper resource="mapper/Fix_recordMapper.xml" />
 		<mapper resource="mapper/mypageMapper.xml" />
+		<mapper resource="mapper/A_productMapper.xml"/>
 	</mappers>
 </configuration>

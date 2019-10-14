@@ -1,3 +1,5 @@
+<%@page import="com.auction.project.DTO.A_productDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,7 +11,8 @@
 <link rel="stylesheet" type="text/css" href="resources/css/list_all.css">
 <link rel="stylesheet" type="text/css" href="resources/css/used.css">
 <link rel="stylesheet" type="text/css" href="resources/css/footer.css">
-<script type="text/javascript" src="resources/js/main.js" charset="UTF-8"></script>
+<script type="text/javascript" src="resources/js/main.js"
+	charset="UTF-8"></script>
 
 </head>
 <body>
@@ -22,13 +25,13 @@
 			<div class="used_prod_wrap used_hp">
 				<div id="hdivTopSort" class="tit_wrap">
 					<h3 class="tit_h3">
-					<img src="http://pics.auction.co.kr/listing/used/2014/tit_real_list.gif" alt="실시간 상품">
+						<img
+							src="http://pics.auction.co.kr/listing/used/2014/tit_real_list.gif"
+							alt="실시간 상품">
 					</h3>
 					<ul class="sort_list" id="hdivSort">
-						<li class="sort_item on"><a href=""
-							onclick="">신규등록순</a></li>
-						<li class="sort_item "><a href=""
-							onclick="">마감임박순</a></li>
+						<li class="sort_item on"><a href="" onclick="">신규등록순</a></li>
+						<li class="sort_item "><a href="" onclick="">마감임박순</a></li>
 					</ul>
 				</div>
 				<div id="ItemListUpdateSlot">
@@ -38,168 +41,42 @@
 					<div id="ucItemList_photoview" class="list_wrap">
 
 						<div class="used_galleryview_wrap">
-						
+
 
 							<ul class="used_prod_list">
-							
-							<%
 
-							%>
-								<li class="gallery_view fst">
- 
+					<%
+				 		 List<A_productDTO> list = (List<A_productDTO>)request.getAttribute("list");
+				         	for(int i = 0; i < list.size(); i++) {
+				            A_productDTO dto = list.get(i);
+				     %>
+								<li class="gallery_view fst" style="margin-right: 40px">
+
 									<div class="item_img">
-										<a href="test1.jsp" target="_blank"> 
-										<img id="ucItemList_rpPhotoLayout_ucItemPhotoLayout_0_itemImage_0"
-											src="./Upload/img1.jpg"
-											style="height: 200px; width: 200px;">
+										<a href="test3.do?a_num=<%= dto.getA_num()%>" target="_blank">
+										<img src="resources/a_productImg/<%= dto.getA_num()%>.jpg" style="height: 200px; width: 200px;">
 										</a>
 									</div>
 									<div class="item_tit">
-										<a
-											href=""
-											target="_blank"></a>
+										<a href="test3.do?a_num=<%= dto.getA_num()%>" target="_blank"><%=dto.getA_title() %></a>
 									</div>
 									<div class="item_price">
-
 										<div class="item_sell">
-											<span class="tit">판매가</span> <span class="cost"><strong>00</strong>원</span>
+											<span class="tit">판매가</span> <span class="cost"><strong><%=dto.getA_endmoney() %></strong>원</span>
 										</div>
 
 									</div>
 									<div class="item_icons">
 										<div class="icon ic_free">
-											<span>배송정보</span>
+											<span><%=dto.getA_drive() %></span>
 										</div>
 									</div>
 									<div class="item_seller">
 										<span class="home"></span><a
-											href="http://search.auction.co.kr/search/listid.aspx?seller=evejini"
 											target="_blank">email</a>
 									</div>
 								</li>
-
-
-
-
-								<li class="gallery_view ">
-
-									<div class="item_img">
-										<a
-											href="http://itempage3.auction.co.kr/DetailView.aspx?ItemNo=B733059141&amp;scoredtype=0"
-											target="_blank"> <img
-											id="ucItemList_rpPhotoLayout_ucItemPhotoLayout_1_itemImage_1"
-											alt="노트fe.노트7.범퍼2개.젤리.유리필름.큐빅링등.6가지" width="200"
-											onerror="if(this.src=='http://pics.auction.co.kr/renewal/lp/img_none_200.gif') return; this.src='http://pics.auction.co.kr/renewal/lp/img_none_200.gif';"
-											imageresizeonload="False" blockadultitems="True"
-											src="http://image.auction.co.kr/itemimage/1a/0f/8c/1a0f8c0c27.jpg"
-											style="height: 200px; width: 200px;">
-										</a>
-									</div>
-									<div class="item_tit">
-										<a
-											href="http://itempage3.auction.co.kr/DetailView.aspx?ItemNo=B733059141&amp;scoredtype=0"
-											target="_blank">노트fe.노트7.범퍼2개.젤리.유리필름.큐빅링등.6가지</a>
-									</div>
-									<div class="item_price">
-
-										<div class="item_sell">
-											<span class="tit">판매가</span> <span class="cost"><strong>10,000</strong>원</span>
-										</div>
-
-									</div>
-									<div class="item_icons">
-										<div class="icon ic_free">
-											<span>무료배송</span>
-										</div>
-									</div>
-									<div class="item_seller">
-										<span class="home"></span><a
-											href="http://search.auction.co.kr/search/listid.aspx?seller=nov74"
-											target="_blank">nov74</a>
-									</div>
-								</li>
-
-
-
-
-								<li class="gallery_view ">
-
-									<div class="item_img">
-										<a
-											href="http://itempage3.auction.co.kr/DetailView.aspx?ItemNo=B733059566&amp;scoredtype=0"
-											target="_blank"> <img
-											id="ucItemList_rpPhotoLayout_ucItemPhotoLayout_2_itemImage_2"
-											alt="(새상품무료배송) 클라비스 트렌치코트" width="200"
-											onerror="if(this.src=='http://pics.auction.co.kr/renewal/lp/img_none_200.gif') return; this.src='http://pics.auction.co.kr/renewal/lp/img_none_200.gif';"
-											imageresizeonload="False" blockadultitems="True"
-											src="http://image.auction.co.kr/itemimage/1a/0f/8c/1a0f8c9287.jpg"
-											style="height: 200px; width: 200px;">
-										</a>
-									</div>
-									<div class="item_tit">
-										<a
-											href="http://itempage3.auction.co.kr/DetailView.aspx?ItemNo=B733059566&amp;scoredtype=0"
-											target="_blank">(새상품무료배송) 클라비스 트렌치코트</a>
-									</div>
-									<div class="item_price">
-
-										<div class="item_sell">
-											<span class="tit">판매가</span> <span class="cost"><strong>24,000</strong>원</span>
-										</div>
-
-									</div>
-									<div class="item_icons">
-										<div class="icon ic_free">
-											<span>무료배송</span>
-										</div>
-									</div>
-									<div class="item_seller">
-										<span class="home"></span><a
-											href="http://search.auction.co.kr/search/listid.aspx?seller=pik4ri"
-											target="_blank">pik4ri</a>
-									</div>
-								</li>
-
-
-
-
-								<li class="gallery_view ">
-
-									<div class="item_img">
-										<a
-											href="http://itempage3.auction.co.kr/DetailView.aspx?ItemNo=B733059520&amp;scoredtype=0"
-											target="_blank"> <img
-											id="ucItemList_rpPhotoLayout_ucItemPhotoLayout_3_itemImage_3"
-											alt="하드디스크 4T 웬스턴디지털" width="200"
-											onerror="if(this.src=='http://pics.auction.co.kr/renewal/lp/img_none_200.gif') return; this.src='http://pics.auction.co.kr/renewal/lp/img_none_200.gif';"
-											imageresizeonload="False" blockadultitems="True"
-											src="http://image.auction.co.kr/itemimage/1a/0f/8c/1a0f8c84e7.jpg"
-											style="height: 200px; width: 200px;">
-										</a>
-									</div>
-									<div class="item_tit">
-										<a
-											href="http://itempage3.auction.co.kr/DetailView.aspx?ItemNo=B733059520&amp;scoredtype=0"
-											target="_blank">하드디스크 4T 웬스턴디지털</a>
-									</div>
-									<div class="item_price">
-
-										<div class="item_sell">
-											<span class="tit">판매가</span> <span class="cost"><strong>84,000</strong>원</span>
-										</div>
-
-									</div>
-									<div class="item_icons">
-										<div class="icon ic_free">
-											<span>무료배송</span>
-										</div>
-									</div>
-									<div class="item_seller">
-										<span class="home"></span><a
-											href="http://search.auction.co.kr/search/listid.aspx?seller=qkrvkstn"
-											target="_blank">skypps</a>
-									</div>
-								</li>
+								<%} %>
 							</ul>
 
 						</div>
