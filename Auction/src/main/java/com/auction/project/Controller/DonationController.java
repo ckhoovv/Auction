@@ -51,6 +51,7 @@ public class DonationController {
 	/* 관리자 기부 관련 */
 	@RequestMapping("admin_donation.do")
 	public void dona_list(DonationDTO donationDTO, Model model) {
+		
 		model.addAttribute("dona_list", donationService.dona_list());
 	}
 	@RequestMapping("delete_donation.do")
@@ -59,6 +60,25 @@ public class DonationController {
 		
 		return "redirect:admin_donation.do";
 	}
+	@RequestMapping("admin_donation_update.do")
+	public void admin_update() {
+		
+	}@RequestMapping("admin_donation_insert.do")
+	public void admin_insert() {
+		
+	}
+	
+	@RequestMapping("donation_update.do")
+	public String dona_update(DonationDTO donationDTO,Model model) {
+		model.addAttribute("dona_update", donationService.dona_update(donationDTO));
+		return "redirect:admin_donation.do";
+	}
+	@RequestMapping("donation_insert.do")
+	public String dona_insert(DonationDTO donationDTO) {
+		donationService.dona_insert(donationDTO);
+		return "redirect:admin_donation.do";
+	}
+
 	
 	
 	

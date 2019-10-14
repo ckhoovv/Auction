@@ -46,4 +46,10 @@ public class DonationDAO {
 	public DonationDTO dona_delete(DonationDTO donationDTO) {
 		return mybatis.selectOne("donationDAO.dona_delete", donationDTO);
 	}
+	public DonationDTO dona_update(DonationDTO donationDTO) {
+		return mybatis.selectOne("donationDAO.dona_update", donationDTO);
+	}
+	public void dona_insert(DonationDTO donationDTO) {
+		mybatis.insert("donationDAO.dona_insert", donationDTO);
+	}
 }

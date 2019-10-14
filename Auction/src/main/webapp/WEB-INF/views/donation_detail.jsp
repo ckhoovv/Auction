@@ -56,6 +56,12 @@
 								    var month = (dat1.getMonth() + 1);
 								    var day = dat1.getDate();
 								    
+								    $(document).ready(function(){
+										$('input[name=dona_date_yy]').attr('value',now.getFullYear());
+									    $('input[name=dona_date_mm]').attr('value',now.getMonth());
+									    $('input[name=dona_date_dd]').attr('value',now.getDate());
+								    });
+								    
 								    var now = new Date(year, month, day);
 								    var dat2 = new Date(end_year, end_month, end_day);
 								     
@@ -90,9 +96,9 @@
 							<input type="hidden" name="dona_num" value="${dto.dona_num}">
 							<input type="hidden" name="dona_tit" value="${dto.dona_tit}">
 							<input type="hidden" name="member_email" value="${sessionScope.sessionEmail}">
-							<input type="hidden" name="dona_date_yy" value="${year}">
-							<input type="hidden" name="dona_date_mm" value="${month}">
-							<input type="hidden" name="dona_date_dd" value="${day}">
+							<input type="hidden" name="dona_date_yy" value="">
+							<input type="hidden" name="dona_date_mm" value="">
+							<input type="hidden" name="dona_date_dd" value="">
 							<input type="text" name="dona_money">
 							<span>원</span>
 						</span>

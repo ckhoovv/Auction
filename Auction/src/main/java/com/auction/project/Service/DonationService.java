@@ -70,4 +70,15 @@ public class DonationService implements DonationInterface{
 		return dona_delete;
 	}
 
+	@Override
+	public DonationDTO dona_update(DonationDTO donationDTO) {
+		DonationDTO dona_update = donationDAO.dona_update(donationDTO);
+		return dona_update;
+	}
+
+	@Override
+	public void dona_insert(DonationDTO donationDTO) {
+		 donationDAO.dona_insert(donationDTO);
+	}
+
 }

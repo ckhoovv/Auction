@@ -8,6 +8,7 @@
 			<meta charset="UTF-8">
 			<title>기부 관리</title>
 			<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+			<script type="text/javascript" src="resources/js/admin_donation_update.js" charset="UTF-8"></script>
 			
 			<style type="text/css">
 			.donation_wrap{
@@ -81,7 +82,7 @@
 			<div class="title">
 				<strong>기부 전체 리스트</strong>
 				<div class="add_donation">
-					<button>기부 추가</button>
+					<button type="button" onclick="location.href='admin_donation_insert.do'">기부 추가</button>
 				</div>
 			</div>
 			<div class="donation_list">
@@ -114,20 +115,15 @@
 									<button type="submit">삭제</button>
 								</form>
 							</li>
-							<li style="float: right; margin-right: 5px;"><button>수정</button></li>
+							<li style="float: right; margin-right: 5px;">
+								<button type="button" onclick="location.href='admin_donation_update.do'">수정</button>
+							</li>
 						</ul>
 					</li>
 					<% } %>
 				</ul>
 			</div>
 		</div>
-		
-		
-		
-		
-		
-	
-	
 	
 		<!-- footer -->
 		<jsp:include page="footer.jsp" flush="false"></jsp:include>

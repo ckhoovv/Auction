@@ -28,4 +28,8 @@ public interface DonationInterface {
 	public List<DonationDTO> dona_list();
 	
 	public DonationDTO dona_delete(DonationDTO donationDTO);
+	
+	public DonationDTO dona_update(DonationDTO donationDTO);
+	
+	public void dona_insert(DonationDTO donationDTO);
 }
