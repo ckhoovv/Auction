@@ -20,8 +20,13 @@ public class MyPageController {
 	}
 
 	@RequestMapping("myPage_member_update.do")
-	public String myPage_member_update(SignUpDTO signUpDTO, Model model) {
+	public void myPage_member_update(SignUpDTO signUpDTO, Model model) {
 		
-		return "myPage_member_update.do";
+	}
+	
+	@RequestMapping("myPage_member_select.do")
+	public String myPage_member_select(SignUpDTO signUpDTO, Model model) {
+		
+		return "myPage_member_select.do";
 	}
 }

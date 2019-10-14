@@ -39,7 +39,7 @@ public class SignUpService implements SignUpInterface {
 	public void SignUp_insert(SignUpDTO signUpDTO) {
 		signUpDAO.insert_member(signUpDTO);
 		signUpDTO.setPlace("home");
-		signUpDTO.setRecipient("choo");
+		signUpDTO.setRecipient(signUpDTO.getName());
 		signUpDAO.insert_address(signUpDTO);
 	}
 
