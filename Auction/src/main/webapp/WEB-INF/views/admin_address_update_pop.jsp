@@ -17,11 +17,6 @@
 			var addr1 = $("#addr1").val(); 
 			var addr2 = $("#addr2").val();
 			var addr3 = $("#addr3").val();
-			alert(member_email);
-			alert(place);
-			alert(addr1);
-			alert(addr2);
-			alert(addr3);
 			$.ajax({
 	            url:"admin_member_update.do",
 				type:"post",
