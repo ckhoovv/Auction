@@ -56,5 +56,29 @@ public class DonationService implements DonationInterface{
 		ChargeDTO f_money = donationDAO.cal_dona_select(chargeDTO);
 		return f_money;
 	}
+	
+	/* 관리자 기부 관련 */
+	@Override
+	public List<DonationDTO> dona_list() {
+		List<DonationDTO> dona_list = donationDAO.dona_list();
+		return dona_list;
+	}
+
+	@Override
+	public DonationDTO dona_delete(DonationDTO donationDTO) {
+		DonationDTO dona_delete =donationDAO.dona_delete(donationDTO);
+		return dona_delete;
+	}
+
+	@Override
+	public DonationDTO dona_update(DonationDTO donationDTO) {
+		DonationDTO dona_update = donationDAO.dona_update(donationDTO);
+		return dona_update;
+	}
+
+	@Override
+	public void dona_insert(DonationDTO donationDTO) {
+		 donationDAO.dona_insert(donationDTO);
+	}
 
 }

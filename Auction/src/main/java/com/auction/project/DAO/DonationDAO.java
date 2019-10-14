@@ -37,4 +37,19 @@ public class DonationDAO {
 	public ChargeDTO cal_dona_select(ChargeDTO chargeDTO) {
 		return mybatis.selectOne("donationDAO.cal_dona_select", chargeDTO);
 	}
+	
+	/* 관리자 기부 관련 */
+	
+	public List<DonationDTO> dona_list(){
+		return mybatis.selectList("donationDAO.dona_list");
+	}
+	public DonationDTO dona_delete(DonationDTO donationDTO) {
+		return mybatis.selectOne("donationDAO.dona_delete", donationDTO);
+	}
+	public DonationDTO dona_update(DonationDTO donationDTO) {
+		return mybatis.selectOne("donationDAO.dona_update", donationDTO);
+	}
+	public void dona_insert(DonationDTO donationDTO) {
+		mybatis.insert("donationDAO.dona_insert", donationDTO);
+	}
 }

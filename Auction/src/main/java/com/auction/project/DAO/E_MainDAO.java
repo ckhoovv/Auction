@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.auction.project.DTO.ChargeDTO;
 import com.auction.project.DTO.E_ListDTO;
 import com.auction.project.DTO.E_MainDTO;
 import com.auction.project.DTO.E_WinnerDTO;
@@ -23,6 +24,9 @@ public class E_MainDAO {
 	public void list_insert (E_ListDTO e_listDTO) {
 		mybatis.insert("e_mainDAO.list_insert", e_listDTO);
 	}
+	public void list_insert1 (ChargeDTO chargeDTO) {
+		mybatis.insert("e_mainDAO.minus_coupon", chargeDTO);
+	}
 	
 	public List<E_WinnerDTO> winnerAll(){
 		return mybatis.selectList("e_mainDAO.winnerAll");
@@ -32,5 +36,9 @@ public class E_MainDAO {
 	}
 	public void insert_winner (E_WinnerDTO e_winnerDTO) {
 		mybatis.insert("e_mainDAO.insert_winner", e_winnerDTO);
+	}
+	
+	public ChargeDTO coupon_select (ChargeDTO chargeDTO) {
+	      return mybatis.selectOne("e_mainDAO.coupon_select", chargeDTO);
 	}
 }

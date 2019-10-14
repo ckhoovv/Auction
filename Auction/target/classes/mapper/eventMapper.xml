@@ -25,6 +25,11 @@
 		<result property="member_email" column="member_email" />
 		<result property="name" column="name" />
 	</resultMap>
+	<resultMap type="chargeDTO" id="charge_rsMap">
+		<result property="member_email" column="member_email" />
+		<result property="money" column="money" />
+		<result property="coupon" column="coupon" />
+	</resultMap>
 	
 	<select id="e_mainAll" resultMap="rsMap">
 		SELECT a.e_num
@@ -40,7 +45,13 @@
 	</select>
 	
 	<select id="winnerAll" resultMap="winner_rsMap">
-	select * from e_winner order by e_num asc
+		select * from e_winner order by e_num asc
+	</select>
+	
+	<select id="coupon_select" parameterType="chargeDTO" resultMap="charge_rsMap">
+		select sum(coupon) as coupon
+		  from member_money
+		 where member_email=#{member_email}
 	</select>
 	
 	<insert id="list_insert" parameterType="e_listDTO">
@@ -58,6 +69,10 @@
 		    , #{name}
 		    , #{e_count}
 		    , (SYSDATE))
+	</insert>
+	<insert id="minus_coupon" parameterType="chargeDTO">
+		INSERT INTO member_money
+				VALUES(#{member_email},#{money},-#{coupon})
 	</insert>
 	
 	<insert id="insert_winner" parameterType="e_winnerDTO">

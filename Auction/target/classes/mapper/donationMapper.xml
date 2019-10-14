@@ -23,7 +23,7 @@
 		        from D_LIST x
 		       where x.dona_num = #{dona_num}
 		       group by x.dona_num) b
-		WHERE a.dona_num = b.dona_num 
+		WHERE a.dona_num = b.dona_num(+) 
 		  and a.dona_num = #{dona_num}
 	</select>
 	<select id="select_list" parameterType="donation_listDTO" resultMap="list_rsMap">
@@ -81,8 +81,12 @@
 	<resultMap type="chargeDTO" id="charge_rsMap">
 		<result property="member_email" column="member_email" />
 		<result property="money" column="money" />
+		<result property="coupon" column="coupon" />
 	</resultMap>
 	
+	<select id="dona_list" resultMap="rsMap">
+		select * from d_detail order by dona_num asc
+	</select>
 	
 	<select id="selectAll" resultMap="rsMap">
 		SELECT a.dona_num		<!-- d_detail / 기부번호 -->
@@ -106,13 +110,6 @@
 			WHERE a.dona_num = b.dona_num(+) 
 	</select>
 	
-	<insert id="insert_donation" parameterType="donationDTO">
-		INSERT INTO d_dtail
-		VALUES(#{dona_num},#{dona_tit},#{dona_tit_sub},#{dona_con}
-		,#{dona_start_yy},#{dona_start_mm},#{dona_start_dd}
-		,#{dona_end_yy},#{dona_end_mm},#{dona_end_dd})
-	</insert>
-	
 	<insert id="cal_dona" parameterType="donation_listDTO">
 		INSERT INTO d_list
 		VALUES(d_list_sq.NEXTVAL,#{dona_num},#{dona_tit},#{member_email}
@@ -129,20 +126,44 @@
 	
 	<insert id="cal_chardona" parameterType="chargeDTO">
 		INSERT INTO member_money
-		VALUES(#{member_email},-#{money})
+		VALUES(#{member_email},-#{money},#{coupon})
 	</insert>
 	
-	<update id="update" parameterType="donationDTO">
-		UPDATE tablename1
-		SET
-		columnname1=#{param1}
-		WHERE
-		columnname2 = #{param2}
+	<insert id="dona_insert" parameterType="donationDTO">
+		INSERT INTO d_detail
+					VALUES(#{dona_num}
+						 , #{dona_tit}
+						 , #{dona_tit_sub}
+						 , #{dona_con}
+						 , #{dona_start_yy}
+						 , #{dona_start_mm}
+						 , #{dona_start_dd}
+						 , #{dona_end_yy}
+						 , #{dona_end_mm}
+						 , #{dona_end_dd}
+						 , #{hope_money})
+	</insert>
+	
+	<update id="dona_update" parameterType="donationDTO">
+		UPDATE d_detail
+					SET
+					  dona_tit= #{dona_tit}
+					, dona_tit_sub= #{dona_tit_sub}
+					, dona_con= #{dona_con}
+					, dona_start_yy= #{dona_start_yy}
+					, dona_start_mm= #{dona_start_mm}
+					, dona_start_dd= #{dona_start_dd}
+					, dona_end_yy= #{dona_end_yy}
+					, dona_end_mm= #{dona_end_mm}
+					, dona_end_dd= #{dona_end_dd}
+					, hope_money = #{hope_money}
+					WHERE
+			dona_num = #{dona_num}
 	</update>
 
-	<delete id="delete" parameterType="donationDTO">
-		DELETE FROM tablename1 WHERE
-		columnname1 = #{param1}
+	<delete id="dona_delete" parameterType="donationDTO">
+		DELETE FROM d_detail WHERE
+		dona_num = #{dona_num}
 	</delete>
 
 </mapper>

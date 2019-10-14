@@ -22,4 +22,14 @@ public interface DonationInterface {
 	public void cal_chardona(ChargeDTO chargeDTO);
 	
 	public ChargeDTO cal_dona_select(ChargeDTO chargeDTO);
+	
+	
+	/* 관리자 기부 관련 */
+	public List<DonationDTO> dona_list();
+	
+	public DonationDTO dona_delete(DonationDTO donationDTO);
+	
+	public DonationDTO dona_update(DonationDTO donationDTO);
+	
+	public void dona_insert(DonationDTO donationDTO);
 }
