@@ -5,21 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원 정보 수정</title>
 <!-- css -->
 <link href="resources/css/signUp.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<h1>회원 정보 수정</h1>
-
-<%--
-	<select name="addressSelect">
-		<c:forEach items="${addressList}" var="item" varStatus="i">
-			<option value="<c:out value="${item.place}" />"><c:out value="${item.place}" /></option>
-		</c:forEach>
-	</select>
- --%>
-	 <c:forEach items="${addressList}" var="item" varStatus="i">
+	<c:forEach items="${addressList}" var="item" varStatus="i">
 		<div class="table_center">
 		<form action="admin_member_update.do" method="post">
 			<input type=hidden name="member_email" value=<c:out value="${item.member_email}" />></td>

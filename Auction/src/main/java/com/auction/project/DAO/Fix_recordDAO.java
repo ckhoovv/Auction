@@ -6,19 +6,16 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.auction.project.DTO.A_proDTO;
+import com.auction.project.DTO.Fix_recordDTO;
 
 @Repository
-public class A_proDAO {
+public class Fix_recordDAO {
 	@Autowired
 	SqlSessionTemplate mybatis;
-
-	public List<A_proDTO> selectAll() {
-		return mybatis.selectList("aproDAO.selectAll");
+	
+	public List<Fix_recordDTO> selectAll() {
+		return mybatis.selectList("fix_recordDAO.selectAll");
 	}
 
-	public int delete(A_proDTO a_proDTO) {
-		return mybatis.delete("aproDAO.delete", a_proDTO);
-	}
 
 }

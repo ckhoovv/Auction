@@ -20,8 +20,8 @@ public class Admin_memberDAO {
 		mybatis.insert("amDAO.insert", memberDTO);
 	}
 
-	public void delete(MemberDTO memberDTO) {
-		mybatis.delete("amDAO.delete", memberDTO);
+	public int delete(MemberDTO memberDTO) {
+		return mybatis.delete("amDAO.delete", memberDTO);
 	}
 
 	public void update(MemberDTO memberDTO) {

@@ -22,7 +22,8 @@
 		<td class="title">마감분</td>
 		<td class="title">마감초</td>
 		<td class="title">날짜</td>
-		<td class="title">수정 / 삭제</td>
+		<td class="title">수정</td>
+		<td class="title">삭제</td>
 	</tr>
 	<c:forEach items="${aproList}" var="item" varStatus="i">
 		<c:choose>
@@ -50,10 +51,8 @@
 					<td><c:out value="${item.a_pro_end_mi}" /></td>
 					<td><c:out value="${item.a_pro_end_ss}" /></td>
 					<td><c:out value="${item.a_pro_date}" /></td>
-					<td><a href="<c:url value='admin_apro_delete.do?a_pro_register=${ item.a_pro_register }' />" class="btn btn-lg btn-default">삭제</a></td>
-					<td><button type="button" onclick="clickUpdateButton(${item.a_pro_register})">수정</button></td>  <!-- 민영 페이지로 바꿀 것 -->
-					<%-- <td><a href="<c:url value='admin_address_update_pop.do?email=${ item.email }' />" class="btn btn-lg btn-default">수정</a></td> --%>
-				</tr>
+					<td><button class="btn btn-primary" type="button" onclick="clickUpdateButton(${item.a_pro_register})">수정</button></td>  <!-- 민영 페이지로 바꿀 것 -->
+					<td><button class="btn btn-primary" type="button" onclick="clickDeleteButton('${item.a_pro_register}')">삭제</button></td>
 	</c:forEach>
 </table>
 </body>
@@ -68,6 +67,26 @@
 		
 		// option 변수를 사용하지 않고 직접 옵션을 넣어줘도 된다.
 		window.open(url, name, option);
+	}
+	
+	function clickDeleteButton(a_pro_register) {
+
+		if (!confirm("삭제하시겠습니까?")) {
+	        return;
+	    }
+		
+	    $.ajax({
+	        url: "admin_apro_delete.do?email=" + a_pro_register,
+	        type:"post",
+	        success: function(result){
+	            if (result=="OK") {
+	                alert("삭제되었습니다.");
+	                location.reload();
+	            } else{
+	                alert("오류가 발생하였습니다.");
+	            }
+	        }
+	    })
 	}
 </script>
 </html>

@@ -22,9 +22,9 @@
 				<span id="clock"></span> <br />
 			</div>
 		</form>
-		<ul class="nav-ul">
-			<li class="nav-li">
-				<p>
+		<ul class="nav-ul" style="margin: 0px;">
+			<li class="nav-li" style="display: inline;">
+				<p style="display: inline;">
 					<a href="#"><b>관리자님 환영합니다.</b></a> <a href="#">로그아웃</a> 
 				</p>
 			</li>
@@ -41,8 +41,7 @@
 				<li><a href="admin_apro_list.do">경매</a></li>
 			</ul></li>
 
-			<li style="width: 150px;"><a href="#">경매승인</a></li>
-			<li style="width: 150px;"><a href="#">전화예약</a></li>
+			<li style="width: 150px;"><a href="admin_fix_record_list.do">경매승인</a></li>
 			<li style="width: 150px;"><a href="admin_customer_service.do">고객센터</a></li>
 			<li style="width: 150px;"><a href="">기부관리</a> 
 				<ul class="li-2-submenu">

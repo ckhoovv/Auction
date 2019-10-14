@@ -18,7 +18,7 @@ public class N_proDAO {
 		return mybatis.selectList("nproDAO.selectAll");
 	}
 
-	public void delete(N_proDTO n_proDTO) {
-		mybatis.delete("nproDAO.delete", n_proDTO);
+	public int delete(N_proDTO n_proDTO) {
+		return mybatis.delete("nproDAO.delete", n_proDTO);
 	}
 }

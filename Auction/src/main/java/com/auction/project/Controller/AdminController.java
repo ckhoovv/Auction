@@ -1,21 +1,26 @@
 package com.auction.project.Controller;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.auction.project.DAO.A_proDAO;
 import com.auction.project.DAO.Admin_memberDAO;
+import com.auction.project.DAO.Fix_recordDAO;
 import com.auction.project.DAO.N_proDAO;
 import com.auction.project.DTO.A_proDTO;
 import com.auction.project.DTO.AddressDTO;
+import com.auction.project.DTO.Fix_recordDTO;
 import com.auction.project.DTO.MemberDTO;
 import com.auction.project.DTO.N_proDTO;
 
@@ -29,6 +34,9 @@ public class AdminController {
 	
 	@Autowired
 	A_proDAO aproDAO;
+	
+	@Autowired
+	Fix_recordDAO fix_recordDAO;
 	 
 	@RequestMapping("admin_main.do")
 	public ModelAndView admin_main() {
@@ -42,7 +50,6 @@ public class AdminController {
 		ModelAndView mv = new ModelAndView();
 		List<MemberDTO> list = amDAO.selectAll();
 	     
-		mv.addObject("testWord", "9999"); // 원하는 값을 ("key", "Value") 형태로전달해서 jsp페이지에서는 ${key}로 사용
 		mv.addObject("memberList", list);
 		
 		mv.setViewName("admin_member");
@@ -50,16 +57,18 @@ public class AdminController {
 	}
 	
 	@RequestMapping("admin_member_delete.do")
-	public ModelAndView admin_member_delete(HttpServletRequest req) {
-		ModelAndView mv = new ModelAndView();
+	@ResponseBody
+	public String admin_member_delete(HttpServletRequest req, HttpServletResponse response) {
 		MemberDTO memberDTO = new MemberDTO();
+		String result = "NG";
 		
 		memberDTO.setEmail(req.getParameter("email"));
 		
-		amDAO.delete(memberDTO);
+		if(amDAO.delete(memberDTO) > 0) {
+			result = "OK";
+		};
 		
-		mv.setViewName("redirect:admin_member.do");
-		return mv;
+		return result;
 	}
 	
 	@RequestMapping("admin_address_update_pop.do")
@@ -96,6 +105,7 @@ public class AdminController {
 		mv.setViewName("admin_address_update");
 		return mv;
 	}
+	//중고 
 	@RequestMapping("admin_npro_list.do")
 	public ModelAndView admin_npro_list() {
 		ModelAndView mv = new ModelAndView();
@@ -108,18 +118,28 @@ public class AdminController {
 	}
 	
 	@RequestMapping("admin_npro_delete.do")
-	public ModelAndView admin_npro_delete(HttpServletRequest req) {
-		ModelAndView mv = new ModelAndView();
+	@ResponseBody
+	public String admin_npro_delete(HttpServletRequest req, HttpServletResponse response) {
 		N_proDTO nproDTO = new N_proDTO();
+		String result = "NG";
 		
-		nproDTO.setN_pro_register(req.getParameter("n_pro_register"));
+		nproDTO.setN_pro_register(req.getParameter("email"));
 		
-		nproDAO.delete(nproDTO);
+		if(nproDAO.delete(nproDTO) > 0) {
+			result = "OK";
+		};
 		
-		mv.setViewName("redirect:admin_npro_list.do");
-		return mv;
+		return result;
 	}
 	
+//	@RequestMapping("admin_main.do")
+//	public ModelAndView admin_main() {
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("admin_main"); // 이동하고자 하는 페이지의 명을 기입
+//		return mv;
+//	}
+	
+	//경매
 	@RequestMapping("admin_apro_list.do")
 	public ModelAndView admin_apro_list() {
 		ModelAndView mv = new ModelAndView();
@@ -132,16 +152,18 @@ public class AdminController {
 	}
 	
 	@RequestMapping("admin_apro_delete.do")
-	public ModelAndView admin_apro_delete(HttpServletRequest req) {
-		ModelAndView mv = new ModelAndView();
+	@ResponseBody
+	public String admin_apro_delete(HttpServletRequest req, HttpServletResponse response) {
 		A_proDTO aproDTO = new A_proDTO();
+		String result = "NG";
 		
-		aproDTO.setA_pro_register(req.getParameter("a_pro_register"));
+		aproDTO.setA_pro_register(req.getParameter("email"));
 		
-		aproDAO.delete(aproDTO);
+		if(aproDAO.delete(aproDTO) > 0) {
+			result = "OK";
+		};
 		
-		mv.setViewName("redirect:admin_apro_list.do");
-		return mv;
+		return result;
 	}
 	
 	@RequestMapping("admin_report_list.do")
@@ -155,6 +177,18 @@ public class AdminController {
 		mv.addObject("nproList", nlist);
 		
 		mv.setViewName("admin_report_list");
+		return mv;
+	}
+	
+	//경매낙찰물품
+	@RequestMapping("admin_fix_record_list.do")
+	public ModelAndView fix_record_list() {
+		ModelAndView mv = new ModelAndView();
+		
+		List<Fix_recordDTO> list = fix_recordDAO.selectAll();
+		mv.addObject("frecordList", list);
+		
+		mv.setViewName("admin_fix_record_list");
 		return mv;
 	}
 	

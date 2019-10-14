@@ -5,7 +5,8 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-
+<link href="resources/css/bootstrapCss/bootstrap.css" rel="stylesheet" />
+<link href="resources/css/capitalStyle.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
 			function chk(){
 			 var req = document.form.req.checked;
@@ -23,26 +24,27 @@
 			 alert("동의하지 않으면 가입하실 수 없습니다");
 			location.href="capitalApply.do";}
 		</script>
+		
 </head>
 <body>
 <jsp:include page="top.jsp" flush="false"></jsp:include>
 	<div class ="visual">
 			<div class="imageVisual">
 				<img src="resources/img/capitalCall.PNG"></img></div>
-					<h2><b>기본 정보</b></h2>
 					<div class="information">
-					이름
+					<h2><b>기본 정보</b></h2>
+					&nbsp;&nbsp;&nbsp;이름
 					<input type="text" name="name" id="name"/><br>
 					연락처
 					<input type="text" name="tel" id="tel"/>-
 					<input type="text" name="tel" id="tel"/>-
 					<input type="text" name="tel" id="tel"/>
-					<button class="visulBtn" onclick ="location=windows.open('capitalResult.jsp')">즉시 신청</button>
+					<button class="btn btn-primary"onclick ="location=windows.open('capitalResult.jsp')">즉시 신청</button>
 					</div>
 		</div>
 		
 		<body>
-<form action="capitalResult.jsp" name="form" method="post">
+<form class= "agree" action="" name="form" method="post">
   <tr>
    <td width="100%" height="50%" align="center">
    <p align="left">
@@ -50,7 +52,7 @@
    SAJO CAPITAL 약관동의</span>
    </p>
    <br>
-   <textarea
+   <textarea class="form-control col-sm-5"
      rows="20" cols="150" readonly>가. 수집하는 개인정보의 항목첫째, 회사는 회원가 입, 원활한 고객상담, 각종 서비스의 제공을 위해 최초 회원가입 당시 아래와 같은 최소한의 개인정보를 필수항목으로 수집하고 있습니다.
 회원가입
 - 이름, 생년월일, 성별, 아이디, 비밀번호, 별명, 연락처(메일주소, 휴대폰 번호 중 선택), 가입인증정보
@@ -80,7 +82,7 @@
   </tr>
   <tr>
    <td align="center" valign="top">
-    <input type="button" value="동의/신청" onclick="chk()"/>&nbsp;&nbsp;&nbsp;
+    <input  type="button" value="동의/신청" onclick="chk()"/>&nbsp;&nbsp;&nbsp;
     <input type="button" value="동의하지 않습니다" onclick="nochk()"/>
    </td>
   </tr>

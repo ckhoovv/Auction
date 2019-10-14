@@ -8,11 +8,10 @@
 		<title>-사조 경매-</title> 
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 		<link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-		<!-- <link href="resources/css/style.css" rel="stylesheet" type="text/css" /> -->
 		<link href="resources/css/capitalStyle.css" rel="stylesheet" type="text/css" />
+		<link href="resources/css/bootstrapCss/bootstrap.css" rel="stylesheet" />
 		<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 		<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    	<!-- <script type="text/javascript" src="resources/js/main.js" charset="UTF-8"></script> -->
 	</head>
 	<body>
 		<jsp:include page="top.jsp" flush="false"></jsp:include>
@@ -32,7 +31,7 @@
 							<br>
 							언제, 어디서든 클릭 한 번 쉽게!
 						</p>
-						 <button class="visulBtn" onclick ="location=windows.open('capitalApply.jsp')">즉시 신청하기</button>
+						 <button class="btn btn-primary" onclick ="location.href='capitalApply.do'">즉시 신청하기</button>
 					</div>
 		</div>
 		<jsp:include page="footer.jsp" flush="false"></jsp:include>
