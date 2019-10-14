@@ -5,63 +5,49 @@
 <b>전체 중고 게시물</b>
 <table class="table">
 	<tr align="center">
-		<td class="title">등록자</td>
 		<td class="title">물품번호</td>
-		<td class="title">물품이름</td>
-		<td class="title">가격</td>
-		<td class="title">시작년도</td>
-		<td class="title">시작월</td>
-		<td class="title">시작날</td>
-		<td class="title">시작시</td>
-		<td class="title">시작분</td>
-		<td class="title">시작초</td>
-		<td class="title">마감년도</td>
+		<td class="title">물품제목</td>
+		<td class="title">시작가격</td>
+		<td class="title">마감가격</td>
 		<td class="title">마감월</td>
-		<td class="title">마감날</td>
+		<td class="title">마감일</td>
 		<td class="title">마감시</td>
 		<td class="title">마감분</td>
-		<td class="title">마감초</td>
-		<td class="title">날짜</td>
+		<td class="title">배송방법</td>
+		<td class="title">조회수</td>
 		<td class="title">수정</td>
 		<td class="title">삭제</td>
 	</tr>
 	<c:forEach items="${aproList}" var="item" varStatus="i">
 		<c:choose>
-			<c:when test="${item.a_pro_register eq '1'}">
+			<c:when test="${item.a_num eq '1'}">
 				<tr align="center" bgcolor="RED">
 			</c:when>
 			<c:otherwise>
 				<tr align="center">
 			</c:otherwise>
 		</c:choose>
-					<td><c:out value="${item.a_pro_register}" /></td>
-					<td><c:out value="${item.a_pro_num}" /></td>
-					<td><c:out value="${item.a_pro_name}" /></td>
-					<td><c:out value="${item.a_pro_price}" /></td>
-					<td><c:out value="${item.a_pro_start_yy}" /></td>
-					<td><c:out value="${item.a_pro_start_mm}" /></td>
-					<td><c:out value="${item.a_pro_start_dd}" /></td>
-					<td><c:out value="${item.a_pro_start_hh}" /></td>
-					<td><c:out value="${item.a_pro_start_mi}" /></td>
-					<td><c:out value="${item.a_pro_start_ss}" /></td>
-					<td><c:out value="${item.a_pro_end_yy}" /></td>
-					<td><c:out value="${item.a_pro_end_mm}" /></td>
-					<td><c:out value="${item.a_pro_end_dd}" /></td>
-					<td><c:out value="${item.a_pro_end_hh}" /></td>
-					<td><c:out value="${item.a_pro_end_mi}" /></td>
-					<td><c:out value="${item.a_pro_end_ss}" /></td>
-					<td><c:out value="${item.a_pro_date}" /></td>
-					<td><button class="btn btn-primary" type="button" onclick="clickUpdateButton(${item.a_pro_register})">수정</button></td>  <!-- 민영 페이지로 바꿀 것 -->
-					<td><button class="btn btn-primary" type="button" onclick="clickDeleteButton('${item.a_pro_register}')">삭제</button></td>
+					<td><c:out value="${item.a_num}" /></td>
+					<td><c:out value="${item.a_title}" /></td>
+					<td><c:out value="${item.a_startmoney}" /></td>
+					<td><c:out value="${item.a_endmoney}" /></td>
+					<td><c:out value="${item.a_endmonth}" /></td>
+					<td><c:out value="${item.a_endday}" /></td>
+					<td><c:out value="${item.a_endhour}" /></td>
+					<td><c:out value="${item.a_endmin}" /></td>
+					<td><c:out value="${item.a_drive}" /></td>
+					<td><c:out value="${item.a_viewcount}" /></td>
+					<td><button class="btn btn-primary" type="button" onclick="clickUpdateButton(${item.a_num})">수정</button></td>  <!-- 민영 페이지로 바꿀 것 -->
+					<td><button class="btn btn-primary" type="button" onclick="clickDeleteButton('${item.a_num}')">삭제</button></td>
 	</c:forEach>
 </table>
 </body>
 
 <jsp:include page="footer.jsp" flush="false"></jsp:include>
 <script>
-	function clickUpdateButton(email) {
+	function clickUpdateButton(a_num) {
 
-		var url = 'admin_address_update_pop.do?email=' + email; <%-- 민영 페이지로 바꿀 것 --%>
+		var url = 'test4.do?a_num==' + a_num; <%-- 민영 페이지로 바꿀 것 --%>
 		var name = 'myPopup';
 		var option = 'scrollbars=no, left=400, top=200, width=700, height=400';
 		

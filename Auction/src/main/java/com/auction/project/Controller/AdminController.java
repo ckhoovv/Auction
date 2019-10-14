@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.auction.project.DAO.A_proDAO;
+import com.auction.project.DAO.A_productDAO;
 import com.auction.project.DAO.Admin_memberDAO;
 import com.auction.project.DAO.Fix_recordDAO;
 import com.auction.project.DAO.N_proDAO;
 import com.auction.project.DTO.A_proDTO;
+import com.auction.project.DTO.A_productDTO;
 import com.auction.project.DTO.AddressDTO;
 import com.auction.project.DTO.Fix_recordDTO;
 import com.auction.project.DTO.MemberDTO;
@@ -33,7 +35,7 @@ public class AdminController {
 	N_proDAO nproDAO;
 	
 	@Autowired
-	A_proDAO aproDAO;
+	A_productDAO a_productDAO;
 	
 	@Autowired
 	Fix_recordDAO fix_recordDAO;
@@ -136,33 +138,33 @@ public class AdminController {
 	public ModelAndView admin_apro_list() {
 		ModelAndView mv = new ModelAndView();
 		
-		List<A_proDTO> list = aproDAO.selectAll();
+		List<A_productDTO> list = a_productDAO.selectAll();
 		mv.addObject("aproList", list);
 		
 		mv.setViewName("admin_apro_list");
 		return mv;
 	}
-	
-	@RequestMapping("admin_apro_delete.do")
-	@ResponseBody
-	public String admin_apro_delete(HttpServletRequest req, HttpServletResponse response) {
-		A_proDTO aproDTO = new A_proDTO();
-		String result = "NG";
-		
-		aproDTO.setA_pro_register(req.getParameter("email"));
-		
-		if(aproDAO.delete(aproDTO) > 0) {
-			result = "OK";
-		};
-		
-		return result;
-	}
+//	
+//	@RequestMapping("admin_apro_delete.do")
+//	@ResponseBody
+//	public String admin_apro_delete(HttpServletRequest req, HttpServletResponse response) {
+//		A_proDTO aproDTO = new A_proDTO();
+//		String result = "NG";
+//		
+//		aproDTO.setA_pro_register(req.getParameter("email"));
+//		
+//		if(aproDAO.delete(aproDTO) > 0) {
+//			result = "OK";
+//		};
+//		
+//		return result;
+//	}
 	
 	@RequestMapping("admin_report_list.do")
 	public ModelAndView admin_report_list() {
 		ModelAndView mv = new ModelAndView();
 		
-		List<A_proDTO> alist = aproDAO.selectAll();
+		List<A_productDTO> alist = a_productDAO.selectAll();
 		mv.addObject("aproList", alist);
 		
 		List<N_proDTO> nlist = nproDAO.selectAll();
