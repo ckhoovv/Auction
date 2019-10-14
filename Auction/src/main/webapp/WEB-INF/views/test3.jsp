@@ -122,6 +122,17 @@
 					</div>
 				</div>
 			</div>
+
+			<div style="width: 1200px;">
+
+				<table style="width: 100%; margin-left: 250px">
+					<tr>
+						<td style="width: AUTO;">${dto.a_content }</td>
+						<!-- 본문 내용 ! -->
+					</tr>
+				</table>
+			</div>
+		</div>
 	</form>
 	<script type="text/javascript">
 		$("#buy").click(function() {
@@ -143,16 +154,6 @@
 			}
 		});
 	</script>
-	<div style="width: 1200px;">
-
-		<table style="width: 100%; margin-left: 250px">
-			<tr>
-				<td style="width: AUTO;">${dto.a_content }</td>
-				<!-- 본문 내용 ! -->
-			</tr>
-		</table>
-	</div>
-	</div>
 
 	<br>
 	<br>
