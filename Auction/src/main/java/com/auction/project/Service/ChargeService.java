@@ -39,8 +39,7 @@ public class ChargeService implements ChargeInterface{
 
 	@Override
 	public void member_delete(ChargeDTO chargeDTO) {
-		// TODO Auto-generated method stub
-		
+		chargeDAO.member_delete(chargeDTO);
 	}
 	
 }

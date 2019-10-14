@@ -41,11 +41,12 @@
 
 	<delete id="member_delete" parameterType="chargeDTO">
 		delete from member_money 
-		 where money = (select money
-		    		      from (select money
-		    		              from member_money
-		    		       		 order by rownum desc)
-		    		     where rownum = 1)
+		 where member_money_seq = (select member_money_seq
+		 							 from (select * 
+		 							         from member_money
+		 							        where member_money_seq is not null
+		 							        order by member_money_seq desc)
+									where rownum = 1)
 	</delete>
 
 </mapper>
