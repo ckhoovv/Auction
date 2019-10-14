@@ -90,16 +90,8 @@ public class AdminController {
 	
 	
 	@RequestMapping("admin_member_update.do")
-	public ModelAndView admin_member_update(HttpServletRequest req) {
+	public ModelAndView admin_member_update(AddressDTO addressDTO, HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
-		AddressDTO addressDTO = new AddressDTO();
-		
-		addressDTO.setMember_email(req.getParameter("member_email"));
-		addressDTO.setPlace(req.getParameter("place"));
-		addressDTO.setAddr1(req.getParameter("addr1"));
-		addressDTO.setAddr2(req.getParameter("addr2"));
-		addressDTO.setAddr3(req.getParameter("addr3"));
-
 		amDAO.updateAddress(addressDTO);
 		
 		mv.setViewName("admin_address_update");
