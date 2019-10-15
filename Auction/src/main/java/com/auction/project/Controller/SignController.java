@@ -39,7 +39,6 @@ public class SignController {
 	@RequestMapping("signUp_result.do")
 	public void signUp(SignUpDTO signUpDTO, Model model) {
 		signUpService.SignUp_insert(signUpDTO);
-		 
 		model.addAttribute("selectsdto", signUpService.signUp_select(signUpDTO));
 	}
 }

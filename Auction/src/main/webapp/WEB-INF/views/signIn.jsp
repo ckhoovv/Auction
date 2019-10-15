@@ -41,18 +41,18 @@
 					<button type="button">아이디/비밀번호 찾기</button>
 				</div>
 			</div>
-			<div class="other_login">
-				<!-- 네이버로그인-->
+			<!-- <div class="other_login">
+				네이버로그인
 				<button class="sign_button" id="b_naver">네이버</button>
-				<!-- 다음로그인-->
+				다음로그인
 				<button class="sign_button" id="b_daum">다음</button>
-				<!-- 구글로그인-->
+				구글로그인
 				<button class="sign_button" id="b_google">구글</button>
-				<!-- 페이스북로그인-->
+				페이스북로그인
 				<button class="sign_button" id="b_facebook">페이스북</button>
-				<!-- 카카오로그인-->
+				카카오로그인
 				<button class="sign_button" id="b_kakao">카카오</button>
-			</div>
+			</div> -->
 		</div>
 		<br><br><br><br>
 		<!-- footer부분 -->

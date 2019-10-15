@@ -18,16 +18,15 @@ public class SignUpService implements SignUpInterface {
 	public SignUpDTO doLogin(SignUpDTO signUpDTO) {
 		SignUpDTO sdto = signUpDAO.login_member(signUpDTO);
 		if (signUpDTO.getEmail().equals(null) || signUpDTO.getEmail().equals("")) {
-			System.out.println("여기 if");
+			System.out.println();
 			sdto.setEmail("no");
 			return null;
 		} else if (signUpDTO.getPw().equals(null) || signUpDTO.getPw().equals("")) {
-			System.out.println("여기 if else" + signUpDTO.getPw());
+			System.out.println(signUpDTO.getPw());
 			sdto.setEmail("no");
 			return null;
 		} else {
-			
-			System.out.println("여기 else" + sdto.getEmail() + sdto.getPw());
+			System.out.println(sdto.getEmail() + sdto.getPw());
 			return sdto;
 		}
 		

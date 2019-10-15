@@ -22,8 +22,7 @@ public class SessionController {
 		String[] arr = email.split(",");
 		
 		session.setAttribute("sessionEmail", arr[0]);
-		
-		
+		/* 관리자 비교 */
 		if(arr[0].equals("root")) {
 			return "admin_main";
 		} else {

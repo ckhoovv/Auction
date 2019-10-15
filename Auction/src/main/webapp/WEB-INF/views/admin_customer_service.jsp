@@ -25,7 +25,6 @@
 	
 	<div class="add">
 		<input type="button" value="추가" onclick="cs_addPopup();" />
-		<input type="button" value="수정" onclick="cs_updatePopup();" />
 		<input type="button" value="삭제" onclick="cs_deletePopup();" />
 	</div>
 	
