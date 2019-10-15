@@ -35,21 +35,15 @@
 	</div>
 	<div class="menubar" style="height: 100px;">
 		<ul>
-			<li><a href="admin_main.do"><img class="auction"
-					src="resources/img/img1.PNG"></a></li>
+			<li><a href="admin_main.do"><img class="auction" src="resources/img/img1.PNG"></a></li>
 			<li style="width: 150px;"><a href="admin_member.do">회원관리</a></li>
-
-			<li style="width: 150px;"><a href="admin_apro_list.do">게시물관리</a>
-			</li>
-
-			<li style="width: 150px;"><a href="admin_fix_record_list.do">경매승인</a></li>
+			<li style="width: 150px;"><a href="admin_apro_list.do">게시물관리</a></li>
 			<li style="width: 150px;"><a href="admin_customer_service.do">고객센터</a></li>
 			<li style="width: 150px;"><a href="">기부관리</a>
 				<ul class="li-2-submenu">
 					<li><a href="admin_donation.do">기부</a></li>
 					<li><a href="admin_event.do">응모</a></li>
 				</ul></li>
-
 		</ul>
 	</div>
 

@@ -55,25 +55,10 @@
 	    	<ul>
 	    		<li><a href="main.do"><img class="auction" src="resources/img/img1.PNG"></a></li>
 	    		<li style="width: 150px;">
-	    			<a href="#">온라인경매</a>
-	    			<ul class="li-2-submenu">
-	    				<li><a href="test1.do">민영경매</a></li>
-	    				<li><a href="test2.do">동원경매</a></li>
-	    			</ul>
+	    			<a href="test2.do">온라인경매</a>
 	    		</li>
 	    		<li style="width: 150px;">
-	    			<a href="#">전문쇼핑몰</a>
-	    			<ul class="li-2-submenu">
-	    				<li><a href="#">민영경매</a></li>
-	    				<li><a href="#">동원경매</a></li>
-	    			</ul>
-	    		</li>
-	    		<li style="width: 150px;">
-	    			<a href="#">물품등록</a>
-	    			<ul class="li-2-submenu">
-	    				<li><a href="#">기훈경매</a></li>
-	    				<li><a href="#">주호경매</a></li>
-	    			</ul>
+	    			<a href="test1.do">물품등록</a>
 	    		</li>
 	    		<li style="width: 150px;">
 	    			<a href="capital.do">캐피탈</a>
