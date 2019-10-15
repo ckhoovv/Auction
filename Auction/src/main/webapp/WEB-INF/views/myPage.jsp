@@ -1,3 +1,8 @@
+<%@page import="com.auction.project.DTO.E_WinnerDTO"%>
+<%@page import="com.auction.project.DTO.E_ListDTO"%>
+<%@page import="com.auction.project.DTO.Donation_ListDTO"%>
+<%@page import="java.util.List"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -5,13 +10,12 @@
 <head>
 <meta charset="UTF-8">
 <title>마이페이지</title>
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="resources/js/myPage.js"></script>
 <style type="text/css">
@@ -160,6 +164,32 @@
 
 </head>
 <script type="text/javascript">
+	function infoBtn(){
+		var email = $("#email").val(); 
+		var tel = $("#tel").val(); 
+		var addr1 = $("#addr1").val(); 
+		var addr2 = $("#addr2").val();
+		var addr3 = $("#addr3").val();
+		$.ajax({
+	        url:"myPage_member_info_update.do",
+			type:"post",
+	        data: {
+	        	"email" : email,
+	        	"tel" : tel,
+	        	"addr1" : addr1,
+	        	"addr2" : addr2,
+	        	"addr3" : addr3
+	        },
+	        success: function(result){
+	        	alert("추가완료");
+				location.href='myPage.do';
+	        },
+	        error : function(xhr, status) {
+	           alert(xhr + " : " + status);
+	        }
+	    });// end ajax
+	}
+	
 	function member_update() {
 		var div = document.getElementById("member_update");
 		div.style.display = 'block';
@@ -231,31 +261,27 @@
 						<h3>My Page</h3>
 					</div>
 					<div>
-						<form id="myForm" action="../member/update_mypage.do"
-							method="post">
-							<p>
-								<label>Email</label> 
-								<input class="w3-input" type="text" id="email" name="email" readonly value="${sessionScope.sessionEmail}">
-							</p>
-							<p>
-								<label>전화번호</label> <input class="w3-input" type="text" id="tel" name="tel" value="${ member.email }" required>
-							</p>
-							<p>
-								<label>주소</label> 
-								<label>우편</label> <input class="w3-input" type="text" id="addr1" name="addr1" value="${ member.email }" 
-									style="width: 150px; border: 1px"  required> 
-								<input class="w3-input" type="text" id="addr2" name="addr2" value="${ member.email }" style="width: 400px" required> 
-								<input class="w3-input" type="text" id="addr3" name="addr3" value="${ member.email }" style="width: 400px" required>
-							</p>
-							<p class="w3-center">
-								<button type="submit" class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">회원정보변경</button>
-							</p>
-						</form>
+						<p>
+							<label>Email</label> 
+							<input class="w3-input" type="text" id="email" name="email" readonly value="${sessionScope.sessionEmail}">
+						</p>
+						<p>
+							<label>전화번호</label> <input class="w3-input" type="text" id="tel" name="tel" value="<c:out value="${my_m_select.tel}"/>" required>
+						</p>
+						<p>
+							<label>주소</label> 
+							<input class="w3-input" type="text" id="addr1" name="addr1" style="width: 150px" value="<c:out value="${my_m_select.addr1}"/>" required> 
+							<input class="w3-input" type="text" id="addr2" name="addr2" value="<c:out value="${my_m_select.addr2}"/>" required> 
+							<input class="w3-input" type="text" id="addr3" name="addr3" value="<c:out value="${my_m_select.addr3}"/>" required>
+						</p>
+						<p class="w3-center">
+							<button type="submit" id="infoBtn" onclick="infoBtn()"class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">회원정보변경</button>
+						</p>
 						<br />
-						<form id="pwForm" action="../member/update_pw.do" method="post">
-							<input type="hidden" name="id" value="${ member.id }">
+							<input type="hidden" name="id" value="${sessionScope.sessionEmail}">
 							<p>
 								<label>비밀번호</label> <input class="w3-input" id="old_pw" name="old_pw" type="password" required>
+								<label id="span_id"></label>
 							</p>
 							<p>
 								<label>새 비밀번호</label> <input class="w3-input" id="pw" name="pw" type="password" required>
@@ -264,9 +290,8 @@
 								<label>비밀번호 확인</label> <input class="w3-input" type="password" id="pw2" type="password" required>
 							</p>
 							<p class="w3-center">
-								<button type="submit" id="joinBtn" class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">비밀번호변경</button>
+								<button type="button" id="passBtn" class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">비밀번호변경</button>
 							</p>
-						</form>
 					</div>
 				</div>
 			</div>
@@ -277,7 +302,26 @@
 				<strong>회원 구매이력</strong>
 			</div>
 			<div style="overflow: auto; width: 850px; height: 652px;">
-				구매이력
+				<table style="width:100%; text-align: center;">
+					  <tr>
+					    <th style="width:50px;">번호</th>
+					    <th style="width:252px;">상품명</th>
+					    <th style="width:252px;">입찰 금액</th>
+					    <th style="width:252px;">입찰 날짜(년/월/일)</th>
+					  </tr>
+					  <% 
+					  List<Donation_ListDTO> my_list = (List<Donation_ListDTO>)request.getAttribute("my_list");
+					  for (int i = 0; i<my_list.size(); i++) {
+						  Donation_ListDTO dto = my_list.get(i);
+					  %>
+					  <tr>
+					    <td><%= i %></td>
+					    <td><%= dto.getDona_tit() %></td>
+					    <td><%= dto.getDona_money() %>원</td>
+					    <td><%= dto.getDona_date_yy() %>/<%= dto.getDona_date_mm() %>/<%= dto.getDona_date_dd() %></td>
+					  </tr>
+					  <% } %>
+				</table>
 			</div>
 		</div>
 		<div class="member_donation_list" id="member_donation_list" style="display: none;">
@@ -293,13 +337,13 @@
 					    <th style="width:252px;">기부 날짜(년/월/일)</th>
 					  </tr>
 					  <% 
-					  for (int i = 0; i<30; i++) {
+					  for (int i = 0; i<3; i++) {
 					  %>
 					  <tr>
 					    <td><%= i %></td>
-					    <td>기부기부</td>
-					    <td>100000원</td>
-					    <td>2019/10/15</td>
+					    <td>></td>
+					    <td>원</td>
+					    <td></td>
 					  </tr>
 					  <% } %>
 				</table>
@@ -318,13 +362,15 @@
 					    <th style="width:252px;">응모 날짜(년/월/일)</th>
 					  </tr>
 					  <% 
-					  for (int i = 0; i<30; i++) {
+					  List<E_ListDTO> my_e_list = (List<E_ListDTO>)request.getAttribute("my_e_list");
+					  for (int i = 0; i<my_e_list.size(); i++) {
+						  E_ListDTO dto = my_e_list.get(i);
 					  %>
 					  <tr>
 					    <td><%= i %></td>
-					    <td>경품경품</td>
-					    <td>232</td>
-					    <td>2019/10/15</td>
+					    <td><%= dto.getE_product() %></td>
+					    <td><%= dto.getE_count() %></td>
+					    <td><%= dto.getE_input_date() %></td>
 					  </tr>
 					  <% } %>
 				</table>
@@ -341,11 +387,13 @@
 					    <th style="width:252px;">당첨 경품</th>
 					  </tr>
 					  <% 
-					  for (int i = 0; i<30; i++) {
+					  List<E_WinnerDTO> my_w_list = (List<E_WinnerDTO>)request.getAttribute("my_w_list");
+					  for (int i = 0; i<my_w_list.size(); i++) {
+						  E_WinnerDTO dto = my_w_list.get(i);
 					  %>
 					  <tr>
 					    <td><%= i %></td>
-					    <td>당첨당첨</td>
+					    <td><%= dto.getE_product() %></td>
 					  </tr>
 					  <% } %>
 				</table>
