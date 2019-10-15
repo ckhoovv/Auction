@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.auction.project.DTO.A_product_listDTO;
 import com.auction.project.DTO.Donation_ListDTO;
 import com.auction.project.DTO.E_ListDTO;
 import com.auction.project.DTO.E_WinnerDTO;
@@ -25,6 +26,9 @@ public class MyPageDAO {
 	}
 	public List<E_WinnerDTO> w_myPage(E_WinnerDTO e_WinnerDTO) {
 		return mybatis.selectList("mypageDAO.my_winner_list", e_WinnerDTO);
+	}
+	public List<A_product_listDTO> p_myPage(A_product_listDTO a_product_listDTO){
+		return mybatis.selectList("mypageDAO.my_pro_list", a_product_listDTO);
 	}
 	
 	public SignUpDTO myPage_member_select(SignUpDTO signUpDTO) {

@@ -1,3 +1,4 @@
+<%@page import="com.auction.project.DTO.A_product_listDTO"%>
 <%@page import="com.auction.project.DTO.E_WinnerDTO"%>
 <%@page import="com.auction.project.DTO.E_ListDTO"%>
 <%@page import="com.auction.project.DTO.Donation_ListDTO"%>
@@ -305,6 +306,33 @@
 				<table style="width:100%; text-align: center;">
 					  <tr>
 					    <th style="width:50px;">번호</th>
+					    <th style="width:252px;">기부 제목</th>
+					    <th style="width:252px;">기부 금액</th>
+					    <th style="width:252px;">기부 날짜(년/월/일)</th>
+					  </tr>
+					  <% 
+					  List<A_product_listDTO> my_p_list = (List<A_product_listDTO>)request.getAttribute("my_p_list");
+					  for (int i = 0; i<my_p_list.size(); i++) {
+						  A_product_listDTO dto = my_p_list.get(i);
+					  %>
+					  <tr>
+					    <td><%= i %></td>
+					    <td><%= dto.getA_title() %></td>
+					    <td><%= dto.getA_endmoney() %>원</td>
+					    <td><%= dto.getA_input_data() %></td>
+					  </tr>
+					  <% } %>
+				</table>
+			</div>
+		</div>
+		<div class="member_donation_list" id="member_donation_list" style="display: none;">
+			<div class="member_donation_list_title">
+				<strong>회원 기부이력</strong>
+			</div>
+			<div style="overflow: auto; width: 850px; height: 652px;">
+				<table style="width:100%; text-align: center;">
+					  <tr>
+					    <th style="width:50px;">번호</th>
 					    <th style="width:252px;">상품명</th>
 					    <th style="width:252px;">입찰 금액</th>
 					    <th style="width:252px;">입찰 날짜(년/월/일)</th>
@@ -319,31 +347,6 @@
 					    <td><%= dto.getDona_tit() %></td>
 					    <td><%= dto.getDona_money() %>원</td>
 					    <td><%= dto.getDona_date_yy() %>/<%= dto.getDona_date_mm() %>/<%= dto.getDona_date_dd() %></td>
-					  </tr>
-					  <% } %>
-				</table>
-			</div>
-		</div>
-		<div class="member_donation_list" id="member_donation_list" style="display: none;">
-			<div class="member_donation_list_title">
-				<strong>회원 기부이력</strong>
-			</div>
-			<div style="overflow: auto; width: 850px; height: 652px;">
-				<table style="width:100%; text-align: center;">
-					  <tr>
-					    <th style="width:50px;">번호</th>
-					    <th style="width:252px;">기부 제목</th>
-					    <th style="width:252px;">기부 금액</th>
-					    <th style="width:252px;">기부 날짜(년/월/일)</th>
-					  </tr>
-					  <% 
-					  for (int i = 0; i<3; i++) {
-					  %>
-					  <tr>
-					    <td><%= i %></td>
-					    <td>></td>
-					    <td>원</td>
-					    <td></td>
 					  </tr>
 					  <% } %>
 				</table>

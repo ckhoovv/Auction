@@ -28,7 +28,7 @@
 		<ul class="nav-ul" style="margin: 0px;">
 			<li class="nav-li" style="display: inline;">
 				<p style="display: inline;">
-					<a href="#"><b>관리자님 환영합니다.</b></a> <a href="#">로그아웃</a>
+					<a href="#"><b>관리자님 환영합니다.</b></a> <a href="sessionLogout.do">로그아웃</a>
 				</p>
 			</li>
 		</ul>

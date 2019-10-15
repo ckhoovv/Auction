@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.auction.project.DAO.MyPageDAO;
+import com.auction.project.DTO.A_product_listDTO;
 import com.auction.project.DTO.DonationDTO;
 import com.auction.project.DTO.Donation_ListDTO;
 import com.auction.project.DTO.E_ListDTO;
@@ -40,6 +41,12 @@ public class MyPageService implements MyPageInterface {
 	}
 
 	@Override
+	public List<A_product_listDTO> p_myPage(A_product_listDTO a_product_listDTO) {
+		List<A_product_listDTO> my_p_list = mypageDAO.p_myPage(a_product_listDTO); 
+		return my_p_list;
+	}
+	
+	@Override
 	public void mypage_update(SignUpDTO signUpDTO) {
 		
 	}
@@ -60,4 +67,5 @@ public class MyPageService implements MyPageInterface {
 	public void myPage_member_password_update(SignUpDTO signUpDTO) {
 		mypageDAO.myPage_member_password_update(signUpDTO);
 	}
+
 }

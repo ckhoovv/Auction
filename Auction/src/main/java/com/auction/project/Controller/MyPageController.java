@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.auction.project.DTO.A_product_listDTO;
 import com.auction.project.DTO.Donation_ListDTO;
 import com.auction.project.DTO.E_ListDTO;
 import com.auction.project.DTO.E_WinnerDTO;
@@ -24,7 +25,7 @@ public class MyPageController {
 	MyPageService mypageService;
 	
 	@RequestMapping("myPage.do")
-	public void myPage(Donation_ListDTO donation_listDTO,E_ListDTO e_listDTO,E_WinnerDTO e_winnerDTO, SignUpDTO signUpDTO, Model model, HttpServletRequest request) {
+	public void myPage(Donation_ListDTO donation_listDTO,E_ListDTO e_listDTO,E_WinnerDTO e_winnerDTO, A_product_listDTO a_product_listDTO , SignUpDTO signUpDTO, Model model, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("sessionEmail");
 		donation_listDTO.setMember_email(email);
@@ -38,6 +39,11 @@ public class MyPageController {
 		
 		signUpDTO.setEmail(email);
 		model.addAttribute("my_m_select", mypageService.myPage_member_select(signUpDTO));
+		
+		a_product_listDTO.setA_email(email);
+		model.addAttribute("my_p_list", mypageService.p_myPage(a_product_listDTO));
+		
+		
 	}
 
 	@RequestMapping("myPage_member_info_update.do")

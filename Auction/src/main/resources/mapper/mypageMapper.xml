@@ -105,6 +105,17 @@
 		<result property="money" column="money" />
 	</resultMap>
 	
+	<resultMap type="a_product_listDTO" id="pro_list_rsMap">
+		<result column="a_email" property="a_email"/>
+		<result property="a_title" column="a_title" />
+		<result property="a_endmoney" column="a_endmoney" />
+		<result property="a_input_data" column="a_input_data" />
+	</resultMap>
+	
+	<select id="my_pro_list" parameterType="a_product_listDTO" resultMap="pro_list_rsMap"> 
+		select * from a_product_list where a_email = #{a_email}
+	</select>
+	
 	<select id="my_dona_list" parameterType="donation_listDTO" resultMap="list_rsMap">
 		select * from d_list where member_email = #{member_email}
 	</select>
