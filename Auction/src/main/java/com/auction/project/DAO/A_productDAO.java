@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.auction.project.DTO.A_productDTO;
 import com.auction.project.DTO.A_product_listDTO;
+import com.auction.project.DTO.MemberDTO;
 
 @Repository
 public class A_productDAO {
@@ -23,8 +24,8 @@ public class A_productDAO {
 	}	
 	
 	
-	public void delete(A_productDTO a_productDTO) {
-		my.delete("a_productDAO.delete", a_productDTO);
+	public int delete(A_productDTO a_productDTO) {
+		return my.delete("a_productDAO.delete", a_productDTO);
 	}
 	
 	public void update(A_productDTO a_productDTO) {

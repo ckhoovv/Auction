@@ -49,20 +49,20 @@
 
 		var url = 'test4.do?a_num=' + a_num; <%-- 민영 페이지로 바꿀 것 --%>
 		var name = 'myPopup';
-		var option = 'scrollbars=no, left=400, top=200, width=700, height=400';
+		var option = 'scrollbars=yes, left=400, top=200, width=1000, height=1000';
 		
 		// option 변수를 사용하지 않고 직접 옵션을 넣어줘도 된다.
 		window.open(url, name, option);
 	}
 	
-	function clickDeleteButton(a_pro_register) {
+	function clickDeleteButton(a_num) {
 
 		if (!confirm("삭제하시겠습니까?")) {
 	        return;
 	    }
 		
 	    $.ajax({
-	        url: "admin_apro_delete.do?email=" + a_pro_register,
+	        url: "admin_apro_delete.do?a_num=" + a_num,
 	        type:"post",
 	        success: function(result){
 	            if (result=="OK") {

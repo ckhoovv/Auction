@@ -55,11 +55,31 @@ public class AdminController {
 	@ResponseBody
 	public String admin_member_delete(HttpServletRequest req, HttpServletResponse response) {
 		MemberDTO memberDTO = new MemberDTO();
+
 		String result = "NG";
 		
 		memberDTO.setEmail(req.getParameter("email"));
+
 		
 		if(amDAO.delete(memberDTO) > 0) {
+			result = "OK";
+		};
+
+		
+		return result;
+	}
+	
+	@RequestMapping("admin_apro_delete.do")
+	@ResponseBody
+	public String admin_pro_delete(HttpServletRequest req, HttpServletResponse response) {
+		
+		String result = "NG";
+		
+		A_productDTO a_productDTO = new A_productDTO();
+		
+		a_productDTO.setA_num(Integer.parseInt((req.getParameter("a_num"))));
+		
+		if(a_productDAO.delete(a_productDTO) > 0) {
 			result = "OK";
 		};
 		

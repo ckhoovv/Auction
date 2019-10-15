@@ -84,9 +84,8 @@
 	</update>
 
 	<delete id="delete" parameterType="a_productDTO">
-		DELETE FROM member WHERE
-		id =
-		#{id}
+		DELETE FROM a_product WHERE
+		a_num = #{a_num}
 	</delete>
 
 </mapper>
