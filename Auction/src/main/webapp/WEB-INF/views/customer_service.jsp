@@ -42,6 +42,8 @@
 			%>
 		</ul>		
 	</div>
+	<hr style="color: black; size: 100px;"></hr>
+	<jsp:include page="footer.jsp" flush="false"></jsp:include>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('.faq_list').boardSlide({
