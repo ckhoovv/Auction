@@ -90,25 +90,6 @@
 						<div class="paginate">
 
 							<span class="num"> <a href="javascript:void(0)" class="on">1</a>
-
-								<a href="javascript:void(0);"
-								onclick="javascript:SearchAreaCode('Unknown','itemlist_page_num').avalue('ASN', 2).send();pvprofiler.sendEvt('click','','pagenation_2',{});SearchWebLog.log(''); Pager.onPageNumberClick(1,'','');">2</a>
-
-								<a href="javascript:void(0);"
-								onclick="javascript:SearchAreaCode('Unknown','itemlist_page_num').avalue('ASN', 3).send();pvprofiler.sendEvt('click','','pagenation_3',{});SearchWebLog.log(''); Pager.onPageNumberClick(2,'','');">3</a>
-
-								<a href="javascript:void(0);"
-								onclick="javascript:SearchAreaCode('Unknown','itemlist_page_num').avalue('ASN', 4).send();pvprofiler.sendEvt('click','','pagenation_others',{});SearchWebLog.log(''); Pager.onPageNumberClick(3,'','');">4</a>
-
-								<a href="javascript:void(0);"
-								onclick="javascript:SearchAreaCode('Unknown','itemlist_page_num').avalue('ASN', 5).send();pvprofiler.sendEvt('click','','pagenation_others',{});SearchWebLog.log(''); Pager.onPageNumberClick(4,'','');">5</a>
-
-								<a href="javascript:void(0);"
-								onclick="javascript:SearchAreaCode('Unknown','itemlist_page_num').avalue('ASN', 6).send();pvprofiler.sendEvt('click','','pagenation_others',{});SearchWebLog.log(''); Pager.onPageNumberClick(5,'','');">6</a>
-
-								<a href="javascript:void(0);"
-								onclick="javascript:SearchAreaCode('Unknown','itemlist_page_num').avalue('ASN', 7).send();pvprofiler.sendEvt('click','','pagenation_others',{});SearchWebLog.log(''); Pager.onPageNumberClick(6,'','');">7</a>
-
 							</span> <span class="nxt"><a href="javascript:void(0);"
 								onclick="javascript:SearchAreaCode('Unknown','itemlist_page_move').avalue('way', 'R').send();Pager.onPageNumberClick(1,'','');">다음</a>
 								<span class="arr"></span></span> <br> <br> <br>
