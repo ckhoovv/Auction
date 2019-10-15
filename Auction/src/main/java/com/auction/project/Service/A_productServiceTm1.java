@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.auction.project.DAO.A_productDAO;
 import com.auction.project.DTO.A_productDTO;
+import com.auction.project.DTO.A_product_listDTO;
 import com.auction.project.Interface.A_productService;
 
 @Service
@@ -65,6 +66,11 @@ public class A_productServiceTm1 implements A_productService {
 	@Override
 	public void moneyupdate(A_productDTO a_productDTO) {
 		a_productDAO.moneyupdate(a_productDTO);
+	}
+
+	@Override
+	public void insert_list(A_product_listDTO a_product_listDTO) {
+		a_productDAO.insert_list(a_product_listDTO);
 	}
 
 }

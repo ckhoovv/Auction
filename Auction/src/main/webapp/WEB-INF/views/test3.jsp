@@ -70,6 +70,7 @@
 			<div class="item-topinfo">
 				<div id="hdivItemInfo"></div>
 				<h1 class="itemtit">
+
 					<span class="text__item-title">${dto.a_title }</span>
 				</h1>
 				<div class="price_wrap">
@@ -111,6 +112,8 @@
 						<fieldset>
 							<div id="ucItemOrderInfo_ucItemOrderButtons_hdivBuy"
 								class="item-bottombtns">
+								<input type="hidden" name="a_email" value="${dto.a_email}">
+								<input type="hidden" name="a_title" value="${dto.a_title }">
 								<button type="button" id="buy"
 									style="width: 270px; height: 60px; background: #e63740; border: 1px solid #222222; margin-right: 10px">경매하기
 								</button>

@@ -73,7 +73,7 @@
 									</div>
 									<div class="item_seller">
 										<span class="home"></span><a
-											target="_blank">email</a>
+											target="_blank"><%=dto.getA_email() %></a>
 									</div>
 								</li>
 								<%} %>

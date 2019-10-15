@@ -21,19 +21,36 @@
 		<result property="a_endmin" column="a_endmin" />
 		<result property="a_content" column="a_content" />
 		<result property="a_drive" column="a_drive" />
+		<result column="a_email" property="a_email"/>
 		<result property="a_viewcount" column="a_viewcount" />
 	</resultMap>
 
+	<resultMap type="a_product_listDTO" id="list_rsMap">
+		<result column="a_email" property="a_email"/>
+		<result property="a_title" column="a_title" />
+		<result property="a_endmoney" column="a_endmoney" />
+		<result property="a_input_data" column="a_input_data" />
+	</resultMap>
+	
+	
 	<select id="selectAll" resultMap="rsMap">
 		SELECT * FROM a_product order
 		by a_num desc
 	</select>
 
 	<insert id="insert" parameterType="a_productDTO">
-		INSERT INTO a_product
-		(a_num,a_title,a_startmoney,a_endmoney,a_endmonth,a_endday,a_endhour,a_endmin,a_content,a_drive,a_viewcount)
-		VALUES(a_product_seq.NEXTVAL,#{a_title},#{a_startmoney},#{a_endmoney},#{a_endmonth},#{a_endday},#{a_endhour},#{a_endmin},#{a_content},#{a_drive},#{a_viewcount})
+		INSERT INTO a_product(a_num,a_title,a_startmoney,a_endmoney,a_endmonth,
+								a_endday,a_endhour,a_endmin,a_content,a_drive,a_email,a_viewcount)
+									VALUES(a_product_seq.NEXTVAL,#{a_title},#{a_startmoney},
+											#{a_endmoney},#{a_endmonth},#{a_endday},#{a_endhour},#{a_endmin},
+											#{a_content},#{a_drive},#{a_email},#{a_viewcount})
 	</insert>
+	
+	<insert id="insert_list" parameterType="a_product_listDTO">
+		insert into a_product_list(a_email,a_title,a_endmoney,a_input_data)
+			 values(#{a_email},#{a_title},#{a_endmoney},(SYSDATE))
+	</insert>
+	
 
 	<update id="update" parameterType="a_productDTO">
 		UPDATE a_product
