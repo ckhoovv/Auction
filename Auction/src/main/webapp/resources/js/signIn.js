@@ -56,7 +56,10 @@ $(function(){
 	            	}
 	            },
 	            error : function(xhr, status) {
-	               alert(xhr + " : " + status);
+	            	alert("아이디와 비밀번호를 확인해주세요.")
+	            	$("#email").val("")
+	            	$("#pw").val("")
+	               /*alert(xhr + " : " + status);*/
 	            }
 	        });// end ajax
 		}

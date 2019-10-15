@@ -20,6 +20,7 @@ public class SignController {
 	
 	@RequestMapping("doLogin.do")
 	public String doLogin(SignUpDTO signUpDTO, Model model) {
+		
 		model.addAttribute("sdto", signUpService.doLogin(signUpDTO));
 		return "login_check";
 	}

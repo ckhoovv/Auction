@@ -17,7 +17,22 @@ public class SignUpService implements SignUpInterface {
 	@Override
 	public SignUpDTO doLogin(SignUpDTO signUpDTO) {
 		SignUpDTO sdto = signUpDAO.login_member(signUpDTO);
-		return sdto;
+		if (signUpDTO.getEmail().equals(null) || signUpDTO.getEmail().equals("")) {
+			System.out.println("여기 if");
+			sdto.setEmail("no");
+			return null;
+		} else if (signUpDTO.getPw().equals(null) || signUpDTO.getPw().equals("")) {
+			System.out.println("여기 if else" + signUpDTO.getPw());
+			sdto.setEmail("no");
+			return null;
+		} else {
+			
+			System.out.println("여기 else" + sdto.getEmail() + sdto.getPw());
+			return sdto;
+		}
+		
+//		SignUpDTO sdto = signUpDAO.login_member(signUpDTO);
+//		return sdto;
 	}
 	
 	//관리자 로그인
