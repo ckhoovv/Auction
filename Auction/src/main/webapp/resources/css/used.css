@@ -1722,7 +1722,7 @@ input[type=text]::-ms-clear {display:block}
 .used_prod_wrap.used_hp .used_galleryview_wrap {margin-top:0px}
 .used_prod_wrap .used_galleryview_wrap {margin-top:0}
 .used_prod_wrap .used_galleryview_wrap .used_prod_list{padding-top:15px;border-top:1px solid #e6e6e6;*zoom: 1}
-.used_prod_wrap .used_galleryview_wrap .used_prod_list:first-child{border-top:0}
+.used_prod_wrap .used_galleryview_wrap .used_prod_list:first-child{width:1000px; border-top:0}
 .used_prod_wrap .used_galleryview_wrap .used_prod_list:after{display: block;content: '';clear: both}
 .used_prod_wrap .used_galleryview_wrap .used_prod_list .gallery_view{float:left;width:200px;margin-left:47px;padding:0 0 13px 0}
 .used_prod_wrap .used_galleryview_wrap .used_prod_list .gallery_view.fst{margin-left:0 !important}

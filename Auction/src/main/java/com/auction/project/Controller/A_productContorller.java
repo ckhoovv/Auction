@@ -30,6 +30,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.auction.project.DTO.A_productDTO;
+import com.auction.project.DTO.A_product_listDTO;
 import com.auction.project.DTO.ChargeDTO;
 import com.auction.project.Service.A_productServiceTm1;
 import com.auction.project.Service.ChargeService;
@@ -40,6 +41,9 @@ public class A_productContorller {
 	@Autowired
 	A_productServiceTm1 a_productService;
 
+//	@Autowired
+//	A_product_listServiceTm a_product_listService;
+
 	@Autowired
 	ChargeService chargeService;
 
@@ -49,7 +53,10 @@ public class A_productContorller {
 	}
 
 	@RequestMapping("insert.do")
-	public String Insert(A_productDTO a_productDTO) {
+	public String Insert(A_productDTO a_productDTO, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String a_email = (String) session.getAttribute("sessionEmail");
+		a_productDTO.setA_email(a_email);
 		a_productDTO.setA_endmoney(a_productDTO.getA_startmoney());
 		a_productDTO.setA_viewcount(0);
 		a_productService.insert(a_productDTO);
@@ -64,34 +71,34 @@ public class A_productContorller {
 	}
 
 	@RequestMapping("moneyupdate.do")
-	public void moneyUpdata(A_productDTO a_productDTO, ChargeDTO chargeDTO, Model model,HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void moneyUpdata(A_productDTO a_productDTO,A_product_listDTO a_product_listDTO, ChargeDTO chargeDTO, Model model, HttpServletRequest request,
+			HttpServletResponse response) throws IOException {
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("sessionEmail");
 		String d_email = chargeService.member_select(chargeDTO).getMember_email();
-		System.out.println(email + "," + d_email);
-		if(!email.equals(d_email)) {
-			System.out.println(email + "," + d_email);
-			System.out.println("여기 들어와?");
+		
+		System.out.println(email);
+		System.out.println(d_email);
+
+		if (!email.equals(d_email)) {
 			a_productService.moneyupdate(a_productDTO);
 			chargeService.member_delete(chargeDTO);
-			
+			System.out.println("ture");
 			chargeDTO.setMember_email(email);
-			chargeDTO.setMoney(a_productDTO.getA_endmoney());
-			
+			chargeDTO.setMoney(-a_productDTO.getA_endmoney());
 			chargeService.insert_money(chargeDTO);
+
+			a_productService.insert_list(a_product_listDTO);
 			
 			Model money = model.addAttribute("f_money", chargeService.member_money(chargeDTO).getMoney());
 			session.setAttribute("sessionMoney", money.asMap().get("f_money"));
-			int a = (int) money.asMap().get("f_money");
-			System.out.println(a);
 		} else {
+			System.out.println("false");
 			chargeDTO.setMember_email(email);
-			System.out.println("else에 들어왔니?");
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.flush();
 		}
-		System.out.println("종료하니?");
 	}
 
 	@RequestMapping("test3.do")

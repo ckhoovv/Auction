@@ -181,7 +181,7 @@ div.tit-area a.accounts{font:12px/1.25 'Malgun Gothic','맑은고딕','나눔고
 div.tit-area a.accounts:hover{color:#0061ff}
 div.tit-area p{font-size:14px;color:#999}
 /* item-register */
-div.item-register{border:1px solid #ccc;font:13px/16px 'Malgun Gothic','맑은 고딕',NanumGothicWeb,sans-serif !important}
+div.item-register{margin:auto; width:800px; border:1px solid #ccc;font:13px/16px 'Malgun Gothic','맑은 고딕',NanumGothicWeb,sans-serif !important}
 div.item-register > ul{width:100%}
 div.item-register > ul > li{width: 800px; padding:25px 29px 30px;border-bottom:1px solid #ededed}
 div.item-register > ul > li.last{border-bottom:0}

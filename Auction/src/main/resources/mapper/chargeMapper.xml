@@ -10,8 +10,15 @@
 	</resultMap>
 	
 	<insert id="insert_money" parameterType="chargeDTO">
-		insert into member_money(member_money_seq,member_email,money) 
-						 values (member_money_seq.NEXTVAL,#{member_email},-#{money})
+		insert into member_money (
+		       		member_money_seq
+		     	  , member_email
+		     	  , money)
+		     values ( case when #{money} > 0 then null
+		                   else member_money_seq.NEXTVAL
+		              end 
+		          , #{member_email}
+		          , #{money})
 	</insert>
 	<select id="moneyAll" resultMap="rsMap">
 		select * from member_money 

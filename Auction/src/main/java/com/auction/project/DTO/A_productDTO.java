@@ -12,10 +12,19 @@ public class A_productDTO {
 	private int a_endmin;
 	private String a_content;
 	private String a_drive;
+	private String a_email;
 	private int a_viewcount;
 	
 	
 	
+	
+	
+	public String getA_email() {
+		return a_email;
+	}
+	public void setA_email(String a_email) {
+		this.a_email = a_email;
+	}
 	public int getA_num() {
 		return a_num;
 	}
