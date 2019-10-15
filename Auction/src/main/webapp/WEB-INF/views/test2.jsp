@@ -7,12 +7,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="resources/js/main.js" charset="UTF-8"></script>
 <link rel="stylesheet" type="text/css" href="resources/css/reset.css">
 <link rel="stylesheet" type="text/css" href="resources/css/list_all.css">
 <link rel="stylesheet" type="text/css" href="resources/css/used.css">
 <link rel="stylesheet" type="text/css" href="resources/css/footer.css">
-<script type="text/javascript" src="resources/js/main.js"
-	charset="UTF-8"></script>
 
 </head>
 <body>

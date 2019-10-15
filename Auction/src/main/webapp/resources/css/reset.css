@@ -68,7 +68,6 @@ list-style:none;
 input,select,textarea,button {
 vertical-align:middle;
 margin: 0;
-padding: 0;
 font-family: "굴림", Gulim, Tahoma, sans-serif;
 }
 input.ckbox {
@@ -87,7 +86,6 @@ img, input, select, textarea, button, iframe {
 vertical-align:middle;
 }
 button {
-background-color:transparent;
 cursor:pointer;
 }
 address,caption,cite,code,dfn,em,var {
