@@ -63,6 +63,68 @@
 		<result property="pw" column="pw" />
 	</resultMap>
 	
+	<resultMap type="donation_listDTO" id="list_rsMap">
+		<result property="sq" column="sq" />
+		<result property="dona_num" column="dona_num" />
+		<result property="dona_tit" column="dona_tit" />
+		<result property="member_email" column="member_email" />
+		<result property="dona_money" column="dona_money" />
+		<result property="dona_date_yy" column="dona_data_yy" />
+		<result property="dona_date_mm" column="dona_data_mm" />
+		<result property="dona_date_dd" column="dona_data_dd" />
+	</resultMap>
+	
+	<resultMap type="e_listDTO" id="e_list_rsMap">
+		<result property="e_num" column="e_num" />
+		<result property="e_product" column="e_product" />
+		<result property="member_email" column="member_email" />
+		<result property="name" column="name" />
+		<result property="e_count" column="e_count" />
+		<result property="e_input_date" column="e_input_date" />
+	</resultMap>
+	
+	<resultMap type="e_winnerDTO" id="winner_rsMap">
+		<result property="e_winner_seq" column="e_winner_seq" />
+		<result property="e_num" column="e_num" />
+		<result property="e_product" column="e_product" />
+		<result property="member_email" column="member_email" />
+		<result property="name" column="name" />
+	</resultMap>
+	
+	<resultMap type="signUpDTO" id="sign_rsMap">
+		<result property="email" column="email" />
+		<result property="pw" column="pw" />
+		<result property="name" column="name" />
+		<result property="tel" column="tel" />
+		<result property="birth" column="birth" />
+		<result property="recipient" column="recipient" />
+		<result property="place" column="place" />
+		<result property="addr1" column="addr1" />
+		<result property="addr2" column="addr2" />
+		<result property="addr3" column="addr3" />
+		<result property="money" column="money" />
+	</resultMap>
+	
+	<select id="my_dona_list" parameterType="donation_listDTO" resultMap="list_rsMap">
+		select * from d_list where member_email = #{member_email}
+	</select>
+	
+	<select id="my_event_list" parameterType="e_listDTO" resultMap="e_list_rsMap">
+		select member_email
+		     , e_product
+		     , e_num
+		     , sum(e_count) as e_count
+		     , e_input_date
+		  from e_list
+		 where member_email = #{member_email}
+		 group by member_email,e_product, e_num, e_input_date
+		 order by e_input_date desc
+	</select>
+	
+	<select id="my_winner_list" parameterType="e_winnerDTO" resultMap="winner_rsMap">
+		select * from e_winner where member_email = #{member_email}
+	</select>
+	
 	<select id="selectAll" resultMap="rsMap">
 		SELECT a.email,		<!-- member  / 사용자 이메일 -->
 			 , a.pw			<!-- member  / 사용자 비밀번호 -->
@@ -86,17 +148,46 @@
 		INSERT INTO address VALUES(#{email},#{place},#{recipient},#{tel},#{addr1},#{addr2},#{addr3})
 	</insert>
 
-	<update id="update" parameterType="signUpDTO">
-		UPDATE tablename1
-		SET
-		columnname1=#{param1}
-		WHERE
-		columnname2 = #{param2}
+	<update id="myPage_member_update" parameterType="signUpDTO">
+		UPDATE member
+		   SET
+		   tel = #{tel}
+		 WHERE
+		 email = #{email}
 	</update>
+	<update id="myPage_address_update" parameterType="signUpDTO">
+		UPDATE address
+		   SET
+		 addr1 = #{addr1}
+	   , addr2 = #{addr2}
+	   , addr3 = #{addr3}
+		 WHERE member_email = #{email}
+	</update>
+	<update id="myPage_member_password_update" parameterType="signUpDTO">
+		UPDATE member
+		   SET
+		 pw = #{pw}
+		 WHERE email = #{email}
+	</update>
+	
 
 	<delete id="delete" parameterType="signUpDTO">
 		DELETE FROM tablename1 WHERE
 		columnname1 = #{param1}
 	</delete>
 
+	<select id="myPage_member_select" parameterType="signUpDTO" resultMap="sign_rsMap">
+		 select a.email
+		      , a.pw
+		      , a.name
+		      , a.tel
+		      , a.birth
+		      , b.addr1
+		      , b.addr2
+		      , b.addr3
+		   from member a
+		      , address b
+		  where a.email = b.member_email
+		    and a.email = #{email}
+	</select>
 </mapper>
