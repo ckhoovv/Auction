@@ -68,30 +68,23 @@ public class A_productContorller {
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("sessionEmail");
 		String d_email = chargeService.member_select(chargeDTO).getMember_email();
-		System.out.println(email + "," + d_email);
+		
 		if(!email.equals(d_email)) {
-			System.out.println(email + "," + d_email);
-			System.out.println("여기 들어와?");
 			a_productService.moneyupdate(a_productDTO);
 			chargeService.member_delete(chargeDTO);
 			
 			chargeDTO.setMember_email(email);
-			chargeDTO.setMoney(a_productDTO.getA_endmoney());
-			
+			chargeDTO.setMoney(-a_productDTO.getA_endmoney());
 			chargeService.insert_money(chargeDTO);
 			
 			Model money = model.addAttribute("f_money", chargeService.member_money(chargeDTO).getMoney());
 			session.setAttribute("sessionMoney", money.asMap().get("f_money"));
-			int a = (int) money.asMap().get("f_money");
-			System.out.println(a);
 		} else {
 			chargeDTO.setMember_email(email);
-			System.out.println("else에 들어왔니?");
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.flush();
 		}
-		System.out.println("종료하니?");
 	}
 
 	@RequestMapping("test3.do")

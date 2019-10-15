@@ -242,10 +242,10 @@
 							</p>
 							<p>
 								<label>주소</label> 
-								<input class="w3-input" type="text" id="addr1
-								" name="addr1" value="${ member.email }" required> 
-								<input class="w3-input" type="text" id="addr2" name="addr2" value="${ member.email }" required> 
-								<input class="w3-input" type="text" id="addr3" name="addr3" value="${ member.email }" required>
+								<label>우편</label> <input class="w3-input" type="text" id="addr1" name="addr1" value="${ member.email }" 
+									style="width: 150px; border: 1px"  required> 
+								<input class="w3-input" type="text" id="addr2" name="addr2" value="${ member.email }" style="width: 400px" required> 
+								<input class="w3-input" type="text" id="addr3" name="addr3" value="${ member.email }" style="width: 400px" required>
 							</p>
 							<p class="w3-center">
 								<button type="submit" class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">회원정보변경</button>
