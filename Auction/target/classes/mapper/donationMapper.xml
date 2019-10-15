@@ -88,6 +88,10 @@
 		select * from d_detail order by dona_num asc
 	</select>
 	
+	<select id="my_dona_list" resultMap="list_rsMap">
+		select * from d_list where member_email = #{member_email}
+	</select>
+	
 	<select id="selectAll" resultMap="rsMap">
 		SELECT a.dona_num		<!-- d_detail / 기부번호 -->
 			, a.dona_tit			<!-- d_detail / 기부제목 -->

@@ -68,7 +68,7 @@ public class A_productContorller {
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("sessionEmail");
 		String d_email = chargeService.member_select(chargeDTO).getMember_email();
-		
+		System.out.println(email + "," + d_email);
 		if(!email.equals(d_email)) {
 			System.out.println(email + "," + d_email);
 			System.out.println("여기 들어와?");

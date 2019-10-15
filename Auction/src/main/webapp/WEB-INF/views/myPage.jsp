@@ -40,7 +40,7 @@
 
 .mypage_menu button {
 	width: 150px;
-	height: 139.5px;
+	height: 140px;
 	border: 1px solid #2E86C1;
 	background: #21618C;
 	color: #fff;
@@ -55,8 +55,9 @@
 }
 
 .member_update_title {
-	width: 830px;
+	width: 849px; 
 	height: 50px;
+	margin-top:-1px;
 	margin-left: 1px;
 	text-align: center;
 	border-bottom: 1px solid black;
@@ -76,8 +77,9 @@
 }
 
 .member_buy_list_title {
-	width: 830px;
+	width: 849px;
 	height: 50px;
+	margin-top:-1px;
 	margin-left: 1px;
 	text-align: center;
 	border-bottom: 1px solid black;
@@ -97,8 +99,9 @@
 }
 
 .member_donation_list_title {
-	width: 830px;
+	width: 849px;
 	height: 50px;
+	margin-top:-1px;
 	margin-left: 1px;
 	text-align: center;
 	border-bottom: 1px solid black;
@@ -118,8 +121,9 @@
 }
 
 .member_event_list_title {
-	width: 830px;
+	width: 849px;
 	height: 50px;
+	margin-top:-1px;
 	margin-left: 1px;
 	text-align: center;
 	border-bottom: 1px solid black;
@@ -139,8 +143,9 @@
 }
 
 .member_winner_list_title {
-	width: 830px;
+	width: 849px;
 	height: 50px;
+	margin-top:-1px;
 	margin-left: 1px;
 	text-align: center;
 	border-bottom: 1px solid black;
@@ -215,10 +220,11 @@
 				<li><button type="button" onclick="member_winner_list()">회원당첨이력</button></li>
 			</ul>
 		</div>
-		<div class="member_update" id="member_update" style="display: block; overflow: auto;">
+		<div class="member_update" id="member_update" style="display: block;">
 			<div class="member_update_title">
 				<strong>회원 정보 수정</strong>
 			</div>
+			<div style=" overflow: auto; width: 850px; height: 652px;">
 			<div class="w3-content w3-container w3-margin-top">
 				<div class="w3-container w3-card-4">
 					<div class="w3-center w3-large w3-margin-top">
@@ -264,26 +270,85 @@
 					</div>
 				</div>
 			</div>
+			</div>
 		</div>
-		<div class="member_buy_list" id="member_buy_list" style="display: none; overflow: scroll;">
+		<div class="member_buy_list" id="member_buy_list" style="display: none;">
 			<div class="member_buy_list_title">
 				<strong>회원 구매이력</strong>
 			</div>
-			ddd
+			<div style="overflow: auto; width: 850px; height: 652px;">
+				구매이력
+			</div>
 		</div>
 		<div class="member_donation_list" id="member_donation_list" style="display: none;">
 			<div class="member_donation_list_title">
 				<strong>회원 기부이력</strong>
+			</div>
+			<div style="overflow: auto; width: 850px; height: 652px;">
+				<table style="width:100%; text-align: center;">
+					  <tr>
+					    <th style="width:50px;">번호</th>
+					    <th style="width:252px;">기부 제목</th>
+					    <th style="width:252px;">기부 금액</th>
+					    <th style="width:252px;">기부 날짜(년/월/일)</th>
+					  </tr>
+					  <% 
+					  for (int i = 0; i<30; i++) {
+					  %>
+					  <tr>
+					    <td><%= i %></td>
+					    <td>기부기부</td>
+					    <td>100000원</td>
+					    <td>2019/10/15</td>
+					  </tr>
+					  <% } %>
+				</table>
 			</div>
 		</div>
 		<div class="member_event_list" id="member_event_list" style="display: none;">
 			<div class="member_event_list_title">
 				<strong>회원 응모이력</strong>
 			</div>
+			<div style="overflow: auto; width: 850px; height: 652px;">
+				<table style="width:100%; text-align: center;">
+					  <tr>
+					    <th style="width:50px;">번호</th>
+					    <th style="width:252px;">경품명</th>
+					    <th style="width:252px;">응모 건수</th>
+					    <th style="width:252px;">응모 날짜(년/월/일)</th>
+					  </tr>
+					  <% 
+					  for (int i = 0; i<30; i++) {
+					  %>
+					  <tr>
+					    <td><%= i %></td>
+					    <td>경품경품</td>
+					    <td>232</td>
+					    <td>2019/10/15</td>
+					  </tr>
+					  <% } %>
+				</table>
+			</div>
 		</div>
 		<div class="member_winner_list" id="member_winner_list" style="display: none;">
 			<div class="member_winner_list_title">
 				<strong>회원 당첨이력</strong>
+			</div>
+			<div style="overflow: auto; width: 850px; height: 652px;">
+				<table style="width:100%; text-align: center;">
+					  <tr>
+					    <th style="width:50px;">번호</th>
+					    <th style="width:252px;">당첨 경품</th>
+					  </tr>
+					  <% 
+					  for (int i = 0; i<30; i++) {
+					  %>
+					  <tr>
+					    <td><%= i %></td>
+					    <td>당첨당첨</td>
+					  </tr>
+					  <% } %>
+				</table>
 			</div>
 		</div>
 	</div>

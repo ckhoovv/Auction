@@ -44,7 +44,10 @@ public class DonationController {
 		return"redirect:donation_detail.do?dona_num="+donation_listDTO.getDona_num();
 	}
 	
-	
+	/*
+	 * @RequestMapping("myPage.do") public String my_dona_list(Donation_ListDTO
+	 * donation_listDTO, Model model) { return "myPage.do"; }
+	 */
 	
 	
 	
